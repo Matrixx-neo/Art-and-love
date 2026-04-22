@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art & Love | Alta Cosmética Artesanal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --dorado: #c5a059; --oscuro: #1a1a1a; --crema: #f9f7f2; }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; background-color: var(--crema); color: var(--oscuro); overflow-x: hidden; }
+        
+        header { 
+            height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/5Wmn0H7v/0d8651292fd255127875f2fd8471f754.jpg');
+            background-size: cover; background-position: center; color: white; text-align: center;
+        }
+        h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 12px; margin: 0; }
+        .linea-decor { width: 80px; height: 1.5px; background: var(--dorado); margin: 25px auto; }
+        .slogan-principal { letter-spacing: 8px; font-weight: 300; text-transform: uppercase; font-size: 0.85rem; max-width: 80%; }
+
+        .seccion-encabezado { text-align: center; padding: 80px 10% 30px; }
+        .seccion-titulo { font-family: 'Cinzel', serif; letter-spacing: 6px; color: var(--dorado); font-size: 2rem; margin-bottom: 12px; text-transform: uppercase; }
+        .uso-sugerido { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: #999; font-weight: 500; font-style: italic; }
+        
+        .catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 0 8% 80px; }
+        .producto { background: white; padding: 30px; border: 1px solid #f0f0f0; text-align: center; transition: 0.5s; }
+        .producto:hover { transform: translateY(-12px); box-shadow: 0 15px 40px rgba(0,0,0,0.06); border-color: var(--dorado); }
+        
+        .img-box { width: 100%; height: 350px; overflow: hidden; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; }
+        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        .info h3 { font-family: 'Cinzel', serif; margin: 15px 0 5px; font-size: 1.3rem; letter-spacing: 2px; }
+        .tag-premium { font-size: 0.65rem; color: var(--dorado); font-weight: bold; text-transform: uppercase; letter-spacing: 2.5px; display: block; margin-bottom: 18px; }
+        .beneficio { font-size: 0.85rem; color: #777; font-style: italic; min-height: 55px; line-height: 1.7; margin-bottom: 25px; }
+        .ingredientes-tag { font-size: 0.7rem; color: var(--dorado); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #f5f5f5; padding-bottom: 12px; margin-bottom: 18px; display: block; }
+        
+        .btn-reserva { display: inline-block; padding: 14px 35px; background: var(--oscuro); text-decoration: none; color: white; font-size: 0.75rem; letter-spacing: 3px; transition: 0.4s; border: 1.5px solid var(--oscuro); }
+        .btn-reserva:hover { background: transparent; color: var(--oscuro); }
+
+        .comparativa { background: #fff; padding: 100px 10%; border-top: 1px solid #eee; }
+        .grid-comparativa { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; }
+        .comparativa-box h4 { font-family: 'Cinzel', serif; color: var(--dorado); margin-bottom: 30px; font-size: 1.4rem; letter-spacing: 3px; }
+        .comparativa-list { list-style: none; padding: 0; font-size: 0.95rem; line-height: 2.2; color: #555; }
+        .comparativa-list li::before { content: "•"; color: var(--dorado); padding-right: 15px; font-weight: bold; }
+
+        .proximamente { background: #efebe3; padding: 80px 10%; text-align: center; border-top: 1px solid #e0ddd5; }
+        .proximamente h2 { font-family: 'Cinzel', serif; font-size: 1.8rem; letter-spacing: 6px; margin-bottom: 20px; }
+        .proximamente p { font-size: 0.9rem; color: #666; letter-spacing: 1.5px; line-height: 2; }
+
+        footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-align: center; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
+        .footer-section h4 { color: var(--dorado); font-family: 'Cinzel', serif; margin-bottom: 25px; letter-spacing: 4px; }
+        .copyright { border-top: 1px solid #2a2a2a; padding-top: 40px; font-size: 0.7rem; letter-spacing: 2px; }
+
+        .whatsapp-btn { position: fixed; bottom: 40px; right: 40px; background: var(--oscuro); color: var(--dorado); padding: 18px 30px; text-decoration: none; font-weight: bold; font-size: 0.75rem; letter-spacing: 3px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); transition: 0.5s; z-index: 1000; border: 1.5px solid var(--dorado); text-transform: uppercase; }
+        .whatsapp-btn:hover { background: var(--dorado); color: var(--oscuro); }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Art & Love</h1>
+    <div class="linea-decor"></div>
+    <p class="slogan-principal">LA MEJOR INVERSIÓN ES TU PROPIO CUIDADO PERSONAL</p>
+</header>
+
+<div class="seccion-encabezado">
+    <div class="seccion-titulo">Línea Equilibrio</div>
+    <div class="uso-sugerido">Ritual Purificante: Detox y Equilibrio para pieles mixtas a grasas</div>
+</div>
+<div class="catalogo">
+    <div class="producto">
+        <div class="img-box"><img src="https://i.ibb.co/21vp313M/IMG-20260422-001649.png"></div>
+        <div class="info">
+            <span class="ingredientes-tag">Carbón Activado • Mosqueta</span>
+            <h3>Diamante Negro</h3>
+            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
+            <p class="beneficio">Limpieza profunda que absorbe impurezas mientras regenera la vitalidad de tu piel.</p>
+            <a href="https://wa.me/51931379225" class="btn-reserva">RESERVAR RITUAL</a>
+        </div>
+    </div>
+    <div class="producto">
+        <div class="img-box"><img src="https://i.ibb.co/Ld6tPMRj/IMG-20260422-001753.png"></div>
+        <div class="info">
+            <span class="ingredientes-tag">Carbón Activado • Aceite de Coco</span>
+            <h3>Esencia de Ébano</h3>
+            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
+            <p class="beneficio">Detox natural con una suavidad tropical que equilibra el brillo de tu rostro.</p>
+            <a href="https://wa.me/51931379225" class="btn-reserva">RESERVAR RITUAL</a>
+        </div>
+    </div>
+    <div class="producto">
+        <div class="img-box"><img src="https://i.ibb.co/5hdQFSvf/IMG-20260422-002240.png"></div>
+        <div class="info">
+            <span class="ingredientes-tag">Carbón • Leche de Coco • Cabra</span>
+            <h3>Velo Nocturno</h3>
+            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
+            <p class="beneficio">La fuerza del carbón se funde en la cremosidad de leches ancestrales.</p>
+            <a href="https://wa.me/51931379225" class="btn-reserva">RESERVAR RITUAL</a>
+        </div>
+    </div>
+</div>
+
+<div class="seccion-encabezado">
+    <div class="seccion-titulo">Línea Renacer</div>
+    <div class="uso-sugerido">Nutrición Consciente: Hidratación intensiva y Calma para pieles secas o sensibles</div>
+</div>
+<div class="catalogo">
+    <div class="producto">
+        <div class="img-box"><img src="https://i.ibb.co/9XHzdgg/IMG-20260422-001731.png"></div>
+        <div class="info">
+            <span class="ingredientes-tag">Cabra • Coco • Avena</span>
+            <h3>Seda de Montaña</h3>
+            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
+            <p class="beneficio">Un festín de hidratación que envuelve tu piel en una textura láctea.</p>
+            <a href="https://wa.me/51931379225" class="btn-reserva">RESERVAR</a>
+        </div>
+    </div>
+    <div class="producto">
+        <div class="img-box"><img src="https://i.ibb.co/s9tcWctF/IMG-20260422-002037.png"></div>
+        <div class="info">
+            <span class="ingredientes-tag">Caléndula • Avena • Coco</span>
+            <h3>Caricia de Caléndula</h3>
+            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
+            <p class="beneficio">Calma absoluta para pieles delicadas, diseñada para sanar.</p>
+            <a href="https://wa.me/51931379225" class="btn-reserva">RESERVAR</a>
+        </div>
+    </div>
+    <div class="producto">
+        <div class="img-box"><img src="https://i.ibb.co/rGnkwjkP/IMG-202145.png"></div>
+        <div class="info">
+            <span class="ingredientes-tag">Leche de Cabra • Coco</span>
+            <h3>Lactococo Premium</h3>
+            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
+            <p class="beneficio">Pureza esencial que restaura la barrera natural de hidratación.</p>
+            <a href="https://wa.me/51931379225" class="btn-reserva">RESERVAR</a>
+        </div>
+    </div>
+</div>
+
+<div class="seccion-encabezado">
+    <div class="seccion-titulo">Línea Vitalidad</div>
+    <div class="uso-sugerido">Antioxidante Vital: Protección y Brillo natural para pieles cansadas u opacas</div>
+</div>
+<div class="catalogo">
+    <div class="producto">
+        <div class="img-box"><img src="https://i.ibb.co/HTncpGJ5/IMG-20260422-001854.png"></div>
+        <div class="info">
+            <span class="ingredientes-tag">Sábila • Té Verde • Coco</span>
+            <h3>Bruma Verde</h3>
+            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
+            <p class="beneficio">Energía pura que refresca y protege tu piel.</p>
+            <a href="https://wa.me/51931379225" class="btn-reserva">RESERVAR</a>
+        </div>
+    </div>
+    <div class="producto">
+        <div class="img-box"><img src="https://i.ibb.co/qFVSy5yf/IMG-20260422-001947.png"></div>
+        <div class="info">
+            <span class="ingredientes-tag">Mosqueta • Jazmín • Coco</span>
+            <h3>Rocío de Mosqueta</h3>
+            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
+            <p class="beneficio">Antioxidante maestro para una piel radiante.</p>
+            <a href="https://wa.me/51931379225" class="btn-reserva">RESERVAR</a>
+        </div>
+    </div>
+    <div class="producto">
+        <div class="img-box"><img src="https://i.ibb.co/RTN7MHWs/IMG-20260422-002221.png"></div>
+        <div class="info">
+            <span class="ingredientes-tag">Mosqueta & Leche de Cabra</span>
+            <h3>Dúo Armonía</h3>
+            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
+            <p class="beneficio">Pack de complemento para un ritual completo día y noche.</p>
+            <a href="https://wa.me/51931379225" class="btn-reserva">RESERVAR DÚO</a>
+        </div>
+    </div>
+</div>
+
+<div class="comparativa">
+    <div class="grid-comparativa">
+        <div class="comparativa-box">
+            <h4>El Secreto Artesanal</h4>
+            <ul class="comparativa-list">
+                <li>Glicerina natural que retiene la hidratación.</li>
+                <li>Bases de Aceite de Oliva y Vitamina E pura.</li>
+                <li>Sin sulfatos ni químicos agresivos para el cutis.</li>
+            </ul>
+        </div>
+        <div class="comparativa-box" style="opacity: 0.5;">
+            <h4>Jabones Industriales</h4>
+            <ul class="comparativa-list">
+                <li>Detergentes sintéticos que resecan y envejecen.</li>
+                <li>Contienen parabenos y derivados del petróleo.</li>
+                <li>Fragancias artificiales altamente irritantes.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="proximamente">
+    <h2>Dúos de Bienestar</h2>
+    <p>Próximamente: Sets de Complemento (Jabón Artesanal + Mascarilla Facial)<br>Velas Aromáticas en Desarrollo</p>
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-section">
+            <h4>ART & LOVE</h4>
+            <p>Elevando tu cuidado diario a un ritual de bienestar.</p>
+        </div>
+        <div class="footer-section">
+            <h4>CONCIERGE</h4>
+            <p>Atención personalizada<br>+51 931379225</p>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2026 Art & Love. Todos los derechos reservados.
+    </div>
+</footer>
+
+<a href="https://wa.me/51931379225" class="whatsapp-btn">WHATSAPP CONCIERGE</a>
+
+</body>
+</html>
+
