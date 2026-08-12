@@ -1,518 +1,602 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art & Love | Alta Cosmética Artesanal</title>
-    <meta property="og:image" content="https://i.ibb.co/ymyCjXLr/Screenshot-2026-04-22-17-47-29-86-e4424258c8b8649f6e67d283a50a2cbc.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
-    <style>
-        :root { --dorado: #c5a059; --oscuro: #1a1a1a; --crema: #f9f7f2; }
-        body { font-family: 'Montserrat', sans-serif; margin: 0; background-color: var(--crema); color: var(--oscuro); overflow-x: hidden; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art & Love | Alta Cosmética Artesanal</title>
+<meta property="og:image" content="https://i.ibb.co/ymyCjXLr/Screenshot-2026-04-22-17-47-29-86-e4424258c8b8649f6e67d283a50a2cbc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+<style>
+:root { --dorado: #c5a059; --oscuro: #1a1a1a; --crema: #f9f7f2; }
+body { font-family: 'Montserrat', sans-serif; margin: 0; background-color: var(--crema); color: var(--oscuro); overflow-x: hidden; }
 
-        header {
-            height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/5Wmn0H7v/0d8651292fd255127875f2fd8471f754.jpg');
-            background-size: cover; background-position: center; color: white; text-align: center;
-        }
-        h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 12px; margin: 0; }
-        .linea-decor { width: 80px; height: 1.5px; background: var(--dorado); margin: 25px auto; }
-        .slogan-principal { letter-spacing: 8px; font-weight: 300; text-transform: uppercase; font-size: 0.85rem; max-width: 80%; }
+header {
+  height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/5Wmn0H7v/0d8651292fd255127875f2fd8471f754.jpg');
+  background-size: cover; background-position: center; color: white; text-align: center;
+}
+h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 12px; margin: 0; }
+.linea-decor { width: 80px; height: 1.5px; background: var(--dorado); margin: 25px auto; }
+.slogan-principal { letter-spacing: 8px; font-weight: 300; text-transform: uppercase; font-size: 0.85rem; max-width: 80%; }
 
-        .seccion-encabezado { text-align: center; padding: 80px 10% 30px; }
-        .seccion-titulo { font-family: 'Cinzel', serif; letter-spacing: 6px; color: var(--dorado); font-size: 2rem; margin-bottom: 12px; text-transform: uppercase; }
-        .uso-sugerido { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: #999; font-weight: 500; font-style: italic; }
+.seccion-encabezado { text-align: center; padding: 80px 10% 30px; }
+.seccion-titulo { font-family: 'Cinzel', serif; letter-spacing: 6px; color: var(--dorado); font-size: 2rem; margin-bottom: 12px; text-transform: uppercase; }
+.uso-sugerido { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: #999; font-weight: 500; font-style: italic; }
 
-        .catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 0 8% 80px; }
-        .producto { background: white; padding: 30px; border: 1px solid #f0f0f0; text-align: center; transition: 0.5s; }
-        .producto:hover { transform: translateY(-12px); box-shadow: 0 15px 40px rgba(0,0,0,0.06); border-color: var(--dorado); }
+.catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 0 8% 80px; }
+.producto { background: white; padding: 30px; border: 1px solid #f0f0f0; text-align: center; transition: 0.5s; }
+.producto:hover { transform: translateY(-12px); box-shadow: 0 15px 40px rgba(0,0,0,0.06); border-color: var(--dorado); }
 
-        .img-box { width: 100%; height: 350px; overflow: hidden; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; }
-        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.img-box { width: 100%; height: 350px; overflow: hidden; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; }
+.img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        .info h3 { font-family: 'Cinzel', serif; margin: 15px 0 5px; font-size: 1.3rem; letter-spacing: 2px; }
-        .tag-premium { font-size: 0.65rem; color: var(--dorado); font-weight: bold; text-transform: uppercase; letter-spacing: 2.5px; display: block; margin-bottom: 18px; }
-        .beneficio { font-size: 0.85rem; color: #777; font-style: italic; min-height: 55px; line-height: 1.7; margin-bottom: 25px; }
-        .ingredientes-tag { font-size: 0.7rem; color: var(--dorado); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #f5f5f5; padding-bottom: 12px; margin-bottom: 18px; display: block; }
+.info h3 { font-family: 'Cinzel', serif; margin: 15px 0 5px; font-size: 1.3rem; letter-spacing: 2px; }
+.tag-premium { font-size: 0.65rem; color: var(--dorado); font-weight: bold; text-transform: uppercase; letter-spacing: 2.5px; display: block; margin-bottom: 18px; }
+.beneficio { font-size: 0.85rem; color: #777; font-style: italic; min-height: 90px; line-height: 1.7; margin-bottom: 25px; }
+.ingredientes-tag { font-size: 0.7rem; color: var(--dorado); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #f5f5f5; padding-bottom: 12px; margin-bottom: 18px; display: block; }
 
-        /* === OPTIMIZACIÓN 4: Precio final con mayor peso visual === */
-        .precio-final {
-            color: #D4AF37;
-            font-weight: 800;
-            font-size: 1.45em;
-            margin: 10px 0;
-            letter-spacing: 0.5px;
-        }
+/* === OPTIMIZACIÓN 4: Precio final con mayor peso visual === */
+.precio-final {
+    color: #D4AF37;
+    font-weight: 800;
+    font-size: 1.45em;
+    margin: 10px 0;
+    letter-spacing: 0.5px;
+}
 
-        .btn-reserva { display: inline-block; padding: 14px 35px; background: var(--oscuro); text-decoration: none; color: white; font-size: 0.75rem; letter-spacing: 3px; transition: 0.4s; border: 1.5px solid var(--oscuro); }
-        .btn-reserva:hover { background: transparent; color: var(--oscuro); }
+.btn-reserva { display: inline-block; padding: 14px 35px; background: var(--oscuro); text-decoration: none; color: white; font-size: 0.75rem; letter-spacing: 3px; transition: 0.4s; border: 1.5px solid var(--oscuro); }
+.btn-reserva:hover { background: transparent; color: var(--oscuro); }
 
-        .comparativa { background: #fff; padding: 100px 10%; border-top: 1px solid #eee; }
-        .grid-comparativa { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; }
-        .comparativa-box h4 { font-family: 'Cinzel', serif; color: var(--dorado); margin-bottom: 30px; font-size: 1.4rem; letter-spacing: 3px; }
-        .comparativa-list { list-style: none; padding: 0; font-size: 0.95rem; line-height: 2.2; color: #555; }
-        .comparativa-list li::before { content: "•"; color: var(--dorado); padding-right: 15px; font-weight: bold; }
+.comparativa { background: #fff; padding: 100px 10%; border-top: 1px solid #eee; }
+.grid-comparativa { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; }
+.comparativa-box h4 { font-family: 'Cinzel', serif; color: var(--dorado); margin-bottom: 30px; font-size: 1.4rem; letter-spacing: 3px; }
+.comparativa-list { list-style: none; padding: 0; font-size: 0.95rem; line-height: 2.2; color: #555; }
+.comparativa-list li::before { content: "•"; color: var(--dorado); padding-right: 15px; font-weight: bold; }
 
-        .proximamente { background: #efebe3; padding: 80px 10%; text-align: center; border-top: 1px solid #e0ddd5; }
-        .proximamente h2 { font-family: 'Cinzel', serif; font-size: 1.8rem; letter-spacing: 6px; margin-bottom: 20px; }
-        .proximamente p { font-size: 0.9rem; color: #666; letter-spacing: 1.5px; line-height: 2; }
+.proximamente { background: #efebe3; padding: 80px 10%; text-align: center; border-top: 1px solid #e0ddd5; }
+.proximamente h2 { font-family: 'Cinzel', serif; font-size: 1.8rem; letter-spacing: 6px; margin-bottom: 20px; }
+.proximamente p { font-size: 0.9rem; color: #666; letter-spacing: 1.5px; line-height: 2; }
 
-        footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-align: center; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
-        .footer-section h4 { color: var(--dorado); font-family: 'Cinzel', serif; margin-bottom: 25px; letter-spacing: 4px; }
-        .copyright { border-top: 1px solid #2a2a2a; padding-top: 40px; font-size: 0.7rem; letter-spacing: 2px; }
+footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-align: center; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
+.footer-section h4 { color: var(--dorado); font-family: 'Cinzel', serif; margin-bottom: 25px; letter-spacing: 4px; }
+.footer-social { margin-top: 18px; }
+.footer-social a { color: #888; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; margin: 0 10px; border-bottom: 1px solid transparent; transition: 0.3s; }
+.footer-social a:hover { color: var(--dorado); border-color: var(--dorado); }
+.copyright { border-top: 1px solid #2a2a2a; padding-top: 40px; font-size: 0.7rem; letter-spacing: 2px; }
 
-        .whatsapp-btn { position: fixed; bottom: 40px; right: 40px; background: var(--oscuro); color: var(--dorado); padding: 18px 30px; text-decoration: none; font-weight: bold; font-size: 0.75rem; letter-spacing: 3px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); transition: 0.5s; z-index: 1000; border: 1.5px solid var(--dorado); text-transform: uppercase; }
-        .whatsapp-btn:hover { background: var(--dorado); color: var(--oscuro); }
+.whatsapp-btn { position: fixed; bottom: 40px; right: 40px; background: var(--oscuro); color: var(--dorado); padding: 18px 30px; text-decoration: none; font-weight: bold; font-size: 0.75rem; letter-spacing: 3px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); transition: 0.5s; z-index: 1000; border: 1.5px solid var(--dorado); text-transform: uppercase; }
+.whatsapp-btn:hover { background: var(--dorado); color: var(--oscuro); }
 
-        /* === OPTIMIZACIÓN 3: Clases limpias para la sección de Packs === */
-        .rituales-section {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-            font-family: 'Georgia', serif;
-        }
-        .rituales-banner {
-            background-color: #4a0404;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            border-radius: 2px;
-            margin-bottom: 30px;
-        }
-        .rituales-banner h1 {
-            margin: 0;
-            font-size: 1.4rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: normal;
-        }
-        .rituales-intro {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .rituales-intro h2 {
-            color: #2d4a22;
-            font-family: 'Arial', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .rituales-intro p {
-            color: #555;
-            line-height: 1.6;
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1rem;
-        }
-        .packs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .pack-card {
-            background: #fff;
-            border: 1px solid #f0f0f0;
-            padding: 20px;
-            text-align: center;
-        }
-        .pack-card--sombra {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .pack-card--premium {
-            background: #fffcf5;
-            border: 1px solid #e8d5b5;
-            position: relative;
-        }
-        .pack-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #2d4a22;
-            color: white;
-            padding: 2px 15px;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .pack-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border-radius: 2px;
-        }
-        .pack-titulo {
-            color: #2d4a22;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        .pack-descripcion {
-            font-size: 0.9rem;
-            color: #777;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        .pack-lista {
-            text-align: left;
-            font-size: 0.85rem;
-            color: #444;
-            margin-bottom: 20px;
-            padding-left: 20px;
-        }
-        .pack-precios {
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-        .pack-card--premium .pack-precios {
-            border-top-color: #e8d5b5;
-        }
-        .pack-precio-tachado {
-            text-decoration: line-through;
-            color: #bbb;
-            font-size: 0.9rem;
-        }
-        .pack-precio-final {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #1a1a1a;
-        }
-        .pack-precio-final--dorado {
-            color: #d4af37;
-        }
-        .pack-consulta {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #eee;
-        }
-        .pack-consulta p {
-            color: #555;
-            margin-bottom: 15px;
-            font-size: 1rem;
-            font-family: 'Georgia', serif;
-            font-style: italic;
-        }
-        .pack-consulta-btn {
-            display: inline-block;
-            background-color: #4a0404;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 2px;
-            font-family: 'Georgia', serif;
-            font-size: 0.9rem;
-            font-weight: normal;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: 0.3s;
-            border: 1px solid #4a0404;
-        }
+/* === OPTIMIZACIÓN 3: Clases limpias para la sección de Packs === */
+.rituales-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Georgia', serif;
+}
+.rituales-banner {
+    background-color: #4a0404;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+.rituales-banner h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.rituales-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.rituales-intro h2 {
+    color: #2d4a22;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.rituales-intro p {
+    color: #555;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+.packs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.pack-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+.pack-card--sombra {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.pack-card--premium {
+    background: #fffcf5;
+    border: 1px solid #e8d5b5;
+    position: relative;
+}
+.pack-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2d4a22;
+    color: white;
+    padding: 2px 15px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.pack-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+.pack-titulo {
+    color: #2d4a22;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.pack-descripcion {
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+.pack-lista {
+    text-align: left;
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+.pack-precios {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+.pack-card--premium .pack-precios {
+    border-top-color: #e8d5b5;
+}
+.pack-precio-tachado {
+    text-decoration: line-through;
+    color: #bbb;
+    font-size: 0.9rem;
+}
+.pack-precio-final {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1a1a1a;
+}
+.pack-precio-final--dorado {
+    color: #d4af37;
+}
+.pack-consulta {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+}
+.pack-consulta p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+}
+.pack-consulta-btn {
+    display: inline-block;
+    background-color: #4a0404;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'Georgia', serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border: 1px solid #4a0404;
+}
 
-        /* === Rituales Complementarios === */
-        .rituales-complementarios {
-            background-color: #ffffff;
-            padding: 40px 10px;
-            font-family: 'Georgia', serif;
-        }
-        .rituales-complementarios-titulo {
-            text-align: center;
-            color: #d4af37;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-        }
-        .rituales-complementarios-subtitulo {
-            text-align: center;
-            color: #888;
-            font-size: 0.8rem;
-            font-style: italic;
-            margin-bottom: 35px;
-        }
-        .rituales-complementarios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .card-ritual {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-        .card-ritual img {
-            width: 100%;
-            display: block;
-            transition: transform 0.6s ease;
-        }
-        .card-ritual:hover img { transform: scale(1.1); }
-        .card-ritual .overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(255,255,255,0.96);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.5s;
-            padding: 20px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .card-ritual:hover .overlay,
-        .card-ritual:active .overlay { opacity: 1; }
-        .overlay h4 {
-            color: #d4af37;
-            margin-bottom: 8px;
-            font-size: 1rem;
-            letter-spacing: 1px;
-        }
-        .overlay p {
-            font-size: 0.82rem;
-            color: #444;
-            line-height: 1.6;
-        }
+/* === Sé de los Primeros (NUEVA SECCIÓN) === */
+.primeros-section {
+    background: #fdf2e9;
+    padding: 60px 10%;
+    text-align: center;
+    border-top: 1.5px dashed #d4af37;
+    border-bottom: 1.5px dashed #d4af37;
+}
+.primeros-inner { max-width: 700px; margin: 0 auto; }
+.primeros-label {
+    color: #a04000;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+.primeros-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--oscuro);
+    margin: 0 0 20px 0;
+    letter-spacing: 1px;
+}
+.primeros-texto {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: #5a5a5a;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
 
-        /* === Tip profesional y mascarillas === */
-        .mascarillas-container {
-            max-width: 900px;
-            margin: 50px auto 10px auto;
-            padding: 45px 25px;
-            background-color: #fffaf5;
-            border-radius: 25px;
-            border: 1.5px solid #eaddca;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-        }
-        .tip-profesional-label {
-            color: #d4af37;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            font-weight: bold;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 8px;
-        }
-        .tip-profesional-texto {
-            font-family: 'Times New Roman', serif;
-            font-size: 1.15rem;
-            color: #5a5a5a;
-            font-style: italic;
-            margin: 0;
-            line-height: 1.5;
-        }
-        .mascarillas-opciones {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
-            margin-top: 30px;
-        }
-        .mascarilla-opcion-individual {
-            width: 190px;
-            padding: 25px 15px;
-            border: 1.2px solid #d4af37;
-            border-radius: 18px;
-            background: white;
-        }
-        .mascarilla-opcion-individual span {
-            font-size: 0.7rem;
-            color: #999;
-            text-transform: uppercase;
-        }
-        .mascarilla-opcion-individual h5 {
-            margin: 10px 0;
-            color: #444;
-            font-size: 1rem;
-            font-weight: normal;
-        }
-        .mascarilla-opcion-individual .precio-opcion {
-            font-size: 1.6rem;
-            color: #444;
-            font-weight: bold;
-        }
-        .mascarilla-opcion-pack {
-            width: 240px;
-            padding: 40px 15px;
-            border: 2.5px solid #d4af37;
-            border-radius: 22px;
-            background: white;
-            position: relative;
-            box-shadow: 0 15px 35px rgba(212,175,55,0.15);
-            transform: scale(1.05);
-        }
-        .mascarilla-pack-badge {
-            position: absolute;
-            top: -16px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #d4af37;
-            color: white;
-            padding: 5px 20px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            border-radius: 50px;
-            white-space: nowrap;
-        }
-        .mascarilla-opcion-pack span.pack-label {
-            font-size: 0.8rem;
-            color: #d4af37;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        .mascarilla-opcion-pack h5 {
-            margin: 10px 0;
-            color: #444;
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-        .mascarilla-opcion-pack .precio-pack {
-            font-size: 2.4rem;
-            color: #d4af37;
-            font-weight: bold;
-        }
-        .mascarilla-ahorro {
-            font-size: 0.85rem;
-            color: #27ae60;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        .mascarillas-bottom {
-            border-top: 1px solid #eaddca;
-            padding-top: 35px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .mascarillas-bottom p.elige-activos {
-            font-family: 'Times New Roman', serif;
-            color: #444;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            font-style: italic;
-        }
-        .consulta-gratis-box {
-            background: #fdf2e9;
-            padding: 22px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border: 1.5px dashed #d4af37;
-        }
-        .consulta-gratis-titulo {
-            font-family: 'Georgia', serif;
-            font-size: 0.95rem;
-            color: #a04000;
-            margin: 0;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .consulta-gratis-texto {
-            font-family: 'Georgia', serif;
-            font-size: 0.85rem;
-            color: #5a5a5a;
-            margin: 10px 0 0 0;
-            line-height: 1.6;
-            font-style: italic;
-        }
-        .btn-pack-personalizado {
-            display: inline-block;
-            padding: 18px 50px;
-            background-color: #d4af37;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-            box-shadow: 0 6px 20px rgba(212,175,55,0.35);
-            transition: 0.3s ease;
-        }
-        .btn-pack-personalizado:hover {
-            background-color: #c49d2d;
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(212,175,55,0.45);
-        }
+/* === Rituales Complementarios === */
+.rituales-complementarios {
+    background-color: #ffffff;
+    padding: 40px 10px;
+    font-family: 'Georgia', serif;
+}
+.rituales-complementarios-titulo {
+    text-align: center;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+.rituales-complementarios-subtitulo {
+    text-align: center;
+    color: #888;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-bottom: 35px;
+}
+.rituales-complementarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.card-ritual {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.card-ritual img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+}
+.card-ritual:hover img { transform: scale(1.1); }
+.card-ritual .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.96);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.card-ritual:hover .overlay,
+.card-ritual:active .overlay { opacity: 1; }
+.overlay h4 {
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.overlay p {
+    font-size: 0.82rem;
+    color: #444;
+    line-height: 1.6;
+}
 
-        /* === Crema Hidratante === */
-        .crema-section {
-            background-color: #ffffff;
-            font-family: 'Times New Roman', Times, serif;
-            padding: 40px 20px;
-            text-align: center;
-            color: #000000;
-        }
-        .crema-inner {
-            max-width: 450px;
-            margin: 0 auto;
-        }
-        .crema-img-wrap {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .crema-subtitulo {
-            color: #d4af37;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 0.75em;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-        .crema-titulo {
-            margin: 0 0 5px 0;
-            font-size: 1.8em;
-            font-family: 'Georgia', serif;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .crema-complemento {
-            color: #d4af37;
-            text-transform: uppercase;
-            font-size: 0.8em;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-        }
-        .crema-descripcion {
-            color: #555;
-            font-size: 1em;
-            line-height: 1.6;
-            font-style: italic;
-            margin-bottom: 30px;
-            padding: 0 10px;
-        }
-        .crema-precio {
-            font-size: 1.5em;
-            color: #d4af37;
-            font-weight: 400;
-            margin-bottom: 25px;
-            display: block;
-        }
-        .crema-btn {
-            text-decoration: none;
-            background: #1a1a1a;
-            color: #ffffff;
-            border: none;
-            padding: 18px 0;
-            width: 100%;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            font-weight: bold;
-        }
-    </style>
+/* === Tip profesional y mascarillas === */
+.mascarillas-container {
+    max-width: 900px;
+    margin: 50px auto 10px auto;
+    padding: 45px 25px;
+    background-color: #fffaf5;
+    border-radius: 25px;
+    border: 1.5px solid #eaddca;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+.tip-profesional-label {
+    color: #d4af37;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+.tip-profesional-texto {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.15rem;
+    color: #5a5a5a;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+}
+.mascarillas-opciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+.mascarilla-opcion-individual {
+    width: 190px;
+    padding: 25px 15px;
+    border: 1.2px solid #d4af37;
+    border-radius: 18px;
+    background: white;
+}
+.mascarilla-opcion-individual span {
+    font-size: 0.7rem;
+    color: #999;
+    text-transform: uppercase;
+}
+.mascarilla-opcion-individual h5 {
+    margin: 10px 0;
+    color: #444;
+    font-size: 1rem;
+    font-weight: normal;
+}
+.mascarilla-opcion-individual .precio-opcion {
+    font-size: 1.6rem;
+    color: #444;
+    font-weight: bold;
+}
+.mascarilla-opcion-pack {
+    width: 240px;
+    padding: 40px 15px;
+    border: 2.5px solid #d4af37;
+    border-radius: 22px;
+    background: white;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(212,175,55,0.15);
+    transform: scale(1.05);
+}
+.mascarilla-pack-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4af37;
+    color: white;
+    padding: 5px 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+.mascarilla-opcion-pack span.pack-label {
+    font-size: 0.8rem;
+    color: #d4af37;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.mascarilla-opcion-pack h5 {
+    margin: 10px 0;
+    color: #444;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.mascarilla-opcion-pack .precio-pack {
+    font-size: 2.4rem;
+    color: #d4af37;
+    font-weight: bold;
+}
+.mascarilla-ahorro {
+    font-size: 0.85rem;
+    color: #27ae60;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.mascarillas-bottom {
+    border-top: 1px solid #eaddca;
+    padding-top: 35px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.mascarillas-bottom p.elige-activos {
+    font-family: 'Times New Roman', serif;
+    color: #444;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+.consulta-gratis-box {
+    background: #fdf2e9;
+    padding: 22px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1.5px dashed #d4af37;
+}
+.consulta-gratis-titulo {
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    color: #a04000;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.consulta-gratis-texto {
+    font-family: 'Georgia', serif;
+    font-size: 0.85rem;
+    color: #5a5a5a;
+    margin: 10px 0 0 0;
+    line-height: 1.6;
+    font-style: italic;
+}
+.btn-pack-personalizado {
+    display: inline-block;
+    padding: 18px 50px;
+    background-color: #d4af37;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    box-shadow: 0 6px 20px rgba(212,175,55,0.35);
+    transition: 0.3s ease;
+}
+.btn-pack-personalizado:hover {
+    background-color: #c49d2d;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(212,175,55,0.45);
+}
+
+/* === Crema Hidratante === */
+.crema-section {
+    background-color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 40px 20px;
+    text-align: center;
+    color: #000000;
+}
+.crema-inner {
+    max-width: 450px;
+    margin: 0 auto;
+}
+.crema-img-wrap {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.crema-subtitulo {
+    color: #d4af37;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.crema-titulo {
+    margin: 0 0 5px 0;
+    font-size: 1.8em;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.crema-complemento {
+    color: #d4af37;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+.crema-descripcion {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+.crema-precio {
+    font-size: 1.5em;
+    color: #d4af37;
+    font-weight: 400;
+    margin-bottom: 25px;
+    display: block;
+}
+.crema-btn {
+    text-decoration: none;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 18px 0;
+    width: 100%;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    font-weight: bold;
+}
+
+/* === FAQ (NUEVA SECCIÓN) === */
+.faq-section {
+    background: #fff;
+    padding: 90px 10%;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+.faq-list {
+    max-width: 800px;
+    margin: 45px auto 0;
+    text-align: left;
+}
+.faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+.faq-item summary {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    color: var(--oscuro);
+    list-style: none;
+    position: relative;
+    padding-right: 35px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: -2px;
+    color: var(--dorado);
+    font-size: 1.4rem;
+    font-family: Arial, sans-serif;
+}
+.faq-item[open] summary::after { content: '\2212'; }
+.faq-item p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin: 14px 0 0 0;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+}
+</style>
 </head>
 <body>
 
@@ -557,9 +641,8 @@
                 <div class="pack-precio-final">S/ 45.00</div>
             </div>
             <br>
-            <!-- OPTIMIZACIÓN 1: Enlace WhatsApp personalizado -->
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Pack%20Ritual%20de%20Inicio"
-               class="pack-consulta-btn">RESERVAR PACK</a>
+                class="pack-consulta-btn">RESERVAR PACK</a>
         </div>
 
         <!-- Pack 2 -->
@@ -580,7 +663,7 @@
             </div>
             <br>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Pack%20Experiencia%20Art%20%26%20Love"
-               class="pack-consulta-btn">RESERVAR PACK</a>
+                class="pack-consulta-btn">RESERVAR PACK</a>
         </div>
 
         <!-- Pack 3 -->
@@ -602,7 +685,7 @@
             </div>
             <br>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Pack%20Cuidado%20Integral%20Premium"
-               class="pack-consulta-btn">RESERVAR PACK</a>
+                class="pack-consulta-btn">RESERVAR PACK</a>
         </div>
 
     </div>
@@ -610,11 +693,28 @@
     <div class="pack-consulta">
         <p>¿Dudas sobre tu tipo de piel?</p>
         <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quisiera%20consultar%20mi%20tipo%20de%20piel%20para%20elegir%20mi%20Pack%20Art%20%26%20Love"
-           class="pack-consulta-btn">
+            class="pack-consulta-btn">
             Haz clic aquí para tu consulta gratuita
         </a>
     </div>
+</section>
 
+<!-- ===== SÉ DE LOS PRIMEROS (NUEVA SECCIÓN) ===== -->
+<section class="primeros-section">
+    <div class="primeros-inner">
+        <span class="primeros-label">Marca Nueva, Ingredientes de Siempre</span>
+        <h2 class="primeros-titulo">Sé de los Primeros en Descubrirnos</h2>
+        <p class="primeros-texto">
+            Art & Love recién comienza su camino, pero cada jabón lleva la misma exigencia
+            de siempre: ingredientes reales, sin atajos. Únete a nuestros primeros clientes
+            y sé parte del inicio de esta historia, con una consulta dermatológica pensada
+            solo para ti.
+        </p>
+        <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20ser%20de%20los%20primeros%20en%20conocer%20Art%20%26%20Love"
+            class="btn-pack-personalizado">
+            Quiero ser de los primeros
+        </a>
+    </div>
 </section>
 
 <!-- ===== LÍNEA EQUILIBRIO ===== -->
@@ -627,119 +727,121 @@
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/7ddZRpP5/IMG-20260422-001920.png"
-                 alt="Jabón Artesanal Dulzura de Ámbar - Miel y Coco"
-                 loading="lazy">
+                alt="Jabón Artesanal Dulzura de Ámbar - Miel y Coco"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Miel • Coco</span>
             <h3>Dulzura de Ámbar</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Hidratación profunda y brillo natural con el poder de la miel.</p>
+            <p class="beneficio">Para ti si buscas equilibrar el brillo natural de tu piel sin resecarla. La miel hidrata en profundidad mientras el coco nutre, dejando un brillo saludable, no graso. Un clásico natural usado por siglos para nutrir sin obstruir los poros.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Dulzura%20de%20Ambar%20Miel%20y%20Coco"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/xS8DJQhp/IMG-20260422-002100.png"
-                 alt="Jabón Artesanal Jardín de Oro - Miel, Jazmín y Coco"
-                 loading="lazy">
+                alt="Jabón Artesanal Jardín de Oro - Miel, Jazmín y Coco"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Miel • Jazmín • Coco</span>
             <h3>Jardín de Oro</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Relajación total y nutrición intensa con aroma a jazmín.</p>
+            <p class="beneficio">Para ti si buscas relajación además de cuidado. El jazmín envuelve tu ritual en un aroma floral calmante, mientras la miel y el coco nutren en profundidad. Un ritual sensorial completo para desconectar del día.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Jardin%20de%20Oro%20Miel%20Jazmin%20y%20Coco"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/21vp313M/IMG-20260422-001649.png"
-                 alt="Jabón Artesanal Diamante Negro - Carbón Activado y Mosqueta"
-                 loading="lazy">
+                alt="Jabón Artesanal Diamante Negro - Carbón Activado y Mosqueta"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Carbón Activado • Mosqueta</span>
             <h3>Diamante Negro</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Limpieza profunda que absorbe impurezas mientras regenera la vitalidad de tu piel.</p>
+            <p class="beneficio">Para ti si sientes tu piel con exceso de brillo o poros visibles hacia la tarde. El carbón activado atrapa impurezas desde el primer uso, dejando esa sensación de piel recién lavada por horas. Un ritual usado por siglos en la cosmética asiática para purificar sin resecar.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Diamante%20Negro%20Carbon%20Activado%20y%20Mosqueta"
-               class="btn-reserva">RESERVAR RITUAL</a>
+                class="btn-reserva">RESERVAR RITUAL</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/Ld6tPMRj/IMG-20260422-001753.png"
-                 alt="Jabón Artesanal Esencia de Ébano - Carbón Activado y Aceite de Coco"
-                 loading="lazy">
+                alt="Jabón Artesanal Esencia de Ébano - Carbón Activado y Aceite de Coco"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Carbón Activado • Aceite de Coco</span>
             <h3>Esencia de Ébano</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Detox natural con una suavidad tropical que equilibra el brillo de tu rostro.</p>
+            <p class="beneficio">Para ti si buscas una limpieza profunda sin perder la suavidad de tu piel. El coco envuelve el poder detox del carbón en una textura cremosa que no reseca. Inspirado en los rituales de balance de la cosmética tropical.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Esencia%20de%20Ebano%20Carbon%20Activado%20y%20Coco"
-               class="btn-reserva">RESERVAR RITUAL</a>
+                class="btn-reserva">RESERVAR RITUAL</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/5hdQFSvf/IMG-20260422-002240.png"
-                 alt="Jabón Artesanal Velo Nocturno - Carbón, Leche de Coco y Cabra"
-                 loading="lazy">
+                alt="Jabón Artesanal Velo Nocturno - Carbón, Leche de Coco y Cabra"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Carbón • Leche de Coco • Cabra</span>
             <h3>Velo Nocturno</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">La fuerza del carbón se funde en la cremosidad de leches ancestrales.</p>
+            <p class="beneficio">Para ti si tu piel necesita desintoxicarse sin perder suavidad al final del día. El carbón absorbe impurezas mientras la leche de coco y cabra envuelve tu piel en cremosidad. Un ritual pensado para cerrar el día, no solo para limpiar.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Velo%20Nocturno%20Carbon%20Leche%20de%20Coco%20y%20Cabra"
-               class="btn-reserva">RESERVAR RITUAL</a>
+                class="btn-reserva">RESERVAR RITUAL</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/S7mtSxTx/1778012576526.png"
-                 alt="Jabón Artesanal Secreto de Jamaica - Flor de Jamaica"
-                 loading="lazy">
+                alt="Jabón Artesanal Secreto de Jamaica - Flor de Jamaica"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Flor de Jamaica</span>
             <h3>Secreto de Jamaica</h3>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Propiedades astringentes y antioxidantes que unifican el tono de la piel, dejándola radiante y renovada.</p>
+            <p class="beneficio">Para ti si tienes tono desigual que te gustaría equilibrar. La flor de Jamaica actúa como astringente natural, ayudando a unificar y renovar la piel con cada uso. Un secreto floral usado tradicionalmente para revitalizar la piel cansada.</p>
             <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial</p>
+            <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Secreto%20de%20Jamaica"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/R4YK2P5M/1778013406282.png"
-                 alt="Jabón Artesanal Destello de Cúrcuma - Cúrcuma Natural"
-                 loading="lazy">
+                alt="Jabón Artesanal Destello de Cúrcuma - Cúrcuma Natural"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Cúrcuma</span>
             <h3>Destello de Cúrcuma</h3>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Un potente aliado antibacteriano y revitalizante que equilibra la grasa natural y devuelve la luminosidad perdida.</p>
+            <p class="beneficio">Para ti si tu piel tiende a la grasa o pierde luminosidad con facilidad. La cúrcuma equilibra la grasa natural mientras revitaliza el brillo perdido. Un ingrediente ancestral reconocido por sus propiedades purificantes.</p>
             <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial</p>
+            <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Destello%20de%20Curcuma"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
@@ -755,119 +857,119 @@
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/ZppVTj22/IMG-20260422-001833.png"
-                 alt="Jabón Artesanal Manantial de Avena - Avena, Coco y Leche de Cabra"
-                 loading="lazy">
+                alt="Jabón Artesanal Manantial de Avena - Avena, Coco y Leche de Cabra"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Avena • Coco • Leche de Cabra</span>
             <h3>Manantial de Avena</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Calma y exfolia suavemente, devolviendo la suavidad natural.</p>
+            <p class="beneficio">Para ti si necesitas exfoliar sin agredir tu piel. La avena disuelve suavemente las impurezas mientras la leche de cabra nutre en profundidad, como una segunda piel más suave. Un clásico de la cosmética natural para pieles que piden ternura, no fuerza.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Manantial%20de%20Avena%20Avena%20Coco%20y%20Leche%20de%20Cabra"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/xKcn2LyF/IMG-20260422-002206.png"
-                 alt="Jabón Artesanal Sábila Silvestre - Sábila, Té Verde y Coco"
-                 loading="lazy">
+                alt="Jabón Artesanal Sábila Silvestre - Sábila, Té Verde y Coco"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Sábila • Té Verde • Coco</span>
             <h3>Sábila Silvestre</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Frescura antioxidante que regenera y protege tu piel.</p>
+            <p class="beneficio">Para ti si tu piel se irrita con facilidad. La sábila calma al instante, mientras el té verde aporta un escudo antioxidante suave. Dos ingredientes usados por generaciones para proteger la piel del desgaste diario.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Sabila%20Silvestre%20Sabila%20Te%20Verde%20y%20Coco"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/9XHzdgg/IMG-20260422-001731.png"
-                 alt="Jabón Artesanal Seda de Montaña - Leche de Cabra, Coco y Avena"
-                 loading="lazy">
+                alt="Jabón Artesanal Seda de Montaña - Leche de Cabra, Coco y Avena"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Cabra • Coco • Avena</span>
             <h3>Seda de Montaña</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Un festín de hidratación que envuelve tu piel en una textura láctea.</p>
+            <p class="beneficio">Para ti si tu piel se siente tirante o áspera al tacto. La leche de cabra nutre en profundidad mientras la avena calma, la sensación es, literalmente, como seda sobre tu piel. Hidratación intensa para quienes necesitan más que una crema superficial.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Seda%20de%20Montana%20Cabra%20Coco%20y%20Avena"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/s9tcWctF/IMG-20260422-002037.png"
-                 alt="Jabón Artesanal Caricia de Caléndula - Caléndula, Avena y Coco"
-                 loading="lazy">
+                alt="Jabón Artesanal Caricia de Caléndula - Caléndula, Avena y Coco"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Caléndula • Avena • Coco</span>
             <h3>Caricia de Caléndula</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Calma absoluta para pieles delicadas, diseñada para sanar.</p>
+            <p class="beneficio">Para ti si tu piel se irrita con cualquier producto nuevo. La caléndula es conocida por su efecto calmante suave, ideal para pieles sensibles. Un clásico botánico usado por generaciones para sanar piel delicada.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Caricia%20de%20Calendula%20Calendula%20Avena%20y%20Coco"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/rGnkwjkP/IMG-202145.png"
-                 alt="Jabón Artesanal Lactococo Premium - Leche de Cabra y Coco"
-                 loading="lazy">
+                alt="Jabón Artesanal Lactococo Premium - Leche de Cabra y Coco"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Leche de Cabra • Coco</span>
             <h3>Lactococo Premium</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Pureza esencial que restaura la barrera natural de hidratación.</p>
+            <p class="beneficio">Para ti si sientes que tu piel perdió su capacidad de retener humedad. La leche de cabra restaura la barrera natural mientras el coco nutre en profundidad. Pureza esencial para reconstruir el equilibrio de tu piel desde la raíz.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Lactococo%20Premium%20Leche%20de%20Cabra%20y%20Coco"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/pj282c5T/1778019166729.png"
-                 alt="Jabón Artesanal Pureza de Coco - Coco Nutritivo"
-                 loading="lazy">
+                alt="Jabón Artesanal Pureza de Coco - Coco Nutritivo"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Coco</span>
             <h3>Pureza de Coco</h3>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Nutrición profunda e intensiva que envuelve las pieles más secas en una capa de suavidad absoluta y tersura natural.</p>
+            <p class="beneficio">Para ti si tu piel se reseca incluso con crema encima. El coco envuelve tu piel en una capa de suavidad absoluta que dura todo el día. Nutrición profunda pensada para los casos más exigentes de sequedad.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Pureza%20de%20Coco"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/hJVsMcR7/1778019390586.png"
-                 alt="Jabón Artesanal Caricia de Avena - Avena Exfoliante"
-                 loading="lazy">
+                alt="Jabón Artesanal Caricia de Avena - Avena Exfoliante"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Avena</span>
             <h3>Caricia de Avena</h3>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Exfoliación ultra-suave y calmante que alivia la piel sensible mientras remueve impurezas con extrema delicadeza.</p>
+            <p class="beneficio">Para ti si quieres exfoliar pero le temes a la irritación. La avena remueve impurezas con extrema delicadeza, calmando mientras limpia. Ideal para quienes creen que exfoliar y cuidar son opuestos, aquí van juntos.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Caricia%20de%20Avena"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
@@ -883,85 +985,85 @@
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/HTncpGJ5/IMG-20260422-001854.png"
-                 alt="Jabón Artesanal Bruma Verde - Sábila, Té Verde y Coco"
-                 loading="lazy">
+                alt="Jabón Artesanal Bruma Verde - Sábila, Té Verde y Coco"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Sábila • Té Verde • Coco</span>
             <h3>Bruma Verde</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Energía pura que refresca y protege tu piel.</p>
+            <p class="beneficio">Para ti si buscas un jabón ligero que refresque sin resecar. Sábila y té verde se combinan para proteger tu piel con un toque energizante. Frescura antioxidante para tu rutina diaria.</p>
             <p class="precio-final">S/ 18.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Bruma%20Verde%20Sabila%20Te%20Verde%20y%20Coco"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/qFVSy5yf/IMG-20260422-001947.png"
-                 alt="Jabón Artesanal Rocío de Mosqueta - Mosqueta, Jazmín y Coco"
-                 loading="lazy">
+                alt="Jabón Artesanal Rocío de Mosqueta - Mosqueta, Jazmín y Coco"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Mosqueta • Jazmín • Coco</span>
             <h3>Rocío de Mosqueta</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Antioxidante maestro para una piel radiante.</p>
+            <p class="beneficio">Para ti si notas tu piel apagada o con signos de cansancio. La mosqueta regenera mientras el jazmín envuelve tu ritual en un aroma relajante. Un aceite tradicionalmente usado para devolver luminosidad a la piel expuesta al estrés diario.</p>
             <p class="precio-final">S/ 18.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Rocio%20de%20Mosqueta%20Mosqueta%20Jazmin%20y%20Coco"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/RTN7MHWs/IMG-20260422-002221.png"
-                 alt="Jabón Artesanal Dúo Armonía - Mosqueta y Leche de Cabra"
-                 loading="lazy">
+                alt="Jabón Artesanal Dúo Armonía - Mosqueta y Leche de Cabra"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Mosqueta & Leche de Cabra</span>
             <h3>Dúo Armonía</h3>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Pack de complemento para un ritual completo día y noche.</p>
+            <p class="beneficio">Para ti si quieres completar tu ritual con algo pensado para dos momentos del día. Mosqueta y leche de cabra trabajan en conjunto para un cuidado integral, mañana y noche. El complemento perfecto para no dejar tu piel a medias.</p>
             <p class="precio-final">S/ 5.00 c/u</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Duo%20Armonia%20Mosqueta%20y%20Leche%20de%20Cabra"
-               class="btn-reserva">RESERVAR DÚO</a>
+                class="btn-reserva">RESERVAR DÚO</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/Jw2D2Fht/IMG-20260505-172416.png"
-                 alt="Jabón Artesanal Elixir de Cacao - Cacao Antioxidante"
-                 loading="lazy">
+                alt="Jabón Artesanal Elixir de Cacao - Cacao Antioxidante"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Cacao</span>
             <h3>Elixir de Cacao</h3>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Una recarga antioxidante que estimula la elasticidad de la piel, protegiéndola del desgaste diario con un aroma exquisito.</p>
+            <p class="beneficio">Para ti si buscas un ritual sensorial además de efectivo. El cacao estimula la elasticidad de tu piel mientras protege del desgaste diario, con un aroma que convierte tu ducha en un momento de disfrute.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Elixir%20de%20Cacao"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
     <div class="producto">
         <div class="img-box">
             <img src="https://i.ibb.co/939y53cN/IMG-20260505-172439.png"
-                 alt="Jabón Artesanal Destello de Arroz - Secreto de Arroz"
-                 loading="lazy">
+                alt="Jabón Artesanal Destello de Arroz - Secreto de Arroz"
+                loading="lazy">
         </div>
         <div class="info">
             <span class="ingredientes-tag">Arroz</span>
             <h3>Destello de Arroz</h3>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Inspirado en rituales ancestrales para suavizar la textura de la piel, aclarar sutilmente y brindar un acabado de porcelana.</p>
+            <p class="beneficio">Para ti si buscas ese acabado suave y uniforme típico de la cosmética asiática. El arroz suaviza la textura y aclara sutilmente, dejando un acabado que se siente como porcelana. Un ritual ancestral que hoy sigue siendo el secreto de piel más envidiada.</p>
             <p class="precio-final">S/ 20.00</p>
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Destello%20de%20Arroz"
-               class="btn-reserva">RESERVAR</a>
+                class="btn-reserva">RESERVAR</a>
         </div>
     </div>
 
@@ -969,7 +1071,6 @@
 
 <!-- ===== RITUALES COMPLEMENTARIOS (MASCARILLAS) ===== -->
 <section class="rituales-complementarios">
-
     <h2 class="rituales-complementarios-titulo">Rituales Complementarios</h2>
     <p class="rituales-complementarios-subtitulo">( Toca o pasa el mouse sobre cada imagen para descubrir sus beneficios )</p>
 
@@ -977,8 +1078,8 @@
 
         <div class="card-ritual">
             <img src="https://i.ibb.co/bM3QqG7Q/IMG-20260430-225920.png"
-                 alt="Mascarilla Ritual Reparador - Lavanda, Manzanilla, Pepino, Miel y Baba de Caracol"
-                 loading="lazy">
+                alt="Mascarilla Ritual Reparador - Lavanda, Manzanilla, Pepino, Miel y Baba de Caracol"
+                loading="lazy">
             <div class="overlay">
                 <h4>RITUAL REPARADOR</h4>
                 <p>
@@ -991,8 +1092,8 @@
 
         <div class="card-ritual">
             <img src="https://i.ibb.co/5gYK83pS/1777607918166.png"
-                 alt="Mascarilla Perfección Porcelana - Sakura, Arroz, Papaya, Pitahaya, Naranja y Leche de Cabra"
-                 loading="lazy">
+                alt="Mascarilla Perfección Porcelana - Sakura, Arroz, Papaya, Pitahaya, Naranja y Leche de Cabra"
+                loading="lazy">
             <div class="overlay">
                 <h4>PERFECCIÓN PORCELANA</h4>
                 <p>
@@ -1005,8 +1106,8 @@
 
         <div class="card-ritual">
             <img src="https://i.ibb.co/2Y3t4JWR/IMG-20260430-225936.png"
-                 alt="Mascarilla Vitalidad Botánica - Lavanda, Rosas, Naranja, Aloe Vera, Fresas y Moras"
-                 loading="lazy">
+                alt="Mascarilla Vitalidad Botánica - Lavanda, Rosas, Naranja, Aloe Vera, Fresas y Moras"
+                loading="lazy">
             <div class="overlay">
                 <h4>VITALIDAD BOTÁNICA</h4>
                 <p>
@@ -1046,21 +1147,21 @@
 
         <div class="mascarillas-bottom">
             <p class="elige-activos">Elige los <b>activos</b> que mejor se adapten a tu piel.</p>
+
             <div class="consulta-gratis-box">
                 <p class="consulta-gratis-titulo">✨ CONSULTA DERMATOLÓGICA GRATIS ✨</p>
                 <p class="consulta-gratis-texto">
                     Identificamos tu tipo de piel para recomendarte los activos y tendencias más eficientes para tu rostro.
                 </p>
             </div>
+
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20Art%20%26%20Love%20quisiera%20una%20consulta%20gratis%20y%20personalizar%20mi%20pack%20de%20mascarillas"
-               target="_blank"
-               class="btn-pack-personalizado">
+                target="_blank"
+                class="btn-pack-personalizado">
                 PEDIR MI PACK PERSONALIZADO
             </a>
         </div>
-
     </div>
-
 </section>
 
 <!-- ===== CREMA HIDRATANTE ===== -->
@@ -1068,31 +1169,35 @@
     <div class="crema-inner">
         <div class="crema-img-wrap">
             <img src="https://i.ibb.co/1Dn7QwW/1777437033013.png"
-                 alt="Crema de Manos Hidratante Art & Love - Glicerina, Aceite de Oliva y Vitamina E"
-                 style="width: 100%; height: auto; border-radius: 4px;"
-                 loading="lazy">
+                alt="Crema de Manos Hidratante Art & Love - Glicerina, Aceite de Oliva y Vitamina E"
+                style="width: 100%; height: auto; border-radius: 4px;"
+                loading="lazy">
         </div>
         <p class="crema-subtitulo">HIDRATACIÓN & SUAVIDAD</p>
         <h3 class="crema-titulo">CREMA HIDRATANTE</h3>
         <p class="crema-complemento">EL COMPLEMENTO IDEAL</p>
         <p class="crema-descripcion">
-            El aliado perfecto para un ritual completo de cuidado, manteniendo la hidratación profunda después de cada limpieza.
+            Para ti si tus manos muestran el desgaste del día antes que el resto de tu piel.
+            Glicerina natural y aceite de oliva sellan la hidratación al instante, sin esa
+            sensación grasosa de las cremas comerciales. El complemento perfecto para cerrar
+            tu ritual, porque el cuidado no termina en el rostro.
         </p>
         <span class="crema-precio">S/ 5.00 c/u</span>
         <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20la%20Crema%20de%20Manos%20Hidratante%20Art%20%26%20Love"
-           class="crema-btn">RESERVAR AHORA</a>
+            class="crema-btn">RESERVAR AHORA</a>
     </div>
 </div>
 
-<!-- ===== COMPARATIVA ===== -->
+<!-- ===== COMPARATIVA (OPTIMIZADA) ===== -->
 <div class="comparativa">
     <div class="grid-comparativa">
         <div class="comparativa-box">
             <h4>El Secreto Artesanal</h4>
             <ul class="comparativa-list">
-                <li>Glicerina natural que retiene la hidratación.</li>
-                <li>Bases de Aceite de Oliva y Vitamina E pura.</li>
-                <li>Sin sulfatos ni químicos agresivos para el cutis.</li>
+                <li>Glicerina natural que retiene la hidratación de tu piel de forma prolongada.</li>
+                <li>Base de aceite de oliva y vitamina E pura, sin rellenos ni ingredientes de relleno.</li>
+                <li>Cero sulfatos ni químicos agresivos: tu piel respira, no se reseca.</li>
+                <li>Resistentes a la humedad: no pierden su forma ni se "derriten" como el jabón industrial.</li>
             </ul>
         </div>
         <div class="comparativa-box" style="opacity: 0.5;">
@@ -1101,6 +1206,7 @@
                 <li>Detergentes sintéticos que resecan y envejecen.</li>
                 <li>Contienen parabenos y derivados del petróleo.</li>
                 <li>Fragancias artificiales altamente irritantes.</li>
+                <li>Pierden forma y se desgastan rápido con la humedad.</li>
             </ul>
         </div>
     </div>
@@ -1112,12 +1218,96 @@
     <p>Próximamente: Sets de Complemento (Jabón Artesanal + Mascarilla Facial)<br>Velas Aromáticas en Desarrollo</p>
 </div>
 
+<!-- ===== FAQ (NUEVA SECCIÓN) ===== -->
+<section class="faq-section">
+    <div class="seccion-titulo" style="font-size:1.6rem;">Preguntas Frecuentes</div>
+    <div class="uso-sugerido">Todo lo que necesitas saber antes de tu ritual</div>
+
+    <div class="faq-list">
+
+        <details class="faq-item">
+            <summary>¿Cómo sé qué línea de jabón es para mi tipo de piel?</summary>
+            <p>Piel mixta o grasa: Línea Equilibrio. Piel seca o sensible: Línea Renacer. Piel cansada u opaca: Línea Vitalidad. Si tienes dudas, pide tu consulta dermatológica gratuita antes de comprar.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Los jabones sirven para rostro y cuerpo?</summary>
+            <p>La mayoría son de uso versátil, pero algunos están formulados especialmente para rostro (más suaves) y otros para cuerpo (más intensos). Indícanoslo en tu consulta y te lo confirmamos.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Qué incluye cada pedido?</summary>
+            <p>Tu jabón, una muestra pequeña de otro jabón de regalo, ficha de uso y beneficios, y acceso a consulta dermatológica sin costo.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Cómo pago?</summary>
+            <p>Yape, Plin o transferencia bancaria. Te enviamos los datos al confirmar tu pedido por WhatsApp.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Cuánto tarda mi pedido?</summary>
+            <p>Lima: coordinación inmediata según disponibilidad y punto de encuentro. Provincias: 2 a 4 días hábiles vía agencia.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Cómo recibo mi pedido si vivo lejos?</summary>
+            <p>Envío gratis en tu primera compra. Despachamos vía agencia (Shalom, Olva u otra según tu ciudad) y te compartimos el código de seguimiento.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Puedo recoger en un punto físico en Lima?</summary>
+            <p>Sí, coordinamos un punto de encuentro cercano a ti, normalmente un centro comercial u otro lugar seguro.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Los ingredientes son 100% naturales?</summary>
+            <p>Sí, 100% natural: aceite de oliva, vitamina E y activos como carbón activado, miel o avena, sin sulfatos ni químicos agresivos.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Cuánto dura un jabón artesanal?</summary>
+            <p>A diferencia de los jabones industriales, los nuestros resisten mejor la humedad: no pierden su forma ni se "derriten" en la ducha. Con buen uso, duran 2 meses o más, según la frecuencia de uso.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Tienen fecha de vencimiento?</summary>
+            <p>No vencen, pero para conservar todas sus propiedades te recomendamos usarlos dentro de los 12 a 18 meses desde su elaboración.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Qué pasa si mi piel es sensible o tengo alergias?</summary>
+            <p>Antes de tu primera compra, cuéntanos si tienes alguna sensibilidad conocida. Te recomendamos la línea o el jabón más adecuado, o si es mejor probar primero la muestra de regalo.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Puedo regalar un jabón o pack?</summary>
+            <p>Sí, incluso podemos coordinar una presentación especial para regalo. Solo indícalo en tu pedido.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Cómo funciona el descuento por lanzamiento?</summary>
+            <p>Válido por tiempo limitado en tu primera compra de jabones individuales. No aplica a packs, ya que los packs tienen su propio descuento incluido.</p>
+        </details>
+
+        <details class="faq-item">
+            <summary>¿Hacen envíos internacionales?</summary>
+            <p>Por ahora despachamos solo dentro de Perú.</p>
+        </details>
+
+    </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer>
     <div class="footer-grid">
         <div class="footer-section">
             <h4>ART & LOVE</h4>
             <p>Elevando tu cuidado diario a un ritual de bienestar.</p>
+            <div class="footer-social">
+                <a href="#" target="_blank">INSTAGRAM</a>
+                <a href="#" target="_blank">FACEBOOK</a>
+            </div>
         </div>
         <div class="footer-section">
             <h4>CONCIERGE</h4>
@@ -1130,8 +1320,8 @@
 </footer>
 
 <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20me%20gustaria%20recibir%20atencion%20personalizada%20de%20Art%20%26%20Love"
-   class="whatsapp-btn">WHATSAPP CONCIERGE</a>
+    class="whatsapp-btn">WHATSAPP CONCIERGE</a>
 
 </body>
 </html>
- 
+
