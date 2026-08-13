@@ -40,6 +40,7 @@ h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-s
 
 .info h3 { font-family: 'Cinzel', serif; margin: 15px 0 5px; font-size: 1.3rem; letter-spacing: 2px; }
 .tag-premium { font-size: 0.65rem; color: var(--dorado); font-weight: bold; text-transform: uppercase; letter-spacing: 2.5px; display: block; margin-bottom: 18px; }
+.peso-tag { font-size: 0.65rem; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 6px; }
 .beneficio { font-size: 0.85rem; color: #777; font-style: italic; min-height: 90px; line-height: 1.7; margin-bottom: 25px; }
 .ingredientes-tag { font-size: 0.7rem; color: var(--dorado); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #f5f5f5; padding-bottom: 12px; margin-bottom: 18px; display: block; }
 
@@ -809,6 +810,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Miel • Coco</span>
             <h3>Dulzura de Ámbar</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si buscas equilibrar el brillo natural de tu piel sin resecarla. La miel hidrata en profundidad mientras el coco nutre, dejando un brillo saludable, no graso. Un clásico natural usado por siglos para nutrir sin obstruir los poros.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -832,6 +834,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Miel • Jazmín • Coco</span>
             <h3>Jardín de Oro</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si buscas relajación además de cuidado. El jazmín envuelve tu ritual en un aroma floral calmante, mientras la miel y el coco nutren en profundidad. Un ritual sensorial completo para desconectar del día.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -855,6 +858,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Carbón Activado • Mosqueta</span>
             <h3>Diamante Negro</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si sientes tu piel con exceso de brillo o poros visibles hacia la tarde. El carbón activado atrapa impurezas desde el primer uso, dejando esa sensación de piel recién lavada por horas. Un ritual usado por siglos en la cosmética asiática para purificar sin resecar.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -878,6 +882,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Carbón Activado • Aceite de Coco</span>
             <h3>Esencia de Ébano</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si buscas una limpieza profunda sin perder la suavidad de tu piel. El coco envuelve el poder detox del carbón en una textura cremosa que no reseca. Inspirado en los rituales de balance de la cosmética tropical.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -901,6 +906,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Carbón • Leche de Coco • Cabra</span>
             <h3>Velo Nocturno</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel necesita desintoxicarse sin perder suavidad al final del día. El carbón absorbe impurezas mientras la leche de coco y cabra envuelve tu piel en cremosidad. Un ritual pensado para cerrar el día, no solo para limpiar.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -924,18 +930,13 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Flor de Jamaica</span>
             <h3>Secreto de Jamaica</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si tienes tono desigual que te gustaría equilibrar. La flor de Jamaica actúa como astringente natural, ayudando a unificar y renovar la piel con cada uso. Un secreto floral usado tradicionalmente para revitalizar la piel cansada.</p>
-            <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-secreto-de-jamaica" data-name="Jabón Secreto de Jamaica" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
+            <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial — disponible por pedido especial</p>
+            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20Art%20%26%20Love%2C%20quisiera%20consultar%20disponibilidad%20del%20Jabon%20Secreto%20de%20Jamaica"
+                target="_blank" rel="noopener noreferrer"
+                class="btn-reserva">CONSULTAR DISPONIBILIDAD</a>
         </div>
     </div>
 
@@ -948,18 +949,13 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Cúrcuma</span>
             <h3>Destello de Cúrcuma</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel tiende a la grasa o pierde luminosidad con facilidad. La cúrcuma equilibra la grasa natural mientras revitaliza el brillo perdido. Un ingrediente ancestral reconocido por sus propiedades purificantes.</p>
-            <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-destello-de-curcuma" data-name="Jabón Destello de Cúrcuma" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
+            <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial — disponible por pedido especial</p>
+            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20Art%20%26%20Love%2C%20quisiera%20consultar%20disponibilidad%20del%20Jabon%20Destello%20de%20Curcuma"
+                target="_blank" rel="noopener noreferrer"
+                class="btn-reserva">CONSULTAR DISPONIBILIDAD</a>
         </div>
     </div>
 
@@ -981,6 +977,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Avena • Coco • Leche de Cabra</span>
             <h3>Manantial de Avena</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si necesitas exfoliar sin agredir tu piel. La avena disuelve suavemente las impurezas mientras la leche de cabra nutre en profundidad, como una segunda piel más suave. Un clásico de la cosmética natural para pieles que piden ternura, no fuerza.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -1004,6 +1001,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Sábila • Té Verde • Coco</span>
             <h3>Sábila Silvestre</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel se irrita con facilidad. La sábila calma al instante, mientras el té verde aporta un escudo antioxidante suave. Dos ingredientes usados por generaciones para proteger la piel del desgaste diario.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -1027,6 +1025,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Cabra • Coco • Avena</span>
             <h3>Seda de Montaña</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel se siente tirante o áspera al tacto. La leche de cabra nutre en profundidad mientras la avena calma, la sensación es, literalmente, como seda sobre tu piel. Hidratación intensa para quienes necesitan más que una crema superficial.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -1050,6 +1049,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Caléndula • Avena • Coco</span>
             <h3>Caricia de Caléndula</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel se irrita con cualquier producto nuevo. La caléndula es conocida por su efecto calmante suave, ideal para pieles sensibles. Un clásico botánico usado por generaciones para sanar piel delicada.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -1073,6 +1073,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Leche de Cabra • Coco</span>
             <h3>Lactococo Premium</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si sientes que tu piel perdió su capacidad de retener humedad. La leche de cabra restaura la barrera natural mientras el coco nutre en profundidad. Pureza esencial para reconstruir el equilibrio de tu piel desde la raíz.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -1096,6 +1097,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Coco</span>
             <h3>Pureza de Coco</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel se reseca incluso con crema encima. El coco envuelve tu piel en una capa de suavidad absoluta que dura todo el día. Nutrición profunda pensada para los casos más exigentes de sequedad.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -1119,6 +1121,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Avena</span>
             <h3>Caricia de Avena</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si quieres exfoliar pero le temes a la irritación. La avena remueve impurezas con extrema delicadeza, calmando mientras limpia. Ideal para quienes creen que exfoliar y cuidar son opuestos, aquí van juntos.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -1151,6 +1154,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Sábila • Té Verde • Coco</span>
             <h3>Bruma Verde</h3>
+            <span class="peso-tag">100 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si buscas un jabón ligero que refresque sin resecar. Sábila y té verde se combinan para proteger tu piel con un toque energizante. Frescura antioxidante para tu rutina diaria.</p>
             <p class="precio-final">S/ 18.00</p>
@@ -1174,6 +1178,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Mosqueta • Jazmín • Coco</span>
             <h3>Rocío de Mosqueta</h3>
+            <span class="peso-tag">100 g</span>
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si notas tu piel apagada o con signos de cansancio. La mosqueta regenera mientras el jazmín envuelve tu ritual en un aroma relajante. Un aceite tradicionalmente usado para devolver luminosidad a la piel expuesta al estrés diario.</p>
             <p class="precio-final">S/ 18.00</p>
@@ -1220,6 +1225,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Cacao</span>
             <h3>Elixir de Cacao</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si buscas un ritual sensorial además de efectivo. El cacao estimula la elasticidad de tu piel mientras protege del desgaste diario, con un aroma que convierte tu ducha en un momento de disfrute.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -1243,6 +1249,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="info">
             <span class="ingredientes-tag">Arroz</span>
             <h3>Destello de Arroz</h3>
+            <span class="peso-tag">150 g</span>
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si buscas ese acabado suave y uniforme típico de la cosmética asiática. El arroz suaviza la textura y aclara sutilmente, dejando un acabado que se siente como porcelana. Un ritual ancestral que hoy sigue siendo el secreto de piel más envidiada.</p>
             <p class="precio-final">S/ 20.00</p>
@@ -1427,8 +1434,8 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 
 <!-- ===== PRÓXIMAMENTE ===== -->
 <div class="proximamente">
-    <h2>Dúos de Bienestar</h2>
-    <p>Próximamente: Sets de Complemento (Aceites psra cabello + Tratamiento natural)<br>Velas Aromáticas en Desarrollo</p>
+    <h2>Ritual de Raíz</h2>
+    <p>Próximamente: aceites naturales para el crecimiento y fortalecimiento capilar,<br>tratamientos y shampoo anticaída 100% natural.<br>El mismo cuidado artesanal, ahora para tu cabello.</p>
 </div>
 
 <!-- ===== FAQ (NUEVA SECCIÓN) ===== -->
