@@ -608,6 +608,13 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .qty-selector { display: flex; align-items: center; border: 1px solid #ddd; position: relative; }
 .qty-limit-toast { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: var(--oscuro); color: var(--dorado); font-size: 0.62rem; letter-spacing: 0.5px; padding: 5px 10px; border-radius: 3px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s; margin-bottom: 8px; z-index: 5; }
 .qty-limit-toast.mostrar { opacity: 1; }
+
+.personaliza-block { text-align: left; margin: 18px 0; padding: 16px 18px; background: #faf7f0; border: 1px solid #eee; border-radius: 4px; }
+.personaliza-block--compact { padding: 10px 12px; margin: 14px 0; }
+.personaliza-block label { display: block; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; color: #999; margin: 12px 0 5px; font-family: 'Montserrat', sans-serif; }
+.personaliza-block label:first-child { margin-top: 0; }
+.personaliza-block select { width: 100%; padding: 9px 10px; border: 1px solid #ddd; font-family: 'Montserrat', sans-serif; font-size: 0.83rem; border-radius: 2px; background: #fff; color: var(--oscuro); }
+.cart-item-detail { font-size: 0.72rem; color: var(--dorado); font-style: italic; margin: 2px 0 4px; line-height: 1.5; }
 .qty-btn { background: #fff; border: none; width: 34px; height: 34px; font-size: 1rem; cursor: pointer; color: var(--oscuro); }
 .qty-btn:hover { background: #f5f5f5; }
 .qty-value { width: 30px; text-align: center; font-size: 0.9rem; font-weight: 600; }
@@ -699,6 +706,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 <span class="pack-precio-tachado">S/ 50.00</span>
                 <div class="pack-precio-final">S/ 45.00</div>
             </div>
+            <div class="personaliza-block">
+                <label>Elige tu jabón</label>
+                <select class="select-jabon"></select>
+                <label>Mascarilla 1</label>
+                <select class="select-mascarilla"></select>
+                <label>Mascarilla 2</label>
+                <select class="select-mascarilla"></select>
+            </div>
             <br>
             <div class="cart-controls" data-id="pack-ritual-de-inicio" data-name="Pack Ritual de Inicio" data-price="45" data-launch="false">
                 <div class="qty-selector">
@@ -725,6 +740,16 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <div class="pack-precios">
                 <span class="pack-precio-tachado">S/ 75.00</span>
                 <div class="pack-precio-final">S/ 68.00</div>
+            </div>
+            <div class="personaliza-block">
+                <label>Jabón 1</label>
+                <select class="select-jabon"></select>
+                <label>Jabón 2</label>
+                <select class="select-jabon"></select>
+                <label>Mascarilla 1</label>
+                <select class="select-mascarilla"></select>
+                <label>Mascarilla 2</label>
+                <select class="select-mascarilla"></select>
             </div>
             <br>
             <div class="cart-controls" data-id="pack-experiencia-art-love" data-name="Pack Experiencia Art & Love" data-price="68" data-launch="false">
@@ -753,6 +778,18 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <div class="pack-precios">
                 <span class="pack-precio-tachado">S/ 95.00</span>
                 <div class="pack-precio-final pack-precio-final--dorado">S/ 75.00</div>
+            </div>
+            <div class="personaliza-block">
+                <label>Jabón 1</label>
+                <select class="select-jabon"></select>
+                <label>Jabón 2</label>
+                <select class="select-jabon"></select>
+                <label>Jabón 3</label>
+                <select class="select-jabon"></select>
+                <label>Mascarilla 1</label>
+                <select class="select-mascarilla"></select>
+                <label>Mascarilla 2</label>
+                <select class="select-mascarilla"></select>
             </div>
             <br>
             <div class="cart-controls" data-id="pack-cuidado-integral-premium" data-name="Pack Cuidado Integral Premium" data-price="75" data-launch="false">
@@ -1332,6 +1369,10 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 <span>Individual</span>
                 <h5>1 UNIDAD</h5>
                 <div class="precio-opcion">S/ 5.00</div>
+                <div class="personaliza-block personaliza-block--compact">
+                    <label>Elige tu mascarilla</label>
+                    <select class="select-mascarilla"></select>
+                </div>
                 <div class="cart-controls" data-id="mascarilla-individual" data-name="Mascarilla Individual" data-price="5" data-launch="false" style="margin-top:14px; flex-direction:column;">
                     <div class="qty-selector">
                         <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
@@ -1347,6 +1388,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 <h5>SET DE 3</h5>
                 <div class="precio-pack">S/ 12.00</div>
                 <p class="mascarilla-ahorro">✓ Ahorras S/ 3.00</p>
+                <div class="personaliza-block personaliza-block--compact">
+                    <label>Mascarilla 1</label>
+                    <select class="select-mascarilla"></select>
+                    <label>Mascarilla 2</label>
+                    <select class="select-mascarilla"></select>
+                    <label>Mascarilla 3</label>
+                    <select class="select-mascarilla"></select>
+                </div>
                 <div class="cart-controls" data-id="mascarilla-set-3" data-name="Mascarillas Set de 3" data-price="12" data-launch="false" style="margin-top:10px; flex-direction:column;">
                     <div class="qty-selector">
                         <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
@@ -1599,6 +1648,38 @@ const LAUNCH_DISCOUNT = 0.20;
 const WHATSAPP_PHONE = "51931379225";
 const MAX_QTY_PER_ITEM = 5;
 
+/* Catálogo usado para poblar los selectores de personalización de packs y mascarillas */
+const CATALOGO_JABONES = [
+    "Dulzura de Ámbar", "Jardín de Oro", "Diamante Negro", "Esencia de Ébano",
+    "Velo Nocturno", "Manantial de Avena", "Sábila Silvestre", "Seda de Montaña",
+    "Caricia de Caléndula", "Lactococo Premium", "Pureza de Coco", "Caricia de Avena",
+    "Bruma Verde", "Rocío de Mosqueta", "Elixir de Cacao", "Destello de Arroz"
+];
+const CATALOGO_MASCARILLAS = ["Ritual Reparador", "Perfección Porcelana", "Vitalidad Botánica"];
+
+function poblarSelectores() {
+    const opcionesJabon = CATALOGO_JABONES.map(function (j) {
+        return '<option value="' + j + '">' + j + '</option>';
+    }).join('');
+    const opcionesMascarilla = CATALOGO_MASCARILLAS.map(function (m) {
+        return '<option value="' + m + '">' + m + '</option>';
+    }).join('');
+    document.querySelectorAll('.select-jabon').forEach(function (sel) { sel.innerHTML = opcionesJabon; });
+    document.querySelectorAll('.select-mascarilla').forEach(function (sel) { sel.innerHTML = opcionesMascarilla; });
+}
+
+/* Lee las elecciones de jabón/mascarilla dentro de la misma tarjeta del producto */
+function leerPersonalizacion(ctrl) {
+    const wrapper = ctrl.closest('.pack-card, .mascarilla-opcion-individual, .mascarilla-opcion-pack');
+    if (!wrapper) return '';
+    const jabones = Array.from(wrapper.querySelectorAll('.select-jabon')).map(function (s) { return s.value; });
+    const mascarillas = Array.from(wrapper.querySelectorAll('.select-mascarilla')).map(function (s) { return s.value; });
+    const partes = [];
+    if (jabones.length) partes.push((jabones.length > 1 ? 'Jabones' : 'Jabón') + ': ' + jabones.join(', '));
+    if (mascarillas.length) partes.push((mascarillas.length > 1 ? 'Mascarillas' : 'Mascarilla') + ': ' + mascarillas.join(', '));
+    return partes.join(' | ');
+}
+
 function isLaunchLive() {
     if (!LAUNCH_ACTIVE) return false;
     const start = new Date(LAUNCH_START_DATE + "T00:00:00");
@@ -1643,12 +1724,12 @@ function cargarCarrito() {
 function guardarCarrito() {
     try { localStorage.setItem('artlove_cart', JSON.stringify(cart)); } catch (e) {}
 }
-function addToCart(id, name, price, qty) {
+function addToCart(id, name, price, qty, detail) {
     const existente = cart.find(function (i) { return i.id === id; });
     if (existente) {
         existente.qty = Math.min(existente.qty + qty, MAX_QTY_PER_ITEM);
     } else {
-        cart.push({ id: id, name: name, price: price, qty: Math.min(qty, MAX_QTY_PER_ITEM) });
+        cart.push({ id: id, name: name, price: price, qty: Math.min(qty, MAX_QTY_PER_ITEM), detail: detail || '' });
     }
     guardarCarrito();
     renderCarrito();
@@ -1685,6 +1766,7 @@ function renderCarrito() {
                 return '<div class="cart-item">' +
                     '<div class="cart-item-info">' +
                         '<div class="cart-item-name">' + item.name + '</div>' +
+                        (item.detail ? '<div class="cart-item-detail">' + item.detail + '</div>' : '') +
                         '<div class="cart-item-price">S/ ' + formatPrice(item.price) + ' c/u</div>' +
                     '</div>' +
                     '<div class="cart-item-actions">' +
@@ -1729,6 +1811,9 @@ function confirmarPedido() {
     let mensaje = 'Hola Art & Love, quiero confirmar el siguiente pedido:\n';
     cart.forEach(function (item) {
         mensaje += '- ' + item.qty + ' x ' + item.name + ' - S/ ' + formatPrice(item.price * item.qty) + '\n';
+        if (item.detail) {
+            mensaje += '   • ' + item.detail + '\n';
+        }
     });
     mensaje += '----------------------------------\n';
     mensaje += 'TOTAL A PAGAR: S/ ' + formatPrice(totalCarrito()) + '\n';
@@ -1756,6 +1841,7 @@ function mostrarLimiteStock(qtySelectorEl) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    poblarSelectores();
     cargarCarrito();
     aplicarDescuentoLanzamiento();
     renderCarrito();
@@ -1780,11 +1866,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         if (addBtn) addBtn.addEventListener('click', function () {
-            const id = ctrl.dataset.id;
+            const baseId = ctrl.dataset.id;
             const name = ctrl.dataset.name;
             const price = parseFloat(ctrl.dataset.price);
             const qty = Math.min(parseInt(qtyValue.textContent, 10), MAX_QTY_PER_ITEM);
-            addToCart(id, name, price, qty);
+            const detail = leerPersonalizacion(ctrl);
+            const cartId = detail ? baseId + '::' + detail : baseId;
+            addToCart(cartId, name, price, qty, detail);
             const original = addBtn.textContent;
             addBtn.textContent = 'AGREGADO ✓';
             addBtn.disabled = true;
