@@ -4,10 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Art & Love | Alta Cosmética Artesanal</title>
+<meta name="description" content="Art & Love — Jabones artesanales, mascarillas y crema de manos 100% naturales, hechos a mano en Perú. Rituales de cuidado personal para cada tipo de piel, con envíos a todo el país.">
 <meta property="og:image" content="https://i.ibb.co/ymyCjXLr/Screenshot-2026-04-22-17-47-29-86-e4424258c8b8649f6e67d283a50a2cbc.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ibb.co">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 <style>
 :root { --dorado: #c5a059; --oscuro: #1a1a1a; --crema: #f9f7f2; }
@@ -596,6 +600,51 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     font-family: 'Georgia', serif;
     font-style: italic;
 }
+
+/* === CARRITO DE COMPRAS (NUEVO) === */
+.cart-controls { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.qty-selector { display: flex; align-items: center; border: 1px solid #ddd; }
+.qty-btn { background: #fff; border: none; width: 34px; height: 34px; font-size: 1rem; cursor: pointer; color: var(--oscuro); }
+.qty-btn:hover { background: #f5f5f5; }
+.qty-value { width: 30px; text-align: center; font-size: 0.9rem; font-weight: 600; }
+.btn-add-cart { cursor: pointer; font-family: inherit; }
+.launch-badge { display: inline-block; border: 1px solid var(--dorado); color: var(--dorado); background: transparent; font-size: 0.6rem; letter-spacing: 2px; padding: 4px 14px; margin-bottom: 10px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 600; }
+.precio-tachado-launch { text-decoration: line-through; color: #bbb; font-size: 0.85rem; margin-right: 8px; }
+
+.cart-float-btn { position: fixed; bottom: 40px; left: 40px; background: var(--oscuro); color: var(--dorado); padding: 16px 24px; border: 1.5px solid var(--dorado); border-radius: 50px; cursor: pointer; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; box-shadow: 0 15px 35px rgba(0,0,0,0.4); z-index: 1000; display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; }
+.cart-float-btn:hover { background: var(--dorado); color: var(--oscuro); }
+.cart-count { background: var(--dorado); color: var(--oscuro); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.7rem; flex-shrink: 0; }
+.cart-float-btn:hover .cart-count { background: var(--oscuro); color: var(--dorado); }
+
+.cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; display: none; }
+.cart-overlay.abierto { display: block; }
+.cart-panel { position: fixed; top: 0; right: 0; width: 100%; max-width: 420px; height: 100%; background: var(--crema); z-index: 2001; transform: translateX(100%); transition: transform 0.4s ease; display: flex; flex-direction: column; box-shadow: -10px 0 40px rgba(0,0,0,0.2); }
+.cart-panel.abierto { transform: translateX(0); }
+.cart-panel-header { padding: 25px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eadfcf; background: #fff; }
+.cart-panel-header h3 { font-family: 'Cinzel', serif; letter-spacing: 2px; margin: 0; font-size: 1.1rem; color: var(--oscuro); }
+.cart-close { background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--oscuro); line-height: 1; }
+.cart-panel-body { flex: 1; overflow-y: auto; padding: 20px 25px; }
+.cart-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #eee; gap: 10px; }
+.cart-item-info { flex: 1; }
+.cart-item-name { font-size: 0.88rem; font-weight: 600; color: var(--oscuro); margin-bottom: 4px; }
+.cart-item-price { font-size: 0.78rem; color: #888; }
+.cart-item-actions { display: flex; align-items: center; gap: 8px; }
+.cart-item-remove { background: none; border: none; color: #c0392b; font-size: 1.2rem; cursor: pointer; }
+.cart-empty { text-align: center; color: #999; font-style: italic; padding: 40px 0; font-family: 'Georgia', serif; }
+.cart-panel-form { padding: 20px 25px; border-top: 1px solid #eadfcf; background: #fff; }
+.cart-panel-form label { display: block; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: #888; margin-bottom: 6px; margin-top: 14px; }
+.cart-panel-form input, .cart-panel-form textarea { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #ddd; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; border-radius: 2px; }
+.cart-panel-form textarea { resize: vertical; min-height: 70px; }
+.cart-total-row { display: flex; justify-content: space-between; align-items: center; font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--oscuro); padding: 16px 0; border-top: 1px solid #eadfcf; margin-top: 6px; }
+.cart-total-row span:last-child { color: var(--dorado); font-weight: bold; }
+.btn-confirmar-pedido { width: 100%; padding: 16px; background: var(--oscuro); color: #fff; border: none; font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; margin-top: 16px; transition: 0.3s; font-family: 'Montserrat', sans-serif; }
+.btn-confirmar-pedido:hover { background: var(--dorado); color: var(--oscuro); }
+.cart-form-error { color: #c0392b; font-size: 0.78rem; margin-top: 8px; display: none; }
+
+@media (max-width: 480px) {
+    .cart-float-btn { bottom: 20px; left: 20px; padding: 13px 18px; font-size: 0.65rem; }
+    .whatsapp-btn { bottom: 20px; right: 20px; padding: 13px 18px; font-size: 0.65rem; }
+}
 </style>
 </head>
 <body>
@@ -641,8 +690,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 <div class="pack-precio-final">S/ 45.00</div>
             </div>
             <br>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Pack%20Ritual%20de%20Inicio"
-                class="pack-consulta-btn">RESERVAR PACK</a>
+            <div class="cart-controls" data-id="pack-ritual-de-inicio" data-name="Pack Ritual de Inicio" data-price="45" data-launch="false">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="pack-consulta-btn btn-add-cart" style="border:none; cursor:pointer;">AGREGAR AL CARRITO</button>
+            </div>
         </div>
 
         <!-- Pack 2 -->
@@ -662,8 +717,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 <div class="pack-precio-final">S/ 68.00</div>
             </div>
             <br>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Pack%20Experiencia%20Art%20%26%20Love"
-                class="pack-consulta-btn">RESERVAR PACK</a>
+            <div class="cart-controls" data-id="pack-experiencia-art-love" data-name="Pack Experiencia Art & Love" data-price="68" data-launch="false">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="pack-consulta-btn btn-add-cart" style="border:none; cursor:pointer;">AGREGAR AL CARRITO</button>
+            </div>
         </div>
 
         <!-- Pack 3 -->
@@ -684,8 +745,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 <div class="pack-precio-final pack-precio-final--dorado">S/ 75.00</div>
             </div>
             <br>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Pack%20Cuidado%20Integral%20Premium"
-                class="pack-consulta-btn">RESERVAR PACK</a>
+            <div class="cart-controls" data-id="pack-cuidado-integral-premium" data-name="Pack Cuidado Integral Premium" data-price="75" data-launch="false">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="pack-consulta-btn btn-add-cart" style="border:none; cursor:pointer;">AGREGAR AL CARRITO</button>
+            </div>
         </div>
 
     </div>
@@ -736,8 +803,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si buscas equilibrar el brillo natural de tu piel sin resecarla. La miel hidrata en profundidad mientras el coco nutre, dejando un brillo saludable, no graso. Un clásico natural usado por siglos para nutrir sin obstruir los poros.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Dulzura%20de%20Ambar%20Miel%20y%20Coco"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-dulzura-de-ambar" data-name="Jabón Dulzura de Ámbar" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -753,8 +826,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si buscas relajación además de cuidado. El jazmín envuelve tu ritual en un aroma floral calmante, mientras la miel y el coco nutren en profundidad. Un ritual sensorial completo para desconectar del día.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Jardin%20de%20Oro%20Miel%20Jazmin%20y%20Coco"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-jardin-de-oro" data-name="Jabón Jardín de Oro" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -770,8 +849,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si sientes tu piel con exceso de brillo o poros visibles hacia la tarde. El carbón activado atrapa impurezas desde el primer uso, dejando esa sensación de piel recién lavada por horas. Un ritual usado por siglos en la cosmética asiática para purificar sin resecar.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Diamante%20Negro%20Carbon%20Activado%20y%20Mosqueta"
-                class="btn-reserva">RESERVAR RITUAL</a>
+            <div class="cart-controls" data-id="jabon-diamante-negro" data-name="Jabón Diamante Negro" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -787,8 +872,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si buscas una limpieza profunda sin perder la suavidad de tu piel. El coco envuelve el poder detox del carbón en una textura cremosa que no reseca. Inspirado en los rituales de balance de la cosmética tropical.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Esencia%20de%20Ebano%20Carbon%20Activado%20y%20Coco"
-                class="btn-reserva">RESERVAR RITUAL</a>
+            <div class="cart-controls" data-id="jabon-esencia-de-ebano" data-name="Jabón Esencia de Ébano" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -804,8 +895,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel necesita desintoxicarse sin perder suavidad al final del día. El carbón absorbe impurezas mientras la leche de coco y cabra envuelve tu piel en cremosidad. Un ritual pensado para cerrar el día, no solo para limpiar.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Velo%20Nocturno%20Carbon%20Leche%20de%20Coco%20y%20Cabra"
-                class="btn-reserva">RESERVAR RITUAL</a>
+            <div class="cart-controls" data-id="jabon-velo-nocturno" data-name="Jabón Velo Nocturno" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -822,8 +919,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <p class="beneficio">Para ti si tienes tono desigual que te gustaría equilibrar. La flor de Jamaica actúa como astringente natural, ayudando a unificar y renovar la piel con cada uso. Un secreto floral usado tradicionalmente para revitalizar la piel cansada.</p>
             <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Secreto%20de%20Jamaica"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-secreto-de-jamaica" data-name="Jabón Secreto de Jamaica" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -840,8 +943,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <p class="beneficio">Para ti si tu piel tiende a la grasa o pierde luminosidad con facilidad. La cúrcuma equilibra la grasa natural mientras revitaliza el brillo perdido. Un ingrediente ancestral reconocido por sus propiedades purificantes.</p>
             <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Destello%20de%20Curcuma"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-destello-de-curcuma" data-name="Jabón Destello de Cúrcuma" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -866,8 +975,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si necesitas exfoliar sin agredir tu piel. La avena disuelve suavemente las impurezas mientras la leche de cabra nutre en profundidad, como una segunda piel más suave. Un clásico de la cosmética natural para pieles que piden ternura, no fuerza.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Manantial%20de%20Avena%20Avena%20Coco%20y%20Leche%20de%20Cabra"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-manantial-de-avena" data-name="Jabón Manantial de Avena" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -883,8 +998,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel se irrita con facilidad. La sábila calma al instante, mientras el té verde aporta un escudo antioxidante suave. Dos ingredientes usados por generaciones para proteger la piel del desgaste diario.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Sabila%20Silvestre%20Sabila%20Te%20Verde%20y%20Coco"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-sabila-silvestre" data-name="Jabón Sábila Silvestre" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -900,8 +1021,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel se siente tirante o áspera al tacto. La leche de cabra nutre en profundidad mientras la avena calma, la sensación es, literalmente, como seda sobre tu piel. Hidratación intensa para quienes necesitan más que una crema superficial.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Seda%20de%20Montana%20Cabra%20Coco%20y%20Avena"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-seda-de-montana" data-name="Jabón Seda de Montaña" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -917,8 +1044,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel se irrita con cualquier producto nuevo. La caléndula es conocida por su efecto calmante suave, ideal para pieles sensibles. Un clásico botánico usado por generaciones para sanar piel delicada.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Caricia%20de%20Calendula%20Calendula%20Avena%20y%20Coco"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-caricia-de-calendula" data-name="Jabón Caricia de Caléndula" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -934,8 +1067,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si sientes que tu piel perdió su capacidad de retener humedad. La leche de cabra restaura la barrera natural mientras el coco nutre en profundidad. Pureza esencial para reconstruir el equilibrio de tu piel desde la raíz.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Lactococo%20Premium%20Leche%20de%20Cabra%20y%20Coco"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-lactococo-premium" data-name="Jabón Lactococo Premium" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -951,8 +1090,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si tu piel se reseca incluso con crema encima. El coco envuelve tu piel en una capa de suavidad absoluta que dura todo el día. Nutrición profunda pensada para los casos más exigentes de sequedad.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Pureza%20de%20Coco"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-pureza-de-coco" data-name="Jabón Pureza de Coco" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -968,8 +1113,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si quieres exfoliar pero le temes a la irritación. La avena remueve impurezas con extrema delicadeza, calmando mientras limpia. Ideal para quienes creen que exfoliar y cuidar son opuestos, aquí van juntos.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Caricia%20de%20Avena"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-caricia-de-avena" data-name="Jabón Caricia de Avena" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -994,8 +1145,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si buscas un jabón ligero que refresque sin resecar. Sábila y té verde se combinan para proteger tu piel con un toque energizante. Frescura antioxidante para tu rutina diaria.</p>
             <p class="precio-final">S/ 18.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Bruma%20Verde%20Sabila%20Te%20Verde%20y%20Coco"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-bruma-verde" data-name="Jabón Bruma Verde" data-price="18" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -1011,8 +1168,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si notas tu piel apagada o con signos de cansancio. La mosqueta regenera mientras el jazmín envuelve tu ritual en un aroma relajante. Un aceite tradicionalmente usado para devolver luminosidad a la piel expuesta al estrés diario.</p>
             <p class="precio-final">S/ 18.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Rocio%20de%20Mosqueta%20Mosqueta%20Jazmin%20y%20Coco"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-rocio-de-mosqueta" data-name="Jabón Rocío de Mosqueta" data-price="18" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -1028,8 +1191,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
             <p class="beneficio">Para ti si quieres completar tu ritual con algo pensado para dos momentos del día. Mosqueta y leche de cabra trabajan en conjunto para un cuidado integral, mañana y noche. El complemento perfecto para no dejar tu piel a medias.</p>
             <p class="precio-final">S/ 5.00 c/u</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Duo%20Armonia%20Mosqueta%20y%20Leche%20de%20Cabra"
-                class="btn-reserva">RESERVAR DÚO</a>
+            <div class="cart-controls" data-id="duo-armonia" data-name="Dúo Armonía" data-price="5" data-launch="false">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -1045,8 +1214,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si buscas un ritual sensorial además de efectivo. El cacao estimula la elasticidad de tu piel mientras protege del desgaste diario, con un aroma que convierte tu ducha en un momento de disfrute.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Elixir%20de%20Cacao"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-elixir-de-cacao" data-name="Jabón Elixir de Cacao" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -1062,8 +1237,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
             <p class="beneficio">Para ti si buscas ese acabado suave y uniforme típico de la cosmética asiática. El arroz suaviza la textura y aclara sutilmente, dejando un acabado que se siente como porcelana. Un ritual ancestral que hoy sigue siendo el secreto de piel más envidiada.</p>
             <p class="precio-final">S/ 20.00</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20el%20Jabon%20Destello%20de%20Arroz"
-                class="btn-reserva">RESERVAR</a>
+            <div class="cart-controls" data-id="jabon-destello-de-arroz" data-name="Jabón Destello de Arroz" data-price="20" data-launch="true">
+                <div class="qty-selector">
+                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                    <span class="qty-value">1</span>
+                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                </div>
+                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
+            </div>
         </div>
     </div>
 
@@ -1135,6 +1316,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 <span>Individual</span>
                 <h5>1 UNIDAD</h5>
                 <div class="precio-opcion">S/ 5.00</div>
+                <div class="cart-controls" data-id="mascarilla-individual" data-name="Mascarilla Individual" data-price="5" data-launch="false" style="margin-top:14px; flex-direction:column;">
+                    <div class="qty-selector">
+                        <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                        <span class="qty-value">1</span>
+                        <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                    </div>
+                    <button type="button" class="btn-reserva btn-add-cart" style="width:100%; box-sizing:border-box;">AGREGAR</button>
+                </div>
             </div>
             <div class="mascarilla-opcion-pack">
                 <div class="mascarilla-pack-badge">RECOMENDADO</div>
@@ -1142,6 +1331,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 <h5>SET DE 3</h5>
                 <div class="precio-pack">S/ 12.00</div>
                 <p class="mascarilla-ahorro">✓ Ahorras S/ 3.00</p>
+                <div class="cart-controls" data-id="mascarilla-set-3" data-name="Mascarillas Set de 3" data-price="12" data-launch="false" style="margin-top:10px; flex-direction:column;">
+                    <div class="qty-selector">
+                        <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                        <span class="qty-value">1</span>
+                        <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+                    </div>
+                    <button type="button" class="btn-pack-personalizado btn-add-cart" style="padding:14px 30px; font-size:0.8rem; border:none; cursor:pointer;">AGREGAR</button>
+                </div>
             </div>
         </div>
 
@@ -1157,6 +1354,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 
             <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20Art%20%26%20Love%20quisiera%20una%20consulta%20gratis%20y%20personalizar%20mi%20pack%20de%20mascarillas"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn-pack-personalizado">
                 PEDIR MI PACK PERSONALIZADO
             </a>
@@ -1183,8 +1381,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             tu ritual, porque el cuidado no termina en el rostro.
         </p>
         <span class="crema-precio">S/ 5.00 c/u</span>
-        <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20quiero%20reservar%20la%20Crema%20de%20Manos%20Hidratante%20Art%20%26%20Love"
-            class="crema-btn">RESERVAR AHORA</a>
+        <div class="cart-controls" data-id="crema-hidratante" data-name="Crema de Manos Hidratante" data-price="5" data-launch="false" style="margin-bottom:15px; flex-direction:column;">
+            <div class="qty-selector">
+                <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+            </div>
+            <button type="button" class="crema-btn btn-add-cart" style="border:none; cursor:pointer;">AGREGAR AL CARRITO</button>
+        </div>
     </div>
 </div>
 
@@ -1305,8 +1509,9 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <h4>ART & LOVE</h4>
             <p>Elevando tu cuidado diario a un ritual de bienestar.</p>
             <div class="footer-social">
-                <a href="#" target="_blank">INSTAGRAM</a>
-                <a href="#" target="_blank">FACEBOOK</a>
+                <a href="https://www.instagram.com/art.and.love.ofc?igsh=MTF2MGh2ZjB2ODZm" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                <a href="https://www.facebook.com/share/1Ctou3hwgv/" target="_blank" rel="noopener noreferrer">FACEBOOK</a>
+                <a href="https://www.tiktok.com/@art.and.love.oficial?_r=1&_t=ZS-98pfOxBvDvA" target="_blank" rel="noopener noreferrer">TIKTOK</a>
             </div>
         </div>
         <div class="footer-section">
@@ -1321,6 +1526,239 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 
 <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20me%20gustaria%20recibir%20atencion%20personalizada%20de%20Art%20%26%20Love"
     class="whatsapp-btn">WHATSAPP CONCIERGE</a>
+
+<!-- ===== CARRITO FLOTANTE ===== -->
+<button type="button" id="cart-float-btn" class="cart-float-btn">
+    🛍️ MI PEDIDO <span class="cart-count" id="cart-count">0</span> <span id="cart-total-btn">S/ 0.00</span>
+</button>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-panel" id="cart-panel">
+    <div class="cart-panel-header">
+        <h3>Tu Pedido</h3>
+        <button type="button" class="cart-close" id="cart-close-btn" aria-label="Cerrar carrito">&times;</button>
+    </div>
+    <div class="cart-panel-body" id="cart-items-list">
+        <p class="cart-empty">Tu carrito está vacío. Agrega algún ritual para comenzar.</p>
+    </div>
+    <div class="cart-panel-form">
+        <div class="cart-total-row">
+            <span>Total</span>
+            <span id="cart-total-row-value">S/ 0.00</span>
+        </div>
+        <label for="cart-nombre">Nombre completo *</label>
+        <input type="text" id="cart-nombre" placeholder="Tu nombre y apellido">
+        <label for="cart-direccion">Dirección de envío / Distrito *</label>
+        <input type="text" id="cart-direccion" placeholder="Ej: Surco, Lima">
+        <label for="cart-nota">Nota especial (opcional)</label>
+        <textarea id="cart-nota" placeholder="Ej: Es para regalo, quiero una dedicatoria que diga..."></textarea>
+        <p class="cart-form-error" id="cart-form-error"></p>
+        <button type="button" class="btn-confirmar-pedido" id="cart-confirmar-btn">Confirmar Pedido por WhatsApp</button>
+    </div>
+</div>
+
+<script>
+/* =========================================================
+   PROMOCIÓN DE LANZAMIENTO — 91 DÍAS
+   Aplica 20% de descuento SOLO a jabones individuales.
+   No afecta packs, mascarillas, crema ni el Dúo Armonía
+   (ya tienen su propio precio especial).
+
+   Para activar la promo:
+   1) Cambia LAUNCH_ACTIVE a "true"
+   2) Ajusta LAUNCH_START_DATE al día exacto en que arranca
+      (formato "AAAA-MM-DD"). El sistema calcula solo los
+      91 días y se desactiva automáticamente al vencer,
+      sin que tengas que volver a tocar el código.
+   ========================================================= */
+const LAUNCH_ACTIVE = false;
+const LAUNCH_START_DATE = "2026-08-12";
+const LAUNCH_DURATION_DAYS = 91;
+const LAUNCH_DISCOUNT = 0.20;
+const WHATSAPP_PHONE = "51931379225";
+
+function isLaunchLive() {
+    if (!LAUNCH_ACTIVE) return false;
+    const start = new Date(LAUNCH_START_DATE + "T00:00:00");
+    const end = new Date(start.getTime() + LAUNCH_DURATION_DAYS * 24 * 60 * 60 * 1000);
+    const now = new Date();
+    return now >= start && now <= end;
+}
+
+function getEffectivePrice(base) {
+    return Math.round(base * (1 - LAUNCH_DISCOUNT) * 100) / 100;
+}
+function formatPrice(n) {
+    return n.toFixed(2);
+}
+
+function aplicarDescuentoLanzamiento() {
+    if (!isLaunchLive()) return;
+    document.querySelectorAll('.cart-controls[data-launch="true"]').forEach(function (ctrl) {
+        const base = parseFloat(ctrl.dataset.price);
+        const final = getEffectivePrice(base);
+        const info = ctrl.closest('.info');
+        if (info) {
+            const precioEl = info.querySelector('.precio-final');
+            if (precioEl) {
+                precioEl.innerHTML = '<span class="launch-badge">Oferta de Lanzamiento −20%</span><br>' +
+                    '<span class="precio-tachado-launch">S/ ' + formatPrice(base) + '</span> S/ ' + formatPrice(final);
+            }
+        }
+        ctrl.dataset.price = final;
+    });
+}
+
+/* ===== CARRITO ===== */
+let cart = [];
+
+function cargarCarrito() {
+    try {
+        const guardado = localStorage.getItem('artlove_cart');
+        if (guardado) cart = JSON.parse(guardado);
+    } catch (e) { cart = []; }
+}
+function guardarCarrito() {
+    try { localStorage.setItem('artlove_cart', JSON.stringify(cart)); } catch (e) {}
+}
+function addToCart(id, name, price, qty) {
+    const existente = cart.find(function (i) { return i.id === id; });
+    if (existente) {
+        existente.qty += qty;
+    } else {
+        cart.push({ id: id, name: name, price: price, qty: qty });
+    }
+    guardarCarrito();
+    renderCarrito();
+}
+function quitarDelCarrito(id) {
+    cart = cart.filter(function (i) { return i.id !== id; });
+    guardarCarrito();
+    renderCarrito();
+}
+function cambiarCantidadCarrito(id, delta) {
+    const item = cart.find(function (i) { return i.id === id; });
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) { quitarDelCarrito(id); return; }
+    guardarCarrito();
+    renderCarrito();
+}
+function totalCarrito() {
+    return cart.reduce(function (sum, i) { return sum + (i.price * i.qty); }, 0);
+}
+function cantidadCarrito() {
+    return cart.reduce(function (sum, i) { return sum + i.qty; }, 0);
+}
+function renderCarrito() {
+    const countEl = document.getElementById('cart-count');
+    const totalBtnEl = document.getElementById('cart-total-btn');
+    if (countEl) countEl.textContent = cantidadCarrito();
+    if (totalBtnEl) totalBtnEl.textContent = 'S/ ' + formatPrice(totalCarrito());
+
+    const body = document.getElementById('cart-items-list');
+    if (body) {
+        if (cart.length === 0) {
+            body.innerHTML = '<p class="cart-empty">Tu carrito está vacío. Agrega algún ritual para comenzar.</p>';
+        } else {
+            body.innerHTML = cart.map(function (item) {
+                return '<div class="cart-item">' +
+                    '<div class="cart-item-info">' +
+                        '<div class="cart-item-name">' + item.name + '</div>' +
+                        '<div class="cart-item-price">S/ ' + formatPrice(item.price) + ' c/u</div>' +
+                    '</div>' +
+                    '<div class="cart-item-actions">' +
+                        '<button type="button" class="qty-btn" onclick="cambiarCantidadCarrito(\'' + item.id + '\', -1)">−</button>' +
+                        '<span class="qty-value">' + item.qty + '</span>' +
+                        '<button type="button" class="qty-btn" onclick="cambiarCantidadCarrito(\'' + item.id + '\', 1)">+</button>' +
+                        '<button type="button" class="cart-item-remove" onclick="quitarDelCarrito(\'' + item.id + '\')" aria-label="Eliminar">&times;</button>' +
+                    '</div>' +
+                '</div>';
+            }).join('');
+        }
+    }
+    const totalRow = document.getElementById('cart-total-row-value');
+    if (totalRow) totalRow.textContent = 'S/ ' + formatPrice(totalCarrito());
+}
+function abrirCarrito() {
+    document.getElementById('cart-overlay').classList.add('abierto');
+    document.getElementById('cart-panel').classList.add('abierto');
+}
+function cerrarCarrito() {
+    document.getElementById('cart-overlay').classList.remove('abierto');
+    document.getElementById('cart-panel').classList.remove('abierto');
+}
+function confirmarPedido() {
+    const nombre = document.getElementById('cart-nombre').value.trim();
+    const direccion = document.getElementById('cart-direccion').value.trim();
+    const nota = document.getElementById('cart-nota').value.trim();
+    const errorEl = document.getElementById('cart-form-error');
+
+    if (cart.length === 0) {
+        errorEl.textContent = 'Tu carrito está vacío. Agrega al menos un producto.';
+        errorEl.style.display = 'block';
+        return;
+    }
+    if (!nombre || !direccion) {
+        errorEl.textContent = 'Por favor completa tu nombre y tu dirección/distrito.';
+        errorEl.style.display = 'block';
+        return;
+    }
+    errorEl.style.display = 'none';
+
+    let mensaje = 'Hola Art & Love, quiero confirmar el siguiente pedido:\n';
+    cart.forEach(function (item) {
+        mensaje += '- ' + item.qty + ' x ' + item.name + ' - S/ ' + formatPrice(item.price * item.qty) + '\n';
+    });
+    mensaje += '----------------------------------\n';
+    mensaje += 'TOTAL A PAGAR: S/ ' + formatPrice(totalCarrito()) + '\n';
+    mensaje += '----------------------------------\n';
+    mensaje += '📦 Datos de envío:\n';
+    mensaje += '- Nombre: ' + nombre + '\n';
+    mensaje += '- Dirección/Distrito: ' + direccion + '\n';
+    mensaje += '- Nota especial: ' + (nota || 'Ninguna') + '\n';
+
+    const url = 'https://api.whatsapp.com/send?phone=' + WHATSAPP_PHONE + '&text=' + encodeURIComponent(mensaje);
+    window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    cargarCarrito();
+    aplicarDescuentoLanzamiento();
+    renderCarrito();
+
+    document.querySelectorAll('.cart-controls').forEach(function (ctrl) {
+        const qtyValue = ctrl.querySelector('.qty-value');
+        const minus = ctrl.querySelector('.qty-minus');
+        const plus = ctrl.querySelector('.qty-plus');
+        const addBtn = ctrl.querySelector('.btn-add-cart');
+
+        if (minus) minus.addEventListener('click', function () {
+            let v = parseInt(qtyValue.textContent, 10);
+            if (v > 1) qtyValue.textContent = v - 1;
+        });
+        if (plus) plus.addEventListener('click', function () {
+            let v = parseInt(qtyValue.textContent, 10);
+            qtyValue.textContent = v + 1;
+        });
+        if (addBtn) addBtn.addEventListener('click', function () {
+            const id = ctrl.dataset.id;
+            const name = ctrl.dataset.name;
+            const price = parseFloat(ctrl.dataset.price);
+            const qty = parseInt(qtyValue.textContent, 10);
+            addToCart(id, name, price, qty);
+            const original = addBtn.textContent;
+            addBtn.textContent = 'AGREGADO ✓';
+            setTimeout(function () { addBtn.textContent = original; }, 1200);
+        });
+    });
+
+    document.getElementById('cart-float-btn').addEventListener('click', abrirCarrito);
+    document.getElementById('cart-close-btn').addEventListener('click', cerrarCarrito);
+    document.getElementById('cart-overlay').addEventListener('click', cerrarCarrito);
+    document.getElementById('cart-confirmar-btn').addEventListener('click', confirmarPedido);
+});
+</script>
 
 </body>
 </html>
