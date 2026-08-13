@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 <style>
 :root { --dorado: #c5a059; --oscuro: #1a1a1a; --crema: #f9f7f2; }
+*, *::before, *::after { box-sizing: border-box; }
 body { font-family: 'Montserrat', sans-serif; margin: 0; background-color: var(--crema); color: var(--oscuro); overflow-x: hidden; }
 
 header {
@@ -603,7 +604,9 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 
 /* === CARRITO DE COMPRAS (NUEVO) === */
 .cart-controls { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
-.qty-selector { display: flex; align-items: center; border: 1px solid #ddd; }
+.qty-selector { display: flex; align-items: center; border: 1px solid #ddd; position: relative; }
+.qty-limit-toast { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: var(--oscuro); color: var(--dorado); font-size: 0.62rem; letter-spacing: 0.5px; padding: 5px 10px; border-radius: 3px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s; margin-bottom: 8px; z-index: 5; }
+.qty-limit-toast.mostrar { opacity: 1; }
 .qty-btn { background: #fff; border: none; width: 34px; height: 34px; font-size: 1rem; cursor: pointer; color: var(--oscuro); }
 .qty-btn:hover { background: #f5f5f5; }
 .qty-value { width: 30px; text-align: center; font-size: 0.9rem; font-weight: 600; }
@@ -611,10 +614,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .launch-badge { display: inline-block; border: 1px solid var(--dorado); color: var(--dorado); background: transparent; font-size: 0.6rem; letter-spacing: 2px; padding: 4px 14px; margin-bottom: 10px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 600; }
 .precio-tachado-launch { text-decoration: line-through; color: #bbb; font-size: 0.85rem; margin-right: 8px; }
 
-.cart-float-btn { position: fixed; bottom: 40px; left: 40px; background: var(--oscuro); color: var(--dorado); padding: 16px 24px; border: 1.5px solid var(--dorado); border-radius: 50px; cursor: pointer; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; box-shadow: 0 15px 35px rgba(0,0,0,0.4); z-index: 1000; display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; }
-.cart-float-btn:hover { background: var(--dorado); color: var(--oscuro); }
-.cart-count { background: var(--dorado); color: var(--oscuro); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.7rem; flex-shrink: 0; }
-.cart-float-btn:hover .cart-count { background: var(--oscuro); color: var(--dorado); }
+.cart-icon-btn { position: fixed; top: 25px; right: 25px; width: 52px; height: 52px; border-radius: 50%; background: var(--oscuro); border: 1.5px solid var(--dorado); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1500; box-shadow: 0 8px 25px rgba(0,0,0,0.28); transition: 0.3s; padding: 0; }
+.cart-icon-btn:hover { background: var(--dorado); transform: scale(1.06); }
+.cart-icon-btn svg { width: 22px; height: 22px; stroke: var(--dorado); fill: none; transition: 0.3s; }
+.cart-icon-btn svg .cart-icon-wheel { fill: var(--dorado); stroke: none; transition: 0.3s; }
+.cart-icon-btn:hover svg { stroke: var(--oscuro); }
+.cart-icon-btn:hover svg .cart-icon-wheel { fill: var(--oscuro); }
+.cart-count { position: absolute; top: -6px; right: -6px; background: var(--dorado); color: var(--oscuro); border-radius: 50%; width: 21px; height: 21px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.68rem; border: 2px solid var(--crema); transition: 0.2s; }
+.cart-icon-btn:hover .cart-count { background: var(--oscuro); color: var(--dorado); border-color: var(--dorado); }
 
 .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; display: none; }
 .cart-overlay.abierto { display: block; }
@@ -623,7 +630,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .cart-panel-header { padding: 25px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eadfcf; background: #fff; }
 .cart-panel-header h3 { font-family: 'Cinzel', serif; letter-spacing: 2px; margin: 0; font-size: 1.1rem; color: var(--oscuro); }
 .cart-close { background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--oscuro); line-height: 1; }
-.cart-panel-body { flex: 1; overflow-y: auto; padding: 20px 25px; }
+.cart-panel-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 20px 25px; }
 .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #eee; gap: 10px; }
 .cart-item-info { flex: 1; }
 .cart-item-name { font-size: 0.88rem; font-weight: 600; color: var(--oscuro); margin-bottom: 4px; }
@@ -642,8 +649,10 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .cart-form-error { color: #c0392b; font-size: 0.78rem; margin-top: 8px; display: none; }
 
 @media (max-width: 480px) {
-    .cart-float-btn { bottom: 20px; left: 20px; padding: 13px 18px; font-size: 0.65rem; }
+    .cart-icon-btn { top: 15px; right: 15px; width: 44px; height: 44px; }
+    .cart-icon-btn svg { width: 19px; height: 19px; }
     .whatsapp-btn { bottom: 20px; right: 20px; padding: 13px 18px; font-size: 0.65rem; }
+    .qty-btn { width: 38px; height: 38px; }
 }
 </style>
 </head>
@@ -1419,7 +1428,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 <!-- ===== PRÓXIMAMENTE ===== -->
 <div class="proximamente">
     <h2>Dúos de Bienestar</h2>
-    <p>Próximamente: Sets de Complemento (Jabón Artesanal + Mascarilla Facial)<br>Velas Aromáticas en Desarrollo</p>
+    <p>Próximamente: Sets de Complemento (Aceites psra cabello + Tratamiento natural)<br>Velas Aromáticas en Desarrollo</p>
 </div>
 
 <!-- ===== FAQ (NUEVA SECCIÓN) ===== -->
@@ -1528,8 +1537,13 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     class="whatsapp-btn">WHATSAPP CONCIERGE</a>
 
 <!-- ===== CARRITO FLOTANTE ===== -->
-<button type="button" id="cart-float-btn" class="cart-float-btn">
-    🛍️ MI PEDIDO <span class="cart-count" id="cart-count">0</span> <span id="cart-total-btn">S/ 0.00</span>
+<button type="button" id="cart-float-btn" class="cart-icon-btn" aria-label="Ver mi pedido">
+    <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 6h15l-1.5 9h-12L6 6zM6 6L5 3H2"/>
+        <circle class="cart-icon-wheel" cx="9.5" cy="20" r="1.4"/>
+        <circle class="cart-icon-wheel" cx="17.5" cy="20" r="1.4"/>
+    </svg>
+    <span class="cart-count" id="cart-count">0</span>
 </button>
 
 <div class="cart-overlay" id="cart-overlay"></div>
@@ -1571,11 +1585,12 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
       91 días y se desactiva automáticamente al vencer,
       sin que tengas que volver a tocar el código.
    ========================================================= */
-const LAUNCH_ACTIVE = false;
+const LAUNCH_ACTIVE = true;
 const LAUNCH_START_DATE = "2026-08-12";
 const LAUNCH_DURATION_DAYS = 91;
 const LAUNCH_DISCOUNT = 0.20;
 const WHATSAPP_PHONE = "51931379225";
+const MAX_QTY_PER_ITEM = 5;
 
 function isLaunchLive() {
     if (!LAUNCH_ACTIVE) return false;
@@ -1624,9 +1639,9 @@ function guardarCarrito() {
 function addToCart(id, name, price, qty) {
     const existente = cart.find(function (i) { return i.id === id; });
     if (existente) {
-        existente.qty += qty;
+        existente.qty = Math.min(existente.qty + qty, MAX_QTY_PER_ITEM);
     } else {
-        cart.push({ id: id, name: name, price: price, qty: qty });
+        cart.push({ id: id, name: name, price: price, qty: Math.min(qty, MAX_QTY_PER_ITEM) });
     }
     guardarCarrito();
     renderCarrito();
@@ -1639,7 +1654,7 @@ function quitarDelCarrito(id) {
 function cambiarCantidadCarrito(id, delta) {
     const item = cart.find(function (i) { return i.id === id; });
     if (!item) return;
-    item.qty += delta;
+    item.qty = Math.min(item.qty + delta, MAX_QTY_PER_ITEM);
     if (item.qty <= 0) { quitarDelCarrito(id); return; }
     guardarCarrito();
     renderCarrito();
@@ -1652,9 +1667,7 @@ function cantidadCarrito() {
 }
 function renderCarrito() {
     const countEl = document.getElementById('cart-count');
-    const totalBtnEl = document.getElementById('cart-total-btn');
     if (countEl) countEl.textContent = cantidadCarrito();
-    if (totalBtnEl) totalBtnEl.textContent = 'S/ ' + formatPrice(totalCarrito());
 
     const body = document.getElementById('cart-items-list');
     if (body) {
@@ -1670,7 +1683,7 @@ function renderCarrito() {
                     '<div class="cart-item-actions">' +
                         '<button type="button" class="qty-btn" onclick="cambiarCantidadCarrito(\'' + item.id + '\', -1)">−</button>' +
                         '<span class="qty-value">' + item.qty + '</span>' +
-                        '<button type="button" class="qty-btn" onclick="cambiarCantidadCarrito(\'' + item.id + '\', 1)">+</button>' +
+                        '<button type="button" class="qty-btn" onclick="cambiarCantidadCarrito(\'' + item.id + '\', 1)"' + (item.qty >= MAX_QTY_PER_ITEM ? ' style="opacity:0.35;cursor:not-allowed;" title="Máximo 5 unidades"' : '') + '>+</button>' +
                         '<button type="button" class="cart-item-remove" onclick="quitarDelCarrito(\'' + item.id + '\')" aria-label="Eliminar">&times;</button>' +
                     '</div>' +
                 '</div>';
@@ -1722,6 +1735,19 @@ function confirmarPedido() {
     window.open(url, '_blank', 'noopener,noreferrer');
 }
 
+function mostrarLimiteStock(qtySelectorEl) {
+    let toast = qtySelectorEl.querySelector('.qty-limit-toast');
+    if (!toast) {
+        toast = document.createElement('span');
+        toast.className = 'qty-limit-toast';
+        toast.textContent = 'Máximo 5 unidades disponibles';
+        qtySelectorEl.appendChild(toast);
+    }
+    toast.classList.add('mostrar');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(function () { toast.classList.remove('mostrar'); }, 1600);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     cargarCarrito();
     aplicarDescuentoLanzamiento();
@@ -1729,6 +1755,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.cart-controls').forEach(function (ctrl) {
         const qtyValue = ctrl.querySelector('.qty-value');
+        const qtySelectorEl = ctrl.querySelector('.qty-selector');
         const minus = ctrl.querySelector('.qty-minus');
         const plus = ctrl.querySelector('.qty-plus');
         const addBtn = ctrl.querySelector('.btn-add-cart');
@@ -1739,17 +1766,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (plus) plus.addEventListener('click', function () {
             let v = parseInt(qtyValue.textContent, 10);
-            qtyValue.textContent = v + 1;
+            if (v < MAX_QTY_PER_ITEM) {
+                qtyValue.textContent = v + 1;
+            } else if (qtySelectorEl) {
+                mostrarLimiteStock(qtySelectorEl);
+            }
         });
         if (addBtn) addBtn.addEventListener('click', function () {
             const id = ctrl.dataset.id;
             const name = ctrl.dataset.name;
             const price = parseFloat(ctrl.dataset.price);
-            const qty = parseInt(qtyValue.textContent, 10);
+            const qty = Math.min(parseInt(qtyValue.textContent, 10), MAX_QTY_PER_ITEM);
             addToCart(id, name, price, qty);
             const original = addBtn.textContent;
             addBtn.textContent = 'AGREGADO ✓';
-            setTimeout(function () { addBtn.textContent = original; }, 1200);
+            addBtn.disabled = true;
+            setTimeout(function () { addBtn.textContent = original; addBtn.disabled = false; }, 1200);
         });
     });
 
@@ -1758,6 +1790,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('cart-overlay').addEventListener('click', cerrarCarrito);
     document.getElementById('cart-confirmar-btn').addEventListener('click', confirmarPedido);
 });
+
 </script>
 
 </body>
