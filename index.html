@@ -4,62 +4,93 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Art & Love | Alta Cosmética Artesanal</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Art & Love — Jabones artesanales, mascarillas y crema de manos 100% naturales, hechos a mano en Perú. Rituales de cuidado personal para cada tipo de piel, con envíos a todo el país.">
+<link rel="canonical" href="https://matrixx-neo.github.io/Art-and-love/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Art & Love | Rituales artesanales para tu piel">
+<meta property="og:description" content="Descubre jabones artesanales, mascarillas y rituales de cuidado personal de Art & Love.">
+<meta property="og:url" content="https://matrixx-neo.github.io/Art-and-love/">
 <meta property="og:image" content="https://i.ibb.co/ymyCjXLr/Screenshot-2026-04-22-17-47-29-86-e4424258c8b8649f6e67d283a50a2cbc.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Art & Love | Rituales artesanales para tu piel">
+<meta name="twitter:description" content="Descubre jabones artesanales, mascarillas y rituales de cuidado personal de Art & Love.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://i.ibb.co">
 <link rel="preload" as="image" href="https://i.ibb.co/5Wmn0H7v/0d8651292fd255127875f2fd8471f754.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 <style>
-:root { --dorado: #c5a059; --oscuro: #1a1a1a; --crema: #f9f7f2; }
+:root { --dorado: #846426; --dorado-claro: #b89354; --guinda: #6d2938; --guinda-profundo: #421923; --oscuro: #211f1a; --crema: #faf7f0; --bosque: #33483d; }
 *, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 body { font-family: 'Montserrat', sans-serif; margin: 0; background-color: var(--crema); color: var(--oscuro); overflow-x: hidden; }
+body, button, input, select, textarea { font-family: 'Montserrat', sans-serif; }
+button, a, select { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--dorado); outline-offset: 3px; }
+.skip-link { position: absolute; top: 10px; left: 10px; z-index: 3000; padding: 12px 16px; background: #fff; color: var(--oscuro); transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
 
 header {
-  height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/5Wmn0H7v/0d8651292fd255127875f2fd8471f754.jpg');
+  min-height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background-color: #332d24;
+  background-image: linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)), url('https://i.ibb.co/5Wmn0H7v/0d8651292fd255127875f2fd8471f754.jpg');
   background-size: cover; background-position: center; color: white; text-align: center;
+  padding: 48px 24px;
 }
-h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: 12px; margin: 0; }
+h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-spacing: clamp(3px, 0.7vw, 9px); margin: 0; }
 .linea-decor { width: 80px; height: 1.5px; background: var(--dorado); margin: 25px auto; }
-.slogan-principal { letter-spacing: 8px; font-weight: 300; text-transform: uppercase; font-size: 0.85rem; max-width: 80%; }
+.slogan-principal { letter-spacing: clamp(1px, 0.35vw, 4px); font-weight: 500; text-transform: uppercase; font-size: clamp(0.75rem, 1vw, 0.85rem); line-height: 1.7; max-width: 80%; }
 
-.seccion-encabezado { text-align: center; padding: 80px 10% 30px; }
-.seccion-titulo { font-family: 'Cinzel', serif; letter-spacing: 6px; color: var(--dorado); font-size: 2rem; margin-bottom: 12px; text-transform: uppercase; }
-.uso-sugerido { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: #999; font-weight: 500; font-style: italic; }
+.site-nav { position: sticky; top: 0; z-index: 1200; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px clamp(16px, 3vw, 42px); padding: 15px 20px; background: var(--crema); border-bottom: 1px solid #e5ddce; box-shadow: 0 5px 16px rgba(33,31,26,0.06); }
+.site-nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 2px; color: var(--oscuro); text-decoration: none; font-size: 0.72rem; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; transition: color 0.2s ease; }
+.site-nav a:hover { color: var(--guinda); }
+.site-nav .site-nav-contact { color: #fff; background: var(--oscuro); padding: 10px 15px; }
+.site-nav .site-nav-contact:hover { background: var(--bosque); color: #fff; }
+main { display: block; }
+main [id] { scroll-margin-top: 88px; }
 
-.catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 0 8% 80px; }
-.producto { background: white; padding: 30px; border: 1px solid #f0f0f0; text-align: center; transition: 0.5s; }
-.producto:hover { transform: translateY(-12px); box-shadow: 0 15px 40px rgba(0,0,0,0.06); border-color: var(--dorado); }
+.seccion-encabezado { text-align: center; padding: 66px 10% 30px; }
+.seccion-titulo { font-family: 'Cinzel', serif; letter-spacing: clamp(1px, 0.3vw, 4px); color: var(--dorado); font-size: clamp(1.45rem, 3vw, 2rem); margin: 0 0 12px; text-transform: uppercase; }
+.uso-sugerido { font-size: 0.78rem; letter-spacing: clamp(0.5px, 0.15vw, 1.5px); text-transform: uppercase; color: #625e56; font-weight: 500; font-style: italic; line-height: 1.7; }
 
-.img-box { width: 100%; height: 350px; overflow: hidden; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; }
-.img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.catalogo { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(18px, 2.5vw, 34px); padding: 0 8% 80px; max-width: 1500px; margin: 0 auto; }
+.producto { background: white; padding: clamp(18px, 2vw, 28px); border: 1px solid #e9e4da; text-align: center; transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease; }
+.producto { display: flex; flex-direction: column; min-width: 0; }
+.producto:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(33,31,26,0.09); border-color: var(--guinda); }
 
-.info h3 { font-family: 'Cinzel', serif; margin: 15px 0 5px; font-size: 1.3rem; letter-spacing: 2px; }
+.img-box { width: 100%; aspect-ratio: 4 / 3; min-height: 220px; max-height: 350px; overflow: hidden; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; background: #f4efe6; }
+.img-box img { width: 100%; height: 100%; object-fit: contain; }
+
+.info { display: flex; flex: 1; flex-direction: column; align-items: center; }
+.info h3 { font-family: 'Cinzel', serif; margin: 15px 0 5px; font-size: clamp(1.1rem, 1.4vw, 1.3rem); letter-spacing: 1px; text-wrap: balance; }
 .tag-premium { font-size: 0.65rem; color: var(--dorado); font-weight: bold; text-transform: uppercase; letter-spacing: 2.5px; display: block; margin-bottom: 18px; }
-.peso-tag { font-size: 0.65rem; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 6px; }
-.beneficio { font-size: 0.85rem; color: #777; font-style: italic; min-height: 90px; line-height: 1.7; margin-bottom: 25px; }
+.peso-tag { font-size: 0.72rem; color: #5e5b55; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 6px; }
+.beneficio { width: 100%; max-width: 42ch; font-size: 0.9rem; color: #514d46; font-style: italic; flex: 1; min-height: 90px; line-height: 1.7; margin-bottom: 25px; }
 .ingredientes-tag { font-size: 0.7rem; color: var(--dorado); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #f5f5f5; padding-bottom: 12px; margin-bottom: 18px; display: block; }
 
 /* === OPTIMIZACIÓN 4: Precio final con mayor peso visual === */
 .precio-final {
-    color: #D4AF37;
+    color: var(--dorado);
     font-weight: 800;
     font-size: 1.45em;
     margin: 10px 0;
     letter-spacing: 0.5px;
 }
 
-.btn-reserva { display: inline-block; padding: 14px 35px; background: var(--oscuro); text-decoration: none; color: white; font-size: 0.75rem; letter-spacing: 3px; transition: 0.4s; border: 1.5px solid var(--oscuro); }
-.btn-reserva:hover { background: transparent; color: var(--oscuro); }
+.btn-reserva { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 14px 24px; background: var(--guinda); text-decoration: none; color: white; font-size: 0.78rem; letter-spacing: 1px; font-weight: 600; transition: background-color 0.2s ease, transform 0.2s ease; border: 1px solid var(--guinda); margin-top: auto; }
+.btn-reserva:hover { background: var(--guinda-profundo); color: #fff; transform: translateY(-1px); }
+.producto .cart-controls { width: 100%; margin-top: auto; }
+.producto .qty-btn { width: 44px; height: 44px; }
+.producto .btn-reserva { width: 100%; margin-top: 12px; cursor: pointer; }
+.producto .precio-final { margin-top: auto; }
+.precio-consulta { margin: auto 0 12px; color: #514d46; font-size: 0.9rem; }
 
 .comparativa { background: #fff; padding: 100px 10%; border-top: 1px solid #eee; }
 .grid-comparativa { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; }
-.comparativa-box h4 { font-family: 'Cinzel', serif; color: var(--dorado); margin-bottom: 30px; font-size: 1.4rem; letter-spacing: 3px; }
+.comparativa-box h3 { font-family: 'Cinzel', serif; color: var(--dorado); margin-bottom: 30px; font-size: 1.4rem; letter-spacing: 3px; }
 .comparativa-list { list-style: none; padding: 0; font-size: 0.95rem; line-height: 2.2; color: #555; }
 .comparativa-list li::before { content: "•"; color: var(--dorado); padding-right: 15px; font-weight: bold; }
 
@@ -69,34 +100,36 @@ h1 { font-family: 'Cinzel', serif; font-size: clamp(2rem, 8vw, 3.5rem); letter-s
 
 footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-align: center; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
-.footer-section h4 { color: var(--dorado); font-family: 'Cinzel', serif; margin-bottom: 25px; letter-spacing: 4px; }
+.footer-section h3 { color: var(--dorado-claro); font-family: 'Cinzel', serif; margin-bottom: 25px; letter-spacing: 4px; }
 .footer-social { margin-top: 18px; }
-.footer-social a { color: #888; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; margin: 0 10px; border-bottom: 1px solid transparent; transition: 0.3s; }
-.footer-social a:hover { color: var(--dorado); border-color: var(--dorado); }
+.footer-social a { color: #c1bbb0; text-decoration: none; font-size: 0.75rem; letter-spacing: 1.4px; margin: 0 10px; border-bottom: 1px solid transparent; transition: 0.3s; }
+.footer-social a:hover { color: var(--dorado-claro); border-color: var(--dorado-claro); }
 .copyright { border-top: 1px solid #2a2a2a; padding-top: 40px; font-size: 0.7rem; letter-spacing: 2px; }
 
-.whatsapp-btn { position: fixed; bottom: 40px; right: 40px; background: var(--oscuro); color: var(--dorado); padding: 18px 30px; text-decoration: none; font-weight: bold; font-size: 0.75rem; letter-spacing: 3px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); transition: 0.5s; z-index: 1000; border: 1.5px solid var(--dorado); text-transform: uppercase; }
-.whatsapp-btn:hover { background: var(--dorado); color: var(--oscuro); }
+.whatsapp-btn { display: block; width: fit-content; max-width: calc(100% - 32px); margin: 26px auto 34px; background: var(--oscuro); color: var(--dorado-claro); padding: 15px 24px; text-align: center; text-decoration: none; font-weight: bold; font-size: 0.75rem; letter-spacing: 1.6px; box-shadow: 0 8px 22px rgba(0,0,0,0.18); transition: background-color 0.25s ease, color 0.25s ease; border: 1.5px solid var(--dorado); text-transform: uppercase; }
+.whatsapp-btn:hover { background: var(--dorado-claro); color: var(--oscuro); }
 
 /* === OPTIMIZACIÓN 3: Clases limpias para la sección de Packs === */
 .rituales-section {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
-    font-family: 'Georgia', serif;
+    font-family: 'Cinzel', serif;
 }
 .rituales-banner {
-    background-color: #4a0404;
+    background-color: var(--oscuro);
     color: white;
     text-align: center;
     padding: 20px;
     border-radius: 2px;
     margin-bottom: 30px;
 }
-.rituales-banner h1 {
+.rituales-banner h2 {
     margin: 0;
-    font-size: 1.4rem;
-    letter-spacing: 3px;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+    line-height: 1.5;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     font-weight: normal;
 }
@@ -105,10 +138,10 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     margin-bottom: 50px;
 }
 .rituales-intro h2 {
-    color: #2d4a22;
-    font-family: 'Arial', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+    color: var(--bosque);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    letter-spacing: 1px;
     margin-bottom: 15px;
     text-transform: uppercase;
 }
@@ -158,13 +191,14 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     border-radius: 2px;
 }
 .pack-titulo {
-    color: #2d4a22;
+    color: var(--bosque);
+    font-family: 'Cinzel', serif;
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 .pack-descripcion {
     font-size: 0.9rem;
-    color: #777;
+    color: #5e5b55;
     font-style: italic;
     margin-bottom: 15px;
 }
@@ -184,7 +218,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 }
 .pack-precio-tachado {
     text-decoration: line-through;
-    color: #bbb;
+    color: #6b665e;
     font-size: 0.9rem;
 }
 .pack-precio-final {
@@ -193,7 +227,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     color: #1a1a1a;
 }
 .pack-precio-final--dorado {
-    color: #d4af37;
+    color: var(--dorado);
 }
 .pack-consulta {
     text-align: center;
@@ -221,16 +255,16 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: 0.3s;
-    border: 1px solid #4a0404;
+    border: 1px solid var(--oscuro);
 }
 
 /* === Sé de los Primeros (NUEVA SECCIÓN) === */
 .primeros-section {
-    background: #fdf2e9;
+    background: #f5efe4;
     padding: 60px 10%;
     text-align: center;
-    border-top: 1.5px dashed #d4af37;
-    border-bottom: 1.5px dashed #d4af37;
+    border-top: 1px solid #d6c8ac;
+    border-bottom: 1px solid #d6c8ac;
 }
 .primeros-inner { max-width: 700px; margin: 0 auto; }
 .primeros-label {
@@ -267,7 +301,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 }
 .rituales-complementarios-titulo {
     text-align: center;
-    color: #d4af37;
+    color: var(--dorado);
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 10px;
@@ -275,7 +309,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 }
 .rituales-complementarios-subtitulo {
     text-align: center;
-    color: #888;
+    color: #514d46;
     font-size: 0.8rem;
     font-style: italic;
     margin-bottom: 35px;
@@ -315,9 +349,12 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     box-sizing: border-box;
 }
 .card-ritual:hover .overlay,
+.card-ritual:focus .overlay,
+.card-ritual:focus-within .overlay,
 .card-ritual:active .overlay { opacity: 1; }
-.overlay h4 {
-    color: #d4af37;
+.card-ritual:focus-visible { outline: 3px solid var(--dorado); outline-offset: 4px; }
+.overlay h3 {
+    color: var(--dorado);
     margin-bottom: 8px;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -340,7 +377,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     box-shadow: 0 10px 30px rgba(0,0,0,0.02);
 }
 .tip-profesional-label {
-    color: #d4af37;
+    color: var(--dorado);
     font-size: 0.75rem;
     letter-spacing: 3px;
     font-weight: bold;
@@ -368,16 +405,16 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .mascarilla-opcion-individual {
     width: 190px;
     padding: 25px 15px;
-    border: 1.2px solid #d4af37;
+    border: 1.2px solid var(--dorado);
     border-radius: 18px;
     background: white;
 }
 .mascarilla-opcion-individual span {
     font-size: 0.7rem;
-    color: #999;
+    color: #5e5b55;
     text-transform: uppercase;
 }
-.mascarilla-opcion-individual h5 {
+.mascarilla-opcion-individual h3 {
     margin: 10px 0;
     color: #444;
     font-size: 1rem;
@@ -391,7 +428,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .mascarilla-opcion-pack {
     width: 240px;
     padding: 40px 15px;
-    border: 2.5px solid #d4af37;
+    border: 2.5px solid var(--dorado);
     border-radius: 22px;
     background: white;
     position: relative;
@@ -403,7 +440,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     top: -16px;
     left: 50%;
     transform: translateX(-50%);
-    background: #d4af37;
+    background: var(--dorado);
     color: white;
     padding: 5px 20px;
     font-size: 0.7rem;
@@ -413,11 +450,11 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 }
 .mascarilla-opcion-pack span.pack-label {
     font-size: 0.8rem;
-    color: #d4af37;
+    color: var(--dorado);
     font-weight: bold;
     letter-spacing: 1px;
 }
-.mascarilla-opcion-pack h5 {
+.mascarilla-opcion-pack h3 {
     margin: 10px 0;
     color: #444;
     font-size: 1.1rem;
@@ -425,7 +462,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 }
 .mascarilla-opcion-pack .precio-pack {
     font-size: 2.4rem;
-    color: #d4af37;
+    color: var(--dorado);
     font-weight: bold;
 }
 .mascarilla-ahorro {
@@ -452,7 +489,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     padding: 22px;
     border-radius: 15px;
     margin-bottom: 30px;
-    border: 1.5px dashed #d4af37;
+    border: 1.5px dashed var(--dorado);
 }
 .consulta-gratis-titulo {
     font-family: 'Georgia', serif;
@@ -474,7 +511,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .btn-pack-personalizado {
     display: inline-block;
     padding: 18px 50px;
-    background-color: #d4af37;
+    background-color: var(--dorado);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -493,7 +530,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 /* === Crema Hidratante === */
 .crema-section {
     background-color: #ffffff;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Montserrat', sans-serif;
     padding: 40px 20px;
     text-align: center;
     color: #000000;
@@ -507,10 +544,10 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     margin-bottom: 20px;
 }
 .crema-subtitulo {
-    color: #d4af37;
-    letter-spacing: 2px;
+    color: var(--dorado);
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-size: 0.75em;
+    font-size: 0.875rem;
     margin-bottom: 15px;
     font-weight: 400;
 }
@@ -523,7 +560,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     letter-spacing: 1px;
 }
 .crema-complemento {
-    color: #d4af37;
+    color: var(--dorado);
     text-transform: uppercase;
     font-size: 0.8em;
     letter-spacing: 1.5px;
@@ -539,7 +576,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 }
 .crema-precio {
     font-size: 1.5em;
-    color: #d4af37;
+    color: var(--dorado);
     font-weight: 400;
     margin-bottom: 25px;
     display: block;
@@ -577,7 +614,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .faq-item summary {
     font-family: 'Cinzel', serif;
     font-size: 1rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0;
     cursor: pointer;
     color: var(--oscuro);
     list-style: none;
@@ -596,7 +633,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 }
 .faq-item[open] summary::after { content: '\2212'; }
 .faq-item p {
-    color: #666;
+    color: #514d46;
     font-size: 0.9rem;
     line-height: 1.75;
     margin: 14px 0 0 0;
@@ -607,12 +644,12 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 /* === CARRITO DE COMPRAS (NUEVO) === */
 .cart-controls { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
 .qty-selector { display: flex; align-items: center; border: 1px solid #ddd; position: relative; }
-.qty-limit-toast { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: var(--oscuro); color: var(--dorado); font-size: 0.62rem; letter-spacing: 0.5px; padding: 5px 10px; border-radius: 3px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s; margin-bottom: 8px; z-index: 5; }
+.qty-limit-toast { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: var(--oscuro); color: var(--dorado-claro); font-size: 0.72rem; letter-spacing: 0.3px; padding: 5px 10px; border-radius: 3px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s; margin-bottom: 8px; z-index: 5; }
 .qty-limit-toast.mostrar { opacity: 1; }
 
 .personaliza-block { text-align: left; margin: 18px 0; padding: 16px 18px; background: #faf7f0; border: 1px solid #eee; border-radius: 4px; }
 .personaliza-block--compact { padding: 10px 12px; margin: 14px 0; }
-.personaliza-block label { display: block; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; color: #999; margin: 12px 0 5px; font-family: 'Montserrat', sans-serif; }
+.personaliza-block label { display: block; font-size: 0.75rem; letter-spacing: 0.6px; text-transform: uppercase; color: #514d46; margin: 12px 0 5px; font-family: 'Montserrat', sans-serif; }
 .personaliza-block label:first-child { margin-top: 0; }
 .personaliza-block select { width: 100%; padding: 9px 10px; border: 1px solid #ddd; font-family: 'Montserrat', sans-serif; font-size: 0.83rem; border-radius: 2px; background: #fff; color: var(--oscuro); }
 .selector-jabon-grupo { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8px; }
@@ -625,16 +662,16 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .qty-value { width: 30px; text-align: center; font-size: 0.9rem; font-weight: 600; }
 .btn-add-cart { cursor: pointer; font-family: inherit; }
 .launch-badge { display: inline-block; border: 1px solid var(--dorado); color: var(--dorado); background: transparent; font-size: 0.6rem; letter-spacing: 2px; padding: 4px 14px; margin-bottom: 10px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 600; }
-.precio-tachado-launch { text-decoration: line-through; color: #bbb; font-size: 0.85rem; margin-right: 8px; }
+.precio-tachado-launch { text-decoration: line-through; color: #6b665e; font-size: 0.85rem; margin-right: 8px; }
 
 .cart-icon-btn { position: fixed; top: 25px; right: 25px; width: 52px; height: 52px; border-radius: 50%; background: var(--oscuro); border: 1.5px solid var(--dorado); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1500; box-shadow: 0 8px 25px rgba(0,0,0,0.28); transition: 0.3s; padding: 0; }
-.cart-icon-btn:hover { background: var(--dorado); transform: scale(1.06); }
-.cart-icon-btn svg { width: 22px; height: 22px; stroke: var(--dorado); fill: none; transition: 0.3s; }
-.cart-icon-btn svg .cart-icon-wheel { fill: var(--dorado); stroke: none; transition: 0.3s; }
+.cart-icon-btn:hover { background: var(--dorado-claro); transform: scale(1.06); }
+.cart-icon-btn svg { width: 22px; height: 22px; stroke: var(--dorado-claro); fill: none; transition: 0.3s; }
+.cart-icon-btn svg .cart-icon-wheel { fill: var(--dorado-claro); stroke: none; transition: 0.3s; }
 .cart-icon-btn:hover svg { stroke: var(--oscuro); }
 .cart-icon-btn:hover svg .cart-icon-wheel { fill: var(--oscuro); }
-.cart-count { position: absolute; top: -6px; right: -6px; background: var(--dorado); color: var(--oscuro); border-radius: 50%; width: 21px; height: 21px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.68rem; border: 2px solid var(--crema); transition: 0.2s; }
-.cart-icon-btn:hover .cart-count { background: var(--oscuro); color: var(--dorado); border-color: var(--dorado); }
+.cart-count { position: absolute; top: -6px; right: -6px; background: var(--dorado-claro); color: var(--oscuro); border-radius: 50%; width: 21px; height: 21px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.72rem; border: 2px solid var(--crema); transition: 0.2s; }
+.cart-icon-btn:hover .cart-count { background: var(--oscuro); color: var(--dorado-claro); border-color: var(--dorado-claro); }
 
 .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; display: none; }
 .cart-overlay.abierto { display: block; }
@@ -647,41 +684,135 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #eee; gap: 10px; }
 .cart-item-info { flex: 1; }
 .cart-item-name { font-size: 0.88rem; font-weight: 600; color: var(--oscuro); margin-bottom: 4px; }
-.cart-item-price { font-size: 0.78rem; color: #888; }
+.cart-item-price { font-size: 0.78rem; color: #5e5b55; }
 .cart-item-actions { display: flex; align-items: center; gap: 8px; }
 .cart-item-remove { background: none; border: none; color: #c0392b; font-size: 1.2rem; cursor: pointer; }
-.cart-empty { text-align: center; color: #999; font-style: italic; padding: 40px 0; font-family: 'Georgia', serif; }
+.cart-empty { text-align: center; color: #5e5b55; font-style: italic; padding: 40px 0; font-family: 'Georgia', serif; }
 .cart-panel-form { padding: 20px 25px; border-top: 1px solid #eadfcf; background: #fff; }
-.cart-panel-form label { display: block; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: #888; margin-bottom: 6px; margin-top: 14px; }
+.cart-panel-form label { display: block; font-size: 0.75rem; letter-spacing: 0.6px; text-transform: uppercase; color: #514d46; margin-bottom: 6px; margin-top: 14px; }
 .cart-panel-form input, .cart-panel-form textarea { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #ddd; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; border-radius: 2px; }
 .cart-panel-form textarea { resize: vertical; min-height: 70px; }
 .cart-total-row { display: flex; justify-content: space-between; align-items: center; font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--oscuro); padding: 16px 0; border-top: 1px solid #eadfcf; margin-top: 6px; }
 .cart-total-row span:last-child { color: var(--dorado); font-weight: bold; }
 .btn-confirmar-pedido { width: 100%; padding: 16px; background: var(--oscuro); color: #fff; border: none; font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; margin-top: 16px; transition: 0.3s; font-family: 'Montserrat', sans-serif; }
-.btn-confirmar-pedido:hover { background: var(--dorado); color: var(--oscuro); }
+.btn-confirmar-pedido:hover { background: var(--dorado-claro); color: var(--oscuro); }
 .cart-form-error { color: #c0392b; font-size: 0.78rem; margin-top: 8px; display: none; }
+.cart-storage-warning { color: #6b4812; font-size: 0.78rem; line-height: 1.5; margin: 8px 0 0; }
+.cart-panel input[aria-invalid="true"], .cart-panel textarea[aria-invalid="true"] { border-color: #a3332a; }
+.cart-close, .cart-item-actions .qty-btn, .cart-item-remove { min-width: 44px; min-height: 44px; }
+.cart-item-actions .qty-btn { border: 1px solid #ded7ca; }
+.cart-item-remove { border-radius: 50%; }
+.cart-count { font-variant-numeric: tabular-nums; }
+.imagen-fallback { display: grid; min-height: 170px; place-items: center; padding: 24px; color: #4a463e; background: #f0eadf; text-align: center; font-family: 'Georgia', serif; font-size: 0.9rem; line-height: 1.5; }
+.img-box .imagen-fallback { width: 100%; height: 100%; }
+.pack-card > .imagen-fallback { min-height: 250px; margin-bottom: 20px; }
+.card-ritual > .imagen-fallback { width: 100%; min-height: 250px; }
+.cart-item-name, .cart-item-detail { overflow-wrap: anywhere; }
+.cart-status { min-height: 1.2em; margin: 8px 0 0; color: #38513f; font-size: 0.78rem; }
+.catalogo-load-status { max-width: 70ch; margin: 0 auto 24px; color: var(--guinda-profundo); font-size: 0.84rem; line-height: 1.6; text-align: center; }
+.cart-controls .btn-add-cart:disabled { cursor: not-allowed; opacity: 0.58; }
+.catalogo-tools { max-width: 1100px; margin: 0 auto; padding: 44px 24px 18px; }
+.catalogo-tools h2 { margin: 0 0 18px; color: var(--bosque); font-family: 'Cinzel', serif; font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 400; letter-spacing: 0.5px; text-align: center; }
+.catalogo-filtros { display: grid; grid-template-columns: minmax(220px, 1.4fr) minmax(180px, 1fr) auto; align-items: end; gap: 14px; }
+.catalogo-campo label { display: block; margin-bottom: 7px; color: #514d46; font-size: 0.76rem; font-weight: 500; }
+.catalogo-campo input, .catalogo-campo select { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #d9d1c3; border-radius: 2px; background: #fff; color: var(--oscuro); font: inherit; font-size: 0.9rem; }
+.catalogo-limpiar { min-height: 46px; padding: 10px 16px; border: 1px solid var(--oscuro); background: transparent; color: var(--oscuro); font: inherit; font-size: 0.78rem; cursor: pointer; }
+.catalogo-limpiar:hover { background: var(--oscuro); color: #fff; }
+.catalogo-resultado { min-height: 1.3em; margin: 12px 0 0; color: #514d46; font-size: 0.78rem; text-align: center; }
+.catalogo[hidden], .producto[hidden], .seccion-encabezado[hidden] { display: none; }
+
+@media (hover: none) {
+    .card-ritual { display: flex; flex-direction: column; }
+    .card-ritual .overlay { position: static; opacity: 1; background: #fff; padding: 18px; }
+    .card-ritual img { object-fit: cover; }
+}
+@media (max-width: 700px) {
+    html { scroll-padding-top: 110px; }
+    header { min-height: 52svh; }
+    .slogan-principal { max-width: 94%; }
+    .site-nav { gap: 4px 16px; padding: 8px 10px; }
+    .site-nav a { font-size: 0.7rem; letter-spacing: 0.7px; padding: 7px 1px; }
+    .site-nav .site-nav-contact { padding: 8px 10px; }
+    main [id] { scroll-margin-top: 110px; }
+    .catalogo { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); padding: 0 16px 54px; gap: 18px; }
+    .seccion-encabezado { padding: 48px 20px 24px; }
+    .catalogo-tools { padding: 36px 18px 14px; }
+    .catalogo-filtros { grid-template-columns: 1fr; gap: 10px; }
+    .catalogo-limpiar { width: 100%; }
+    .whatsapp-btn { position: static; display: block; width: fit-content; max-width: calc(100% - 32px); margin: 20px auto 28px; padding: 14px 20px; text-align: center; }
+    .cart-panel { height: 100dvh; }
+    .cart-panel-form { max-height: 58dvh; overflow-y: auto; padding: 14px 18px calc(18px + env(safe-area-inset-bottom)); }
+    .cart-panel-header, .cart-panel-body { padding-inline: 18px; }
+    .cart-panel-form input, .cart-panel-form textarea { font-size: 16px; }
+    .cart-close { width: 44px; }
+}
+@media (max-width: 380px) {
+    .site-nav { gap: 3px 10px; }
+    .cart-panel-form { max-height: 62dvh; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .producto, .card-ritual img, .site-nav a, .cart-panel, .whatsapp-btn, .btn-pack-personalizado, .pack-consulta-btn { transition: none !important; }
+}
 
 @media (max-width: 480px) {
     .cart-icon-btn { top: 15px; right: 15px; width: 44px; height: 44px; }
     .cart-icon-btn svg { width: 19px; height: 19px; }
-    .whatsapp-btn { bottom: 20px; right: 20px; padding: 13px 18px; font-size: 0.65rem; }
+    .whatsapp-btn { padding: 14px 18px; font-size: 0.75rem; }
     .qty-btn { width: 38px; height: 38px; }
+}
+
+.rituales-complementarios, .comparativa, .crema-section, .faq-section, .proximamente { scroll-margin-top: 88px; }
+.rituales-complementarios-titulo, .overlay h3, .mascarilla-opcion-individual h3, .mascarilla-opcion-pack h3,
+.crema-titulo, .comparativa-box h3, .proximamente h2 { font-family: 'Cinzel', serif; }
+.rituales-complementarios-titulo, .overlay h3, .crema-subtitulo, .crema-complemento,
+.crema-precio, .precio-final, .pack-precio-final--dorado, .precio-opcion, .precio-pack,
+.launch-badge, .ingredientes-tag, .tip-profesional-label { color: var(--dorado); }
+.tag-premium, .peso-tag, .personaliza-block label, .mascarilla-opcion-individual span { color: #5e5b55; }
+.ingredientes-tag, .pack-card--premium .pack-precios { border-color: #e6dece; }
+.rituales-complementarios-subtitulo, .mascarilla-opcion-individual .precio-opcion,
+.mascarilla-opcion-pack h3 { color: #514d46; }
+.mascarilla-ahorro { color: var(--bosque); }
+.mascarilla-pack-badge { background: var(--dorado); }
+.consulta-gratis-box { border: 1px solid #d6c8ac; }
+.btn-pack-personalizado { background: var(--oscuro); border: 1px solid var(--oscuro); border-radius: 2px; box-shadow: none; }
+.btn-pack-personalizado:hover { background: var(--bosque); border-color: var(--bosque); box-shadow: 0 6px 18px rgba(33,31,26,0.16); }
+.comparativa-box h3 { letter-spacing: 1.5px; }
+.proximamente h2 { letter-spacing: 2px; }
+.cart-panel-form label { color: #514d46; }
+.launch-badge, .tag-premium, .peso-tag, .ingredientes-tag { font-size: max(0.72rem, 11.5px); letter-spacing: 1px; }
+.producto, .pack-card, .mascarilla-opcion-individual, .mascarilla-opcion-pack { min-width: 0; }
+.cart-panel-form form { margin: 0; }
+.cart-panel-form [hidden] { display: none; }
+@media (max-width: 700px) {
+    .whatsapp-btn { letter-spacing: 1px; font-size: 0.75rem; }
+    .faq-section, .rituales-complementarios, .comparativa, .crema-section, .proximamente { scroll-margin-top: 110px; }
 }
 </style>
 </head>
 <body>
 
+<a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
 <header>
     <h1>Art & Love</h1>
     <div class="linea-decor"></div>
     <p class="slogan-principal">LA MEJOR INVERSIÓN ES TU PROPIO CUIDADO PERSONAL</p>
 </header>
 
+<nav class="site-nav" aria-label="Secciones principales">
+    <a href="#experiencias-rituales">Packs</a>
+    <a href="#buscar-jabones">Jabones</a>
+    <a href="#rituales-complementarios">Mascarillas</a>
+    <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
+    <a class="site-nav-contact" href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20Art%20%26%20Love%2C%20quisiera%20recibir%20atenci%C3%B3n%20personalizada" target="_blank" rel="noopener noreferrer">Atención personal</a>
+</nav>
+
+<main id="contenido-principal" tabindex="-1">
 <!-- ===== SECCIÓN PACKS DE EXPERIENCIAS ===== -->
 <section id="experiencias-rituales" class="rituales-section">
 
     <div class="rituales-banner">
-        <h1>"La salud de tu piel no es un lujo, es tu ritual diario"</h1>
+        <h2>"La salud de tu piel no es un lujo, es tu ritual diario"</h2>
     </div>
 
     <div class="rituales-intro">
@@ -691,6 +822,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             Todos incluyen una <strong>Muestra Gratis</strong> y una <strong>Consulta Dermatológica Personalizada</strong>.
         </p>
     </div>
+    <p class="catalogo-load-status" id="catalogo-load-status" role="status" aria-live="polite">Preparando las opciones de personalización…</p>
 
     <div class="packs-grid">
 
@@ -872,491 +1004,61 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
     </div>
 </section>
 
+<section id="buscar-jabones" class="catalogo-tools" aria-labelledby="catalogo-tools-title">
+    <h2 id="catalogo-tools-title">Encuentra tu jabón</h2>
+    <div class="catalogo-filtros">
+        <div class="catalogo-campo">
+            <label for="buscar-producto">Busca por nombre o ingrediente</label>
+            <input type="search" id="buscar-producto" placeholder="Ej. avena, coco, carbón" autocomplete="off">
+        </div>
+        <div class="catalogo-campo">
+            <label for="filtrar-linea">Filtra por línea</label>
+            <select id="filtrar-linea">
+                <option value="todas">Todas las líneas</option>
+                <option value="equilibrio">Equilibrio</option>
+                <option value="renacer">Renacer</option>
+                <option value="vitalidad">Vitalidad</option>
+            </select>
+        </div>
+        <button type="button" class="catalogo-limpiar" id="limpiar-filtros">Limpiar búsqueda</button>
+    </div>
+    <p class="catalogo-resultado" id="catalogo-resultado" role="status" aria-live="polite">Cargando el catálogo artesanal…</p>
+</section>
+
 <!-- ===== LÍNEA EQUILIBRIO ===== -->
 <div class="seccion-encabezado">
-    <div class="seccion-titulo">Línea Equilibrio</div>
-    <div class="uso-sugerido">Ritual Purificante: Detox y Equilibrio para pieles mixtas a grasas</div>
+    <h2 class="seccion-titulo" id="linea-equilibrio">Línea Equilibrio</h2>
+    <p class="uso-sugerido">Ritual Purificante: Detox y Equilibrio para pieles mixtas a grasas</p>
 </div>
-<div class="catalogo">
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/7ddZRpP5/IMG-20260422-001920.png"
-                alt="Jabón Artesanal Dulzura de Ámbar - Miel y Coco"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Miel • Coco</span>
-            <h3>Dulzura de Ámbar</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si buscas equilibrar el brillo natural de tu piel sin resecarla. La miel hidrata en profundidad mientras el coco nutre, dejando un brillo saludable, no graso. Un clásico natural usado por siglos para nutrir sin obstruir los poros.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-dulzura-de-ambar" data-name="Jabón Dulzura de Ámbar" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/xS8DJQhp/IMG-20260422-002100.png"
-                alt="Jabón Artesanal Jardín de Oro - Miel, Jazmín y Coco"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Miel • Jazmín • Coco</span>
-            <h3>Jardín de Oro</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si buscas relajación además de cuidado. El jazmín envuelve tu ritual en un aroma floral calmante, mientras la miel y el coco nutren en profundidad. Un ritual sensorial completo para desconectar del día.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-jardin-de-oro" data-name="Jabón Jardín de Oro" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/21vp313M/IMG-20260422-001649.png"
-                alt="Jabón Artesanal Diamante Negro - Carbón Activado y Mosqueta"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Carbón Activado • Mosqueta</span>
-            <h3>Diamante Negro</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si sientes tu piel con exceso de brillo o poros visibles hacia la tarde. El carbón activado atrapa impurezas desde el primer uso, dejando esa sensación de piel recién lavada por horas. Un ritual usado por siglos en la cosmética asiática para purificar sin resecar.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-diamante-negro" data-name="Jabón Diamante Negro" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/Ld6tPMRj/IMG-20260422-001753.png"
-                alt="Jabón Artesanal Esencia de Ébano - Carbón Activado y Aceite de Coco"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Carbón Activado • Aceite de Coco</span>
-            <h3>Esencia de Ébano</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si buscas una limpieza profunda sin perder la suavidad de tu piel. El coco envuelve el poder detox del carbón en una textura cremosa que no reseca. Inspirado en los rituales de balance de la cosmética tropical.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-esencia-de-ebano" data-name="Jabón Esencia de Ébano" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/5hdQFSvf/IMG-20260422-002240.png"
-                alt="Jabón Artesanal Velo Nocturno - Carbón, Leche de Coco y Cabra"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Carbón • Leche de Coco • Cabra</span>
-            <h3>Velo Nocturno</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si tu piel necesita desintoxicarse sin perder suavidad al final del día. El carbón absorbe impurezas mientras la leche de coco y cabra envuelve tu piel en cremosidad. Un ritual pensado para cerrar el día, no solo para limpiar.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-velo-nocturno" data-name="Jabón Velo Nocturno" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/S7mtSxTx/1778012576526.png"
-                alt="Jabón Artesanal Secreto de Jamaica - Flor de Jamaica"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Flor de Jamaica</span>
-            <h3>Secreto de Jamaica</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Para ti si tienes tono desigual que te gustaría equilibrar. La flor de Jamaica actúa como astringente natural, ayudando a unificar y renovar la piel con cada uso. Un secreto floral usado tradicionalmente para revitalizar la piel cansada.</p>
-            <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial — disponible por pedido especial</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20Art%20%26%20Love%2C%20quisiera%20consultar%20disponibilidad%20del%20Jabon%20Secreto%20de%20Jamaica"
-                target="_blank" rel="noopener noreferrer"
-                class="btn-reserva">CONSULTAR DISPONIBILIDAD</a>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/R4YK2P5M/1778013406282.png"
-                alt="Jabón Artesanal Destello de Cúrcuma - Cúrcuma Natural"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Cúrcuma</span>
-            <h3>Destello de Cúrcuma</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Para ti si tu piel tiende a la grasa o pierde luminosidad con facilidad. La cúrcuma equilibra la grasa natural mientras revitaliza el brillo perdido. Un ingrediente ancestral reconocido por sus propiedades purificantes.</p>
-            <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; font-style: italic; margin-bottom: 15px;">* Foto referencial — disponible por pedido especial</p>
-            <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20Art%20%26%20Love%2C%20quisiera%20consultar%20disponibilidad%20del%20Jabon%20Destello%20de%20Curcuma"
-                target="_blank" rel="noopener noreferrer"
-                class="btn-reserva">CONSULTAR DISPONIBILIDAD</a>
-        </div>
-    </div>
-
-</div>
+<div class="catalogo" data-linea="equilibrio"></div>
 
 <!-- ===== LÍNEA RENACER ===== -->
 <div class="seccion-encabezado">
-    <div class="seccion-titulo">Línea Renacer</div>
-    <div class="uso-sugerido">Nutrición Consciente: Hidratación intensiva y Calma para pieles secas o sensibles</div>
+    <h2 class="seccion-titulo" id="linea-renacer">Línea Renacer</h2>
+    <p class="uso-sugerido">Nutrición Consciente: Hidratación intensiva y Calma para pieles secas o sensibles</p>
 </div>
-<div class="catalogo">
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/ZppVTj22/IMG-20260422-001833.png"
-                alt="Jabón Artesanal Manantial de Avena - Avena, Coco y Leche de Cabra"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Avena • Coco • Leche de Cabra</span>
-            <h3>Manantial de Avena</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si necesitas exfoliar sin agredir tu piel. La avena disuelve suavemente las impurezas mientras la leche de cabra nutre en profundidad, como una segunda piel más suave. Un clásico de la cosmética natural para pieles que piden ternura, no fuerza.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-manantial-de-avena" data-name="Jabón Manantial de Avena" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/xKcn2LyF/IMG-20260422-002206.png"
-                alt="Jabón Artesanal Sábila Silvestre - Sábila, Té Verde y Coco"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Sábila • Té Verde • Coco</span>
-            <h3>Sábila Silvestre</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si tu piel se irrita con facilidad. La sábila calma al instante, mientras el té verde aporta un escudo antioxidante suave. Dos ingredientes usados por generaciones para proteger la piel del desgaste diario.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-sabila-silvestre" data-name="Jabón Sábila Silvestre" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/9XHzdgg/IMG-20260422-001731.png"
-                alt="Jabón Artesanal Seda de Montaña - Leche de Cabra, Coco y Avena"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Cabra • Coco • Avena</span>
-            <h3>Seda de Montaña</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si tu piel se siente tirante o áspera al tacto. La leche de cabra nutre en profundidad mientras la avena calma, la sensación es, literalmente, como seda sobre tu piel. Hidratación intensa para quienes necesitan más que una crema superficial.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-seda-de-montana" data-name="Jabón Seda de Montaña" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/s9tcWctF/IMG-20260422-002037.png"
-                alt="Jabón Artesanal Caricia de Caléndula - Caléndula, Avena y Coco"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Caléndula • Avena • Coco</span>
-            <h3>Caricia de Caléndula</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si tu piel se irrita con cualquier producto nuevo. La caléndula es conocida por su efecto calmante suave, ideal para pieles sensibles. Un clásico botánico usado por generaciones para sanar piel delicada.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-caricia-de-calendula" data-name="Jabón Caricia de Caléndula" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/rGnkwjkP/IMG-202145.png"
-                alt="Jabón Artesanal Lactococo Premium - Leche de Cabra y Coco"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Leche de Cabra • Coco</span>
-            <h3>Lactococo Premium</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si sientes que tu piel perdió su capacidad de retener humedad. La leche de cabra restaura la barrera natural mientras el coco nutre en profundidad. Pureza esencial para reconstruir el equilibrio de tu piel desde la raíz.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-lactococo-premium" data-name="Jabón Lactococo Premium" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/pj282c5T/1778019166729.png"
-                alt="Jabón Artesanal Pureza de Coco - Coco Nutritivo"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Coco</span>
-            <h3>Pureza de Coco</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Para ti si tu piel se reseca incluso con crema encima. El coco envuelve tu piel en una capa de suavidad absoluta que dura todo el día. Nutrición profunda pensada para los casos más exigentes de sequedad.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-pureza-de-coco" data-name="Jabón Pureza de Coco" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/hJVsMcR7/1778019390586.png"
-                alt="Jabón Artesanal Caricia de Avena - Avena Exfoliante"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Avena</span>
-            <h3>Caricia de Avena</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Para ti si quieres exfoliar pero le temes a la irritación. La avena remueve impurezas con extrema delicadeza, calmando mientras limpia. Ideal para quienes creen que exfoliar y cuidar son opuestos, aquí van juntos.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-caricia-de-avena" data-name="Jabón Caricia de Avena" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-</div>
+<div class="catalogo" data-linea="renacer"></div>
 
 <!-- ===== LÍNEA VITALIDAD ===== -->
 <div class="seccion-encabezado">
-    <div class="seccion-titulo">Línea Vitalidad</div>
-    <div class="uso-sugerido">Antioxidante Vital: Protección y Brillo natural para pieles cansadas u opacas</div>
+    <h2 class="seccion-titulo" id="linea-vitalidad">Línea Vitalidad</h2>
+    <p class="uso-sugerido">Antioxidante Vital: Protección y Brillo natural para pieles cansadas u opacas</p>
 </div>
-<div class="catalogo">
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/HTncpGJ5/IMG-20260422-001854.png"
-                alt="Jabón Artesanal Bruma Verde - Sábila, Té Verde y Coco"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Sábila • Té Verde • Coco</span>
-            <h3>Bruma Verde</h3>
-            <span class="peso-tag">100 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si buscas un jabón ligero que refresque sin resecar. Sábila y té verde se combinan para proteger tu piel con un toque energizante. Frescura antioxidante para tu rutina diaria.</p>
-            <p class="precio-final">S/ 18.00</p>
-            <div class="cart-controls" data-id="jabon-bruma-verde" data-name="Jabón Bruma Verde" data-price="18" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/qFVSy5yf/IMG-20260422-001947.png"
-                alt="Jabón Artesanal Rocío de Mosqueta - Mosqueta, Jazmín y Coco"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Mosqueta • Jazmín • Coco</span>
-            <h3>Rocío de Mosqueta</h3>
-            <span class="peso-tag">100 g</span>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si notas tu piel apagada o con signos de cansancio. La mosqueta regenera mientras el jazmín envuelve tu ritual en un aroma relajante. Un aceite tradicionalmente usado para devolver luminosidad a la piel expuesta al estrés diario.</p>
-            <p class="precio-final">S/ 18.00</p>
-            <div class="cart-controls" data-id="jabon-rocio-de-mosqueta" data-name="Jabón Rocío de Mosqueta" data-price="18" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/RTN7MHWs/IMG-20260422-002221.png"
-                alt="Jabón Artesanal Dúo Armonía - Mosqueta y Leche de Cabra"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Mosqueta & Leche de Cabra</span>
-            <h3>Dúo Armonía</h3>
-            <span class="tag-premium">Aceite de Oliva & Vitamina E</span>
-            <p class="beneficio">Para ti si quieres completar tu ritual con algo pensado para dos momentos del día. Mosqueta y leche de cabra trabajan en conjunto para un cuidado integral, mañana y noche. El complemento perfecto para no dejar tu piel a medias.</p>
-            <p class="precio-final">S/ 5.00 c/u</p>
-            <div class="cart-controls" data-id="duo-armonia" data-name="Dúo Armonía" data-price="5" data-launch="false">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/Jw2D2Fht/IMG-20260505-172416.png"
-                alt="Jabón Artesanal Elixir de Cacao - Cacao Antioxidante"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Cacao</span>
-            <h3>Elixir de Cacao</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Para ti si buscas un ritual sensorial además de efectivo. El cacao estimula la elasticidad de tu piel mientras protege del desgaste diario, con un aroma que convierte tu ducha en un momento de disfrute.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-elixir-de-cacao" data-name="Jabón Elixir de Cacao" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="producto">
-        <div class="img-box">
-            <img src="https://i.ibb.co/939y53cN/IMG-20260505-172439.png"
-                alt="Jabón Artesanal Destello de Arroz - Secreto de Arroz"
-                loading="lazy">
-        </div>
-        <div class="info">
-            <span class="ingredientes-tag">Arroz</span>
-            <h3>Destello de Arroz</h3>
-            <span class="peso-tag">150 g</span>
-            <span class="tag-premium">Aceite de Oliva, Coco & Vitamina E</span>
-            <p class="beneficio">Para ti si buscas ese acabado suave y uniforme típico de la cosmética asiática. El arroz suaviza la textura y aclara sutilmente, dejando un acabado que se siente como porcelana. Un ritual ancestral que hoy sigue siendo el secreto de piel más envidiada.</p>
-            <p class="precio-final">S/ 20.00</p>
-            <div class="cart-controls" data-id="jabon-destello-de-arroz" data-name="Jabón Destello de Arroz" data-price="20" data-launch="true">
-                <div class="qty-selector">
-                    <button type="button" class="qty-btn qty-minus" aria-label="Reducir cantidad">−</button>
-                    <span class="qty-value">1</span>
-                    <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
-                </div>
-                <button type="button" class="btn-reserva btn-add-cart">AGREGAR AL CARRITO</button>
-            </div>
-        </div>
-    </div>
-
-</div>
+<div class="catalogo" data-linea="vitalidad"></div>
 
 <!-- ===== RITUALES COMPLEMENTARIOS (MASCARILLAS) ===== -->
-<section class="rituales-complementarios">
+<section id="rituales-complementarios" class="rituales-complementarios">
     <h2 class="rituales-complementarios-titulo">Rituales Complementarios</h2>
-    <p class="rituales-complementarios-subtitulo">( Toca o pasa el mouse sobre cada imagen para descubrir sus beneficios )</p>
+    <p class="rituales-complementarios-subtitulo">Descubre los activos y beneficios de cada ritual.</p>
 
     <div class="rituales-complementarios-grid">
 
-        <div class="card-ritual">
+        <div class="card-ritual" tabindex="0">
             <img src="https://i.ibb.co/bM3QqG7Q/IMG-20260430-225920.png"
                 alt="Mascarilla Ritual Reparador - Lavanda, Manzanilla, Pepino, Miel y Baba de Caracol"
                 loading="lazy">
             <div class="overlay">
-                <h4>RITUAL REPARADOR</h4>
+                <h3>RITUAL REPARADOR</h3>
                 <p>
                     <b>Lavanda & Manzanilla:</b> Serenidad absoluta para pieles delicadas.<br>
                     <b>Pepino & Miel:</b> Hidratación acuosa y nutrición sanadora.<br>
@@ -1365,12 +1067,12 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             </div>
         </div>
 
-        <div class="card-ritual">
+        <div class="card-ritual" tabindex="0">
             <img src="https://i.ibb.co/5gYK83pS/1777607918166.png"
                 alt="Mascarilla Perfección Porcelana - Sakura, Arroz, Papaya, Pitahaya, Naranja y Leche de Cabra"
                 loading="lazy">
             <div class="overlay">
-                <h4>PERFECCIÓN PORCELANA</h4>
+                <h3>PERFECCIÓN PORCELANA</h3>
                 <p>
                     <b>Sakura & Arroz:</b> Restauración del tono y luminosidad ancestral.<br>
                     <b>Papaya, Pitahaya & Naranja:</b> Renovación exótica y vitalidad intensa.<br>
@@ -1379,12 +1081,12 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             </div>
         </div>
 
-        <div class="card-ritual">
+        <div class="card-ritual" tabindex="0">
             <img src="https://i.ibb.co/2Y3t4JWR/IMG-20260430-225936.png"
                 alt="Mascarilla Vitalidad Botánica - Lavanda, Rosas, Naranja, Aloe Vera, Fresas y Moras"
                 loading="lazy">
             <div class="overlay">
-                <h4>VITALIDAD BOTÁNICA</h4>
+                <h3>VITALIDAD BOTÁNICA</h3>
                 <p>
                     <b>Lavanda & Rosas:</b> Tonificación y relax floral profundo.<br>
                     <b>Naranja & Aloe Vera:</b> Energía cítrica y reparación calmante.<br>
@@ -1408,7 +1110,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
         <div class="mascarillas-opciones">
             <div class="mascarilla-opcion-individual">
                 <span>Individual</span>
-                <h5>1 UNIDAD</h5>
+                <h3>1 UNIDAD</h3>
                 <div class="precio-opcion">S/ 5.00</div>
                 <div class="personaliza-block personaliza-block--compact">
                     <label>Elige tu mascarilla</label>
@@ -1429,7 +1131,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             <div class="mascarilla-opcion-pack">
                 <div class="mascarilla-pack-badge">RECOMENDADO</div>
                 <span class="pack-label">Pack Semanal</span>
-                <h5>SET DE 3</h5>
+                <h3>SET DE 3</h3>
                 <div class="precio-pack">S/ 12.00</div>
                 <p class="mascarilla-ahorro">✓ Ahorras S/ 3.00</p>
                 <div class="personaliza-block personaliza-block--compact">
@@ -1489,8 +1191,8 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 style="width: 100%; height: auto; border-radius: 4px;"
                 loading="lazy">
         </div>
+        <h2 class="crema-titulo">CREMA HIDRATANTE</h2>
         <p class="crema-subtitulo">HIDRATACIÓN & SUAVIDAD</p>
-        <h3 class="crema-titulo">CREMA HIDRATANTE</h3>
         <p class="crema-complemento">EL COMPLEMENTO IDEAL</p>
         <p class="crema-descripcion">
             Para ti si tus manos muestran el desgaste del día antes que el resto de tu piel.
@@ -1514,7 +1216,7 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 <div class="comparativa">
     <div class="grid-comparativa">
         <div class="comparativa-box">
-            <h4>El Secreto Artesanal</h4>
+            <h3>El Secreto Artesanal</h3>
             <ul class="comparativa-list">
                 <li>Glicerina natural que retiene la hidratación de tu piel de forma prolongada.</li>
                 <li>Base de aceite de oliva y vitamina E pura, sin rellenos ni ingredientes de relleno.</li>
@@ -1522,8 +1224,8 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
                 <li>Resistentes a la humedad: no pierden su forma ni se "derriten" como el jabón industrial.</li>
             </ul>
         </div>
-        <div class="comparativa-box" style="opacity: 0.5;">
-            <h4>Jabones Industriales</h4>
+        <div class="comparativa-box">
+            <h3>Jabones Industriales</h3>
             <ul class="comparativa-list">
                 <li>Detergentes sintéticos que resecan y envejecen.</li>
                 <li>Contienen parabenos y derivados del petróleo.</li>
@@ -1541,9 +1243,9 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 </div>
 
 <!-- ===== FAQ (NUEVA SECCIÓN) ===== -->
-<section class="faq-section">
-    <div class="seccion-titulo" style="font-size:1.6rem;">Preguntas Frecuentes</div>
-    <div class="uso-sugerido">Todo lo que necesitas saber antes de tu ritual</div>
+<section id="preguntas-frecuentes" class="faq-section">
+    <h2 class="seccion-titulo">Preguntas Frecuentes</h2>
+    <p class="uso-sugerido">Todo lo que necesitas saber antes de tu ritual</p>
 
     <div class="faq-list">
 
@@ -1619,12 +1321,13 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
 
     </div>
 </section>
+</main>
 
 <!-- ===== FOOTER ===== -->
 <footer>
     <div class="footer-grid">
         <div class="footer-section">
-            <h4>ART & LOVE</h4>
+            <h3>ART & LOVE</h3>
             <p>Elevando tu cuidado diario a un ritual de bienestar.</p>
             <div class="footer-social">
                 <a href="https://www.instagram.com/art.and.love.ofc?igsh=MTF2MGh2ZjB2ODZm" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
@@ -1633,50 +1336,52 @@ footer { background: var(--oscuro); color: #888; padding: 80px 10% 40px; text-al
             </div>
         </div>
         <div class="footer-section">
-            <h4>CONCIERGE</h4>
+            <h3>ATENCIÓN PERSONAL</h3>
             <p>Atención personalizada<br>+51 931379225</p>
         </div>
     </div>
+    <a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20me%20gustaria%20recibir%20atencion%20personalizada%20de%20Art%20%26%20Love"
+        class="whatsapp-btn" target="_blank" rel="noopener noreferrer">CONSULTAR POR WHATSAPP</a>
     <div class="copyright">
         &copy; 2026 Art & Love. Todos los derechos reservados.
     </div>
 </footer>
 
-<a href="https://api.whatsapp.com/send?phone=51931379225&text=Hola%20me%20gustaria%20recibir%20atencion%20personalizada%20de%20Art%20%26%20Love"
-    class="whatsapp-btn">WHATSAPP CONCIERGE</a>
-
 <!-- ===== CARRITO FLOTANTE ===== -->
-<button type="button" id="cart-float-btn" class="cart-icon-btn" aria-label="Ver mi pedido">
+<button type="button" id="cart-float-btn" class="cart-icon-btn" aria-label="Ver mi pedido" aria-controls="cart-panel" aria-expanded="false">
     <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
         <path d="M6 6h15l-1.5 9h-12L6 6zM6 6L5 3H2"/>
         <circle class="cart-icon-wheel" cx="9.5" cy="20" r="1.4"/>
         <circle class="cart-icon-wheel" cx="17.5" cy="20" r="1.4"/>
     </svg>
-    <span class="cart-count" id="cart-count">0</span>
+    <span class="cart-count" id="cart-count" aria-live="polite" aria-atomic="true">0</span>
 </button>
 
-<div class="cart-overlay" id="cart-overlay"></div>
-<div class="cart-panel" id="cart-panel">
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+<div class="cart-panel" id="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-panel-title" aria-hidden="true" inert tabindex="-1">
     <div class="cart-panel-header">
-        <h3>Tu Pedido</h3>
+        <h3 id="cart-panel-title">Tu Pedido</h3>
         <button type="button" class="cart-close" id="cart-close-btn" aria-label="Cerrar carrito">&times;</button>
     </div>
     <div class="cart-panel-body" id="cart-items-list">
         <p class="cart-empty">Tu carrito está vacío. Agrega algún ritual para comenzar.</p>
     </div>
     <div class="cart-panel-form">
-        <div class="cart-total-row">
-            <span>Total</span>
-            <span id="cart-total-row-value">S/ 0.00</span>
-        </div>
-        <label for="cart-nombre">Nombre completo *</label>
-        <input type="text" id="cart-nombre" placeholder="Tu nombre y apellido">
-        <label for="cart-direccion">Dirección de envío / Distrito *</label>
-        <input type="text" id="cart-direccion" placeholder="Ej: Surco, Lima">
-        <label for="cart-nota">Nota especial (opcional)</label>
-        <textarea id="cart-nota" placeholder="Ej: Es para regalo, quiero una dedicatoria que diga..."></textarea>
-        <p class="cart-form-error" id="cart-form-error"></p>
-        <button type="button" class="btn-confirmar-pedido" id="cart-confirmar-btn">Confirmar Pedido por WhatsApp</button>
+        <form id="cart-checkout-form" novalidate>
+            <div class="cart-total-row">
+                <span>Total</span>
+                <span id="cart-total-row-value">S/ 0.00</span>
+            </div>
+            <label for="cart-nombre">Nombre completo *</label>
+            <input type="text" id="cart-nombre" name="name" autocomplete="name" maxlength="120" placeholder="Tu nombre y apellido" required>
+            <label for="cart-direccion">Dirección de envío / Distrito *</label>
+            <input type="text" id="cart-direccion" name="address" autocomplete="address-line1" maxlength="200" placeholder="Ej: Surco, Lima" required>
+            <label for="cart-nota">Nota especial (opcional)</label>
+            <textarea id="cart-nota" name="note" maxlength="500" placeholder="Ej: Es para regalo, quiero una dedicatoria que diga..."></textarea>
+            <p class="cart-form-error" id="cart-form-error" role="alert" aria-live="assertive"></p>
+            <p class="cart-storage-warning" id="cart-storage-warning" role="status" hidden></p>
+            <button type="submit" class="btn-confirmar-pedido" id="cart-confirmar-btn">Confirmar Pedido por WhatsApp</button>
+        </form>
     </div>
 </div>
 
@@ -1707,11 +1412,8 @@ const MAX_QTY_PER_ITEM = 5;
    Agregar un jabón nuevo es solo sumarlo a su línea aquí abajo;
    ningún <select> del HTML necesita tocarse.
    ============================================================ */
-const CATALOGO_JABONES = {
-    Equilibrio: ['Dulzura de Ámbar', 'Jardín de Oro', 'Diamante Negro', 'Esencia de Ébano', 'Velo Nocturno'],
-    Renacer: ['Manantial de Avena', 'Sábila Silvestre', 'Seda de Montaña', 'Caricia de Caléndula', 'Lactococo Premium', 'Pureza de Coco', 'Caricia de Avena'],
-    Vitalidad: ['Bruma Verde', 'Rocío de Mosqueta', 'Elixir de Cacao', 'Destello de Arroz'],
-};
+let CATALOGO_JABONES = {};
+let selectoresInicializados = false;
 
 /* Cada mascarilla tiene 3 combinaciones de activos a elegir dentro de ella
    (igual que la relación Línea → Jabones de arriba). */
@@ -1725,7 +1427,7 @@ const CATALOGO_MASCARILLAS = {
    CAPA DE PRESENTACIÓN (UI) — solo lee del modelo de arriba,
    nunca contiene nombres de producto hardcodeados.
    ============================================================ */
-const crearOpciones = (lista) => lista.map((valor) => `<option value="${valor}">${valor}</option>`).join('');
+const crearOpciones = (lista) => lista.map((valor) => new Option(valor, valor));
 
 /* Repuebla un <select> "hijo" según el valor elegido en su <select> "padre" hermano.
    Sirve tanto para Línea → Jabón como para Tipo de mascarilla → Activos. */
@@ -1734,25 +1436,27 @@ const actualizarSelectDependiente = (selectPadre, catalogo, claseHijo) => {
     if (!selectHijo || !selectHijo.classList.contains(claseHijo)) return;
     const valorPrevio = selectHijo.value;
     const opciones = catalogo[selectPadre.value] || [];
-    selectHijo.innerHTML = crearOpciones(opciones);
+    selectHijo.replaceChildren(...crearOpciones(opciones));
     if (opciones.includes(valorPrevio)) selectHijo.value = valorPrevio;
 };
 
 function poblarSelectores() {
+    if (selectoresInicializados) return;
     const opcionesLinea = crearOpciones(Object.keys(CATALOGO_JABONES));
     const opcionesTipoMascarilla = crearOpciones(Object.keys(CATALOGO_MASCARILLAS));
 
     document.querySelectorAll('.select-linea').forEach((selectLinea) => {
-        selectLinea.innerHTML = opcionesLinea;
+        selectLinea.replaceChildren(...opcionesLinea.map((option) => option.cloneNode(true)));
         actualizarSelectDependiente(selectLinea, CATALOGO_JABONES, 'select-jabon');
         selectLinea.addEventListener('change', () => actualizarSelectDependiente(selectLinea, CATALOGO_JABONES, 'select-jabon'));
     });
 
     document.querySelectorAll('.select-mascarilla-tipo').forEach((selectTipo) => {
-        selectTipo.innerHTML = opcionesTipoMascarilla;
+        selectTipo.replaceChildren(...opcionesTipoMascarilla.map((option) => option.cloneNode(true)));
         actualizarSelectDependiente(selectTipo, CATALOGO_MASCARILLAS, 'select-mascarilla');
         selectTipo.addEventListener('change', () => actualizarSelectDependiente(selectTipo, CATALOGO_MASCARILLAS, 'select-mascarilla'));
     });
+    selectoresInicializados = true;
 }
 
 /* Lee las elecciones de jabón/mascarilla dentro de la misma tarjeta del producto */
@@ -1802,17 +1506,256 @@ function aplicarDescuentoLanzamiento() {
     });
 }
 
+const LINEAS_JABONES = new Set(['equilibrio', 'renacer', 'vitalidad']);
+
+function validarCatalogoJabones(productos) {
+    if (!Array.isArray(productos) || productos.length === 0) {
+        throw new Error('El catálogo debe ser una lista con al menos un jabón.');
+    }
+
+    const ids = new Set();
+    productos.forEach((producto, indice) => {
+        const requerido = ['id', 'name', 'cartName', 'line', 'image', 'alt', 'ingredients', 'description'];
+        if (!producto || typeof producto !== 'object' ||
+            requerido.some((campo) => typeof producto[campo] !== 'string' || !producto[campo].trim())) {
+            throw new Error('El jabón #' + (indice + 1) + ' tiene campos de texto vacíos o inválidos.');
+        }
+        if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(producto.id) || ids.has(producto.id)) {
+            throw new Error('El identificador "' + producto.id + '" no es válido o está repetido.');
+        }
+        ids.add(producto.id);
+        if (!LINEAS_JABONES.has(producto.line)) {
+            throw new Error('El jabón "' + producto.name + '" utiliza una línea desconocida.');
+        }
+
+        let imagenValida = false;
+        try {
+            const urlImagen = new URL(producto.image, window.location.href);
+            imagenValida = urlImagen.protocol === 'https:' ||
+                (urlImagen.origin === window.location.origin && !producto.image.startsWith('/') &&
+                    !producto.image.includes('..') && !producto.image.includes('\\'));
+        } catch (error) {
+            imagenValida = false;
+        }
+        if (!imagenValida) throw new Error('La fotografía del jabón "' + producto.name + '" no tiene una ruta segura.');
+        if (producto.availability === 'available') {
+            if (!Number.isFinite(producto.price) || producto.price <= 0 || typeof producto.launch !== 'boolean') {
+                throw new Error('El jabón "' + producto.name + '" debe tener un precio positivo y estado de oferta válido.');
+            }
+        } else if (producto.availability === 'inquiry') {
+            if (producto.price !== null || producto.launch !== false) {
+                throw new Error('El jabón "' + producto.name + '" de consulta no debe tener precio ni oferta.');
+            }
+        } else {
+            throw new Error('El jabón "' + producto.name + '" debe indicar disponibilidad "available" o "inquiry".');
+        }
+    });
+
+    return productos;
+}
+
+function crearElemento(tag, clase, texto) {
+    const elemento = document.createElement(tag);
+    if (clase) elemento.className = clase;
+    if (texto !== undefined) elemento.textContent = texto;
+    return elemento;
+}
+
+function crearTarjetaJabon(producto) {
+    const tarjeta = crearElemento('article', 'producto');
+    tarjeta.dataset.productId = producto.id;
+    tarjeta.dataset.line = producto.line;
+
+    const cuadroImagen = crearElemento('div', 'img-box');
+    const imagen = document.createElement('img');
+    imagen.src = producto.image;
+    imagen.alt = producto.alt;
+    imagen.loading = 'lazy';
+    imagen.decoding = 'async';
+    cuadroImagen.appendChild(imagen);
+    tarjeta.appendChild(cuadroImagen);
+
+    const info = crearElemento('div', 'info');
+    info.appendChild(crearElemento('span', 'ingredientes-tag', producto.ingredients));
+    info.appendChild(crearElemento('h3', '', producto.name));
+    if (producto.size) info.appendChild(crearElemento('span', 'peso-tag', producto.size));
+    if (producto.tag) info.appendChild(crearElemento('span', 'tag-premium', producto.tag));
+    info.appendChild(crearElemento('p', 'beneficio', producto.description));
+
+    if (producto.availability === 'inquiry') {
+        info.appendChild(crearElemento('p', 'precio-consulta', 'Disponibilidad y precio por confirmar'));
+        const enlace = crearElemento('a', 'btn-reserva', 'Consultar disponibilidad');
+        enlace.href = 'https://api.whatsapp.com/send?phone=' + WHATSAPP_PHONE +
+            '&text=' + encodeURIComponent('Hola Art & Love, quisiera consultar la disponibilidad de ' + producto.name + '.');
+        enlace.target = '_blank';
+        enlace.rel = 'noopener noreferrer';
+        info.appendChild(enlace);
+    } else {
+        const precio = crearElemento('p', 'precio-final', 'S/ ' + formatPrice(producto.price));
+        info.appendChild(precio);
+
+        const controles = crearElemento('div', 'cart-controls');
+        controles.dataset.id = producto.id;
+        controles.dataset.name = producto.cartName;
+        controles.dataset.price = producto.price;
+        controles.dataset.launch = String(producto.launch);
+
+        const selector = crearElemento('div', 'qty-selector');
+        const menos = crearElemento('button', 'qty-btn qty-minus', '−');
+        menos.type = 'button';
+        menos.setAttribute('aria-label', 'Reducir cantidad de ' + producto.name);
+        const cantidad = crearElemento('span', 'qty-value', '1');
+        cantidad.setAttribute('aria-live', 'polite');
+        const mas = crearElemento('button', 'qty-btn qty-plus', '+');
+        mas.type = 'button';
+        mas.setAttribute('aria-label', 'Aumentar cantidad de ' + producto.name);
+        selector.append(menos, cantidad, mas);
+        controles.appendChild(selector);
+
+        const agregar = crearElemento('button', 'btn-reserva btn-add-cart', 'Agregar al pedido');
+        agregar.type = 'button';
+        agregar.setAttribute('aria-label', 'Agregar ' + producto.name + ' al pedido');
+        controles.appendChild(agregar);
+        info.appendChild(controles);
+    }
+
+    tarjeta.appendChild(info);
+    return tarjeta;
+}
+
+async function cargarCatalogoJabones() {
+    const resultado = document.getElementById('catalogo-resultado');
+    const estadoPacks = document.getElementById('catalogo-load-status');
+    actualizarDisponibilidadPacks(false);
+    estadoPacks.hidden = false;
+    estadoPacks.textContent = 'Preparando las opciones de personalización…';
+    resultado.textContent = 'Cargando el catálogo artesanal…';
+    try {
+        const respuesta = await fetch('data/jabones.json', { cache: 'no-cache' });
+        if (!respuesta.ok) throw new Error('El servidor respondió con estado ' + respuesta.status + '.');
+
+        const productos = validarCatalogoJabones(await respuesta.json());
+        const porLinea = {};
+        productos.forEach((producto) => {
+            (porLinea[producto.line] ||= []).push(producto);
+        });
+        document.querySelectorAll('.catalogo[data-linea]').forEach((catalogo) => {
+            const lista = porLinea[catalogo.dataset.linea] || [];
+            catalogo.replaceChildren(...lista.map(crearTarjetaJabon));
+        });
+        CATALOGO_JABONES = Object.fromEntries(
+            Object.entries(porLinea).map(([linea, lista]) => [
+                linea.charAt(0).toUpperCase() + linea.slice(1),
+                lista.filter((producto) => producto.availability === 'available' && producto.selectable !== false)
+                    .map((producto) => producto.name),
+            ])
+        );
+        return true;
+    } catch (error) {
+        console.error('No se pudo cargar el catálogo de jabones.', error);
+        estadoPacks.textContent = 'No se pudieron cargar las opciones. La personalización de packs está pausada; reintenta desde «Encuentra tu jabón».';
+        const mensaje = crearElemento('span', '', 'No pudimos cargar los jabones. Comprueba tu conexión e inténtalo de nuevo.');
+        const reintentar = crearElemento('button', 'btn-reserva', 'Reintentar');
+        reintentar.type = 'button';
+        reintentar.addEventListener('click', inicializarCatalogo);
+        resultado.replaceChildren(mensaje, document.createTextNode(' '), reintentar);
+        return false;
+    }
+}
+
+function actualizarDisponibilidadPacks(disponible) {
+    document.querySelectorAll(
+        '.pack-card .btn-add-cart, .mascarilla-opcion-individual .btn-add-cart, .mascarilla-opcion-pack .btn-add-cart'
+    ).forEach((boton) => {
+        boton.disabled = !disponible;
+    });
+}
+
+function normalizarTextoCatalogo(texto) {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+}
+
+function filtrarCatalogo() {
+    const consulta = normalizarTextoCatalogo(document.getElementById('buscar-producto').value.trim());
+    const lineaElegida = document.getElementById('filtrar-linea').value;
+    let visibles = 0;
+    let total = 0;
+
+    document.querySelectorAll('.catalogo[data-linea]').forEach(function (catalogo) {
+        let visiblesEnLinea = 0;
+        catalogo.querySelectorAll('.producto').forEach(function (producto) {
+            total += 1;
+            const info = producto.querySelector('.info');
+            const imagen = producto.querySelector('img');
+            const contenido = normalizarTextoCatalogo(
+                (info ? info.textContent : '') + ' ' +
+                (imagen ? imagen.alt : '')
+            );
+            const coincide = (lineaElegida === 'todas' || catalogo.dataset.linea === lineaElegida) &&
+                (!consulta || contenido.includes(consulta));
+            producto.hidden = !coincide;
+            if (coincide) {
+                visibles += 1;
+                visiblesEnLinea += 1;
+            }
+        });
+
+        catalogo.hidden = visiblesEnLinea === 0;
+        const encabezado = catalogo.previousElementSibling;
+        if (encabezado && encabezado.classList.contains('seccion-encabezado')) {
+            encabezado.hidden = visiblesEnLinea === 0;
+        }
+    });
+
+    const resultado = document.getElementById('catalogo-resultado');
+    if (visibles === 0) {
+        resultado.textContent = 'No encontramos jabones con esos criterios. Prueba otra búsqueda o limpia los filtros.';
+    } else if (visibles === total) {
+        resultado.textContent = visibles + (visibles === 1 ? ' jabón en el catálogo' : ' jabones en el catálogo');
+    } else {
+        resultado.textContent = 'Mostrando ' + visibles + (visibles === 1 ? ' jabón' : ' jabones') + ' de ' + total + '.';
+    }
+}
+
 /* ===== CARRITO ===== */
 let cart = [];
+let avisoPersistenciaCarrito = '';
 
 function cargarCarrito() {
     try {
         const guardado = localStorage.getItem('artlove_cart');
-        if (guardado) cart = JSON.parse(guardado);
-    } catch (e) { cart = []; }
+        if (!guardado) return;
+
+        const parseado = JSON.parse(guardado);
+        if (!Array.isArray(parseado)) throw new Error('El formato del pedido guardado no es válido.');
+
+        cart = parseado.filter(function (item) {
+            return item && typeof item.id === 'string' && item.id.length <= 500 &&
+                typeof item.name === 'string' && item.name.length <= 160 &&
+                Number.isFinite(item.price) && item.price > 0 && item.price < 1000000 &&
+                Number.isInteger(item.qty) && item.qty > 0 && item.qty <= MAX_QTY_PER_ITEM &&
+                (item.detail === undefined || (typeof item.detail === 'string' && item.detail.length <= 1500));
+        }).map(function (item) {
+            return { id: item.id, name: item.name, price: item.price, qty: item.qty, detail: item.detail || '' };
+        });
+
+        if (cart.length !== parseado.length) {
+            avisoPersistenciaCarrito = 'Se omitieron artículos guardados con datos incompletos. Revisa tu pedido antes de continuar.';
+        }
+    } catch (error) {
+        console.warn('No se pudo recuperar el pedido guardado.', error);
+        cart = [];
+        avisoPersistenciaCarrito = 'No se pudo recuperar tu pedido anterior; el carrito está vacío. Puedes volver a agregar tus productos.';
+    }
 }
 function guardarCarrito() {
-    try { localStorage.setItem('artlove_cart', JSON.stringify(cart)); } catch (e) {}
+    try {
+        localStorage.setItem('artlove_cart', JSON.stringify(cart));
+        avisoPersistenciaCarrito = '';
+    } catch (error) {
+        console.error('No se pudo guardar el pedido en este navegador.', error);
+        avisoPersistenciaCarrito = 'El pedido seguirá disponible mientras esta página permanezca abierta, pero no se pudo guardar para después.';
+    }
 }
 function addToCart(id, name, price, qty, detail) {
     const existente = cart.find(function (i) { return i.id === id; });
@@ -1849,40 +1792,164 @@ function renderCarrito() {
 
     const body = document.getElementById('cart-items-list');
     if (body) {
+        body.replaceChildren();
         if (cart.length === 0) {
-            body.innerHTML = '<p class="cart-empty">Tu carrito está vacío. Agrega algún ritual para comenzar.</p>';
+            const emptyMessage = document.createElement('p');
+            emptyMessage.className = 'cart-empty';
+            emptyMessage.textContent = 'Tu carrito está vacío. Agrega algún ritual para comenzar.';
+            body.appendChild(emptyMessage);
         } else {
-            body.innerHTML = cart.map(function (item) {
-                return '<div class="cart-item">' +
-                    '<div class="cart-item-info">' +
-                        '<div class="cart-item-name">' + item.name + '</div>' +
-                        (item.detail ? '<div class="cart-item-detail">' + item.detail + '</div>' : '') +
-                        '<div class="cart-item-price">S/ ' + formatPrice(item.price) + ' c/u</div>' +
-                    '</div>' +
-                    '<div class="cart-item-actions">' +
-                        '<button type="button" class="qty-btn" onclick="cambiarCantidadCarrito(\'' + item.id + '\', -1)">−</button>' +
-                        '<span class="qty-value">' + item.qty + '</span>' +
-                        '<button type="button" class="qty-btn" onclick="cambiarCantidadCarrito(\'' + item.id + '\', 1)"' + (item.qty >= MAX_QTY_PER_ITEM ? ' style="opacity:0.35;cursor:not-allowed;" title="Máximo 5 unidades"' : '') + '>+</button>' +
-                        '<button type="button" class="cart-item-remove" onclick="quitarDelCarrito(\'' + item.id + '\')" aria-label="Eliminar">&times;</button>' +
-                    '</div>' +
-                '</div>';
-            }).join('');
+            cart.forEach(function (item) {
+                const row = document.createElement('div');
+                row.className = 'cart-item';
+
+                const info = document.createElement('div');
+                info.className = 'cart-item-info';
+
+                const name = document.createElement('div');
+                name.className = 'cart-item-name';
+                name.textContent = item.name;
+                info.appendChild(name);
+
+                if (item.detail) {
+                    const detail = document.createElement('div');
+                    detail.className = 'cart-item-detail';
+                    detail.textContent = item.detail;
+                    info.appendChild(detail);
+                }
+
+                const price = document.createElement('div');
+                price.className = 'cart-item-price';
+                price.textContent = 'S/ ' + formatPrice(item.price) + ' c/u';
+                info.appendChild(price);
+
+                const actions = document.createElement('div');
+                actions.className = 'cart-item-actions';
+
+                const decrease = document.createElement('button');
+                decrease.type = 'button';
+                decrease.className = 'qty-btn';
+                decrease.setAttribute('aria-label', 'Reducir cantidad');
+                decrease.dataset.cartAction = 'decrease';
+                decrease.dataset.cartId = item.id;
+                decrease.textContent = '−';
+                actions.appendChild(decrease);
+
+                const quantity = document.createElement('span');
+                quantity.className = 'qty-value';
+                quantity.textContent = item.qty;
+                actions.appendChild(quantity);
+
+                const increase = document.createElement('button');
+                increase.type = 'button';
+                increase.className = 'qty-btn';
+                increase.setAttribute('aria-label', item.qty >= MAX_QTY_PER_ITEM ? 'Cantidad máxima alcanzada' : 'Aumentar cantidad');
+                increase.dataset.cartAction = 'increase';
+                increase.dataset.cartId = item.id;
+                increase.disabled = item.qty >= MAX_QTY_PER_ITEM;
+                if (increase.disabled) increase.title = 'Máximo 5 unidades';
+                increase.textContent = '+';
+                actions.appendChild(increase);
+
+                const remove = document.createElement('button');
+                remove.type = 'button';
+                remove.className = 'cart-item-remove';
+                remove.setAttribute('aria-label', 'Eliminar artículo del pedido');
+                remove.dataset.cartAction = 'remove';
+                remove.dataset.cartId = item.id;
+                remove.textContent = '×';
+                actions.appendChild(remove);
+
+                row.append(info, actions);
+                body.appendChild(row);
+            });
         }
     }
     const totalRow = document.getElementById('cart-total-row-value');
     if (totalRow) totalRow.textContent = 'S/ ' + formatPrice(totalCarrito());
+    const aviso = document.getElementById('cart-storage-warning');
+    if (aviso) {
+        aviso.textContent = avisoPersistenciaCarrito;
+        aviso.hidden = !avisoPersistenciaCarrito;
+    }
 }
 function abrirCarrito() {
-    document.getElementById('cart-overlay').classList.add('abierto');
-    document.getElementById('cart-panel').classList.add('abierto');
+    const overlay = document.getElementById('cart-overlay');
+    const panel = document.getElementById('cart-panel');
+    const trigger = document.getElementById('cart-float-btn');
+
+    overlay.classList.add('abierto');
+    panel.classList.add('abierto');
+    overlay.setAttribute('aria-hidden', 'false');
+    panel.removeAttribute('inert');
+    panel.setAttribute('aria-hidden', 'false');
+    trigger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+
+    Array.from(document.body.children).forEach(function (child) {
+        if (child !== overlay && child !== panel && child.tagName !== 'SCRIPT') {
+            child.inert = true;
+        }
+    });
+    document.getElementById('cart-close-btn').focus();
 }
 function cerrarCarrito() {
-    document.getElementById('cart-overlay').classList.remove('abierto');
-    document.getElementById('cart-panel').classList.remove('abierto');
+    const overlay = document.getElementById('cart-overlay');
+    const panel = document.getElementById('cart-panel');
+    const trigger = document.getElementById('cart-float-btn');
+
+    if (!panel.classList.contains('abierto')) return;
+
+    overlay.classList.remove('abierto');
+    panel.classList.remove('abierto');
+    overlay.setAttribute('aria-hidden', 'true');
+    panel.setAttribute('aria-hidden', 'true');
+    panel.setAttribute('inert', '');
+    trigger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+
+    Array.from(document.body.children).forEach(function (child) {
+        child.inert = false;
+    });
+    trigger.focus();
+}
+function gestionarTecladoCarrito(event) {
+    const panel = document.getElementById('cart-panel');
+    if (!panel.classList.contains('abierto')) return;
+
+    if (event.key === 'Escape') {
+        event.preventDefault();
+        cerrarCarrito();
+        return;
+    }
+    if (event.key !== 'Tab') return;
+
+    const elementosEnfocables = Array.from(panel.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )).filter(function (element) {
+        return element.offsetParent !== null;
+    });
+    if (!elementosEnfocables.length) {
+        event.preventDefault();
+        panel.focus();
+        return;
+    }
+
+    const primero = elementosEnfocables[0];
+    const ultimo = elementosEnfocables[elementosEnfocables.length - 1];
+    if (event.shiftKey && (document.activeElement === primero || document.activeElement === panel)) {
+        event.preventDefault();
+        ultimo.focus();
+    } else if (!event.shiftKey && document.activeElement === ultimo) {
+        event.preventDefault();
+        primero.focus();
+    }
 }
 function confirmarPedido() {
-    const nombre = document.getElementById('cart-nombre').value.trim();
-    const direccion = document.getElementById('cart-direccion').value.trim();
+    const nombreEl = document.getElementById('cart-nombre');
+    const direccionEl = document.getElementById('cart-direccion');
+    const nombre = nombreEl.value.trim();
+    const direccion = direccionEl.value.trim();
     const nota = document.getElementById('cart-nota').value.trim();
     const errorEl = document.getElementById('cart-form-error');
 
@@ -1891,9 +1958,19 @@ function confirmarPedido() {
         errorEl.style.display = 'block';
         return;
     }
-    if (!nombre || !direccion) {
-        errorEl.textContent = 'Por favor completa tu nombre y tu dirección/distrito.';
+    const camposInvalidos = [
+        { campo: nombreEl, invalido: !nombre },
+        { campo: direccionEl, invalido: !direccion },
+    ];
+    camposInvalidos.forEach(function (item) {
+        if (item.invalido) item.campo.setAttribute('aria-invalid', 'true');
+        else item.campo.removeAttribute('aria-invalid');
+    });
+    const primerCampoInvalido = camposInvalidos.find(function (item) { return item.invalido; });
+    if (primerCampoInvalido) {
+        errorEl.textContent = 'Completa los campos marcados para continuar con tu pedido por WhatsApp.';
         errorEl.style.display = 'block';
+        primerCampoInvalido.campo.focus();
         return;
     }
     errorEl.style.display = 'none';
@@ -1917,6 +1994,28 @@ function confirmarPedido() {
     window.open(url, '_blank', 'noopener,noreferrer');
 }
 
+function mostrarImagenNoDisponible(imagen) {
+    const contenedor = imagen.closest('.img-box, .pack-card, .card-ritual, .crema-img-wrap') || imagen.parentElement;
+    if (!contenedor || contenedor.querySelector('.imagen-fallback')) return;
+
+    const fallback = document.createElement('div');
+    fallback.className = 'imagen-fallback';
+    fallback.setAttribute('role', 'img');
+    fallback.setAttribute('aria-label', imagen.alt || 'Imagen del producto no disponible');
+    fallback.textContent = 'Fotografía temporalmente no disponible';
+    imagen.hidden = true;
+    imagen.insertAdjacentElement('afterend', fallback);
+}
+
+function activarFallbackImagenes() {
+    document.querySelectorAll('img').forEach(function (imagen) {
+        if (imagen.dataset.fallbackListener) return;
+        imagen.dataset.fallbackListener = 'true';
+        imagen.addEventListener('error', function () { mostrarImagenNoDisponible(imagen); });
+        if (imagen.complete && imagen.currentSrc && imagen.naturalWidth === 0) mostrarImagenNoDisponible(imagen);
+    });
+}
+
 function mostrarLimiteStock(qtySelectorEl) {
     let toast = qtySelectorEl.querySelector('.qty-limit-toast');
     if (!toast) {
@@ -1930,54 +2029,86 @@ function mostrarLimiteStock(qtySelectorEl) {
     toast._timer = setTimeout(function () { toast.classList.remove('mostrar'); }, 1600);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+async function inicializarCatalogo() {
+    if (!await cargarCatalogoJabones()) return;
+    activarFallbackImagenes();
     poblarSelectores();
-    cargarCarrito();
+    actualizarDisponibilidadPacks(true);
+    document.getElementById('catalogo-load-status').hidden = true;
     aplicarDescuentoLanzamiento();
+    filtrarCatalogo();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+    cargarCarrito();
     renderCarrito();
-
-    document.querySelectorAll('.cart-controls').forEach(function (ctrl) {
-        const qtyValue = ctrl.querySelector('.qty-value');
-        const qtySelectorEl = ctrl.querySelector('.qty-selector');
-        const minus = ctrl.querySelector('.qty-minus');
-        const plus = ctrl.querySelector('.qty-plus');
-        const addBtn = ctrl.querySelector('.btn-add-cart');
-
-        if (minus) minus.addEventListener('click', function () {
-            let v = parseInt(qtyValue.textContent, 10);
-            if (v > 1) qtyValue.textContent = v - 1;
-        });
-        if (plus) plus.addEventListener('click', function () {
-            let v = parseInt(qtyValue.textContent, 10);
-            if (v < MAX_QTY_PER_ITEM) {
-                qtyValue.textContent = v + 1;
-            } else if (qtySelectorEl) {
-                mostrarLimiteStock(qtySelectorEl);
-            }
-        });
-        if (addBtn) addBtn.addEventListener('click', function () {
-            const baseId = ctrl.dataset.id;
-            const name = ctrl.dataset.name;
-            const price = parseFloat(ctrl.dataset.price);
-            const qty = Math.min(parseInt(qtyValue.textContent, 10), MAX_QTY_PER_ITEM);
-            const detail = leerPersonalizacion(ctrl);
-            const cartId = detail ? baseId + '::' + detail : baseId;
-            addToCart(cartId, name, price, qty, detail);
-            const original = addBtn.textContent;
-            addBtn.textContent = 'AGREGADO ✓';
-            addBtn.disabled = true;
-            setTimeout(function () { addBtn.textContent = original; addBtn.disabled = false; }, 1200);
-        });
-    });
+    activarFallbackImagenes();
 
     document.getElementById('cart-float-btn').addEventListener('click', abrirCarrito);
     document.getElementById('cart-close-btn').addEventListener('click', cerrarCarrito);
     document.getElementById('cart-overlay').addEventListener('click', cerrarCarrito);
-    document.getElementById('cart-confirmar-btn').addEventListener('click', confirmarPedido);
+    document.getElementById('cart-checkout-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        confirmarPedido();
+    });
+    document.getElementById('buscar-producto').addEventListener('input', filtrarCatalogo);
+    document.getElementById('filtrar-linea').addEventListener('change', filtrarCatalogo);
+    document.getElementById('limpiar-filtros').addEventListener('click', function () {
+        document.getElementById('buscar-producto').value = '';
+        document.getElementById('filtrar-linea').value = 'todas';
+        filtrarCatalogo();
+        document.getElementById('buscar-producto').focus();
+    });
+    document.getElementById('cart-checkout-form').addEventListener('input', function (event) {
+        if (event.target.matches('input[aria-invalid="true"], textarea[aria-invalid="true"]')) {
+            event.target.removeAttribute('aria-invalid');
+            document.getElementById('cart-form-error').style.display = 'none';
+        }
+    });
+    document.getElementById('cart-items-list').addEventListener('click', function (event) {
+        const button = event.target.closest('button[data-cart-action]');
+        if (!button || !this.contains(button)) return;
+
+        const id = button.dataset.cartId;
+        if (button.dataset.cartAction === 'decrease') cambiarCantidadCarrito(id, -1);
+        else if (button.dataset.cartAction === 'increase') cambiarCantidadCarrito(id, 1);
+        else if (button.dataset.cartAction === 'remove') quitarDelCarrito(id);
+    });
+    document.addEventListener('keydown', gestionarTecladoCarrito);
+    document.addEventListener('click', function (event) {
+        if (!(event.target instanceof Element)) return;
+        const boton = event.target.closest('.cart-controls button');
+        if (!boton) return;
+        const controles = boton.closest('.cart-controls');
+        const valor = controles.querySelector('.qty-value');
+        const selector = controles.querySelector('.qty-selector');
+
+        if (boton.classList.contains('qty-minus')) {
+            valor.textContent = Math.max(1, parseInt(valor.textContent, 10) - 1);
+        } else if (boton.classList.contains('qty-plus')) {
+            const cantidad = parseInt(valor.textContent, 10);
+            if (cantidad < MAX_QTY_PER_ITEM) valor.textContent = cantidad + 1;
+            else mostrarLimiteStock(selector);
+        } else if (boton.classList.contains('btn-add-cart')) {
+            const cartId = controles.dataset.id;
+            const detalle = leerPersonalizacion(controles);
+            addToCart(detalle ? cartId + '::' + detalle : cartId, controles.dataset.name,
+                parseFloat(controles.dataset.price),
+                Math.min(parseInt(valor.textContent, 10), MAX_QTY_PER_ITEM), detalle);
+            const original = boton.textContent;
+            boton.textContent = 'Agregado al pedido ✓';
+            boton.disabled = true;
+            setTimeout(function () {
+                boton.textContent = original;
+                boton.disabled = false;
+            }, 1200);
+        }
+    });
+
+    await inicializarCatalogo();
 });
 
 </script>
 
 </body>
 </html>
-
